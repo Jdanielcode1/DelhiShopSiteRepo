@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary - Deep Forest Greens */
+  --color-primary-50: oklch(96% 0.02 145);
+  --color-primary-100: oklch(90% 0.04 145);
+  --color-primary-200: oklch(80% 0.06 145);
+  --color-primary-300: oklch(70% 0.08 145);
+  --color-primary-400: oklch(55% 0.09 145);
+  --color-primary-500: oklch(42% 0.10 145);
+  --color-primary-600: oklch(36% 0.09 145);
+  --color-primary-700: oklch(30% 0.08 145);
+  --color-primary-800: oklch(24% 0.06 145);
+  --color-primary-900: oklch(18% 0.04 145);
+
+  /* Secondary - Warm Wheat/Straw Tones */
+  --color-secondary-50: oklch(98% 0.02 75);
+  --color-secondary-100: oklch(96% 0.04 75);
+  --color-secondary-200: oklch(92% 0.07 75);
+  --color-secondary-300: oklch(86% 0.11 75);
+  --color-secondary-400: oklch(78% 0.12 75);
+  --color-secondary-500: oklch(70% 0.12 75);
+  --color-secondary-600: oklch(60% 0.10 75);
+
+  /* Neutrals */
+  --color-cream: oklch(97% 0.01 75);
+  --color-cream-dark: oklch(94% 0.02 75);
+  --color-charcoal: oklch(22% 0.01 0);
+  --color-charcoal-light: oklch(35% 0.01 0);
+
+  /* Accent - Barn Red */
+  --color-accent: oklch(48% 0.18 25);
+  --color-accent-hover: oklch(42% 0.16 25);
+
+  /* Semantic */
+  --background: var(--color-cream);
+  --foreground: var(--color-charcoal);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Primary */
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+
+  /* Secondary */
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+
+  /* Neutrals */
+  --color-cream: var(--color-cream);
+  --color-cream-dark: var(--color-cream-dark);
+  --color-charcoal: var(--color-charcoal);
+  --color-charcoal-light: var(--color-charcoal-light);
+
+  /* Accent */
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+
+  /* Fonts */
+  --font-heading: var(--font-libre-baskerville), Georgia, serif;
+  --font-body: var(--font-source-sans), system-ui, sans-serif;
+}
+
+/* Base styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+/* Heading defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--color-primary-200);
+  color: var(--color-primary-900);
+}
+
+/* Focus styling for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* Grain texture overlay */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Stagger delays for animations */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Scroll reveal initial state */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

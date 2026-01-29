@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect fill="#3d5a3d" width="1200" height="800"/>
+  <rect fill="#2d4a2d" x="0" y="400" width="1200" height="400"/>
+  <circle fill="#c9a96e" cx="900" cy="150" r="80" opacity="0.8"/>
+  <rect fill="#5a4a3a" x="150" y="350" width="200" height="150"/>
+  <polygon fill="#8b4513" points="150,350 250,250 350,350"/>
+  <rect fill="#d4a76a" x="200" y="400" width="50" height="100"/>
+  <text x="600" y="420" font-family="Georgia, serif" font-size="48" fill="#f5f0e6" text-anchor="middle" opacity="0.3">Delhi Feed and Supply</text>
+</svg>
