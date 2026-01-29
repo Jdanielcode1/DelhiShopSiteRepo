@@ -44,18 +44,43 @@ export default function ContactPage() {
             <p className="text-charcoal-light mb-8 max-w-2xl mx-auto">
               {t.findUsDescription}
             </p>
-            <div className="aspect-[16/9] md:aspect-[21/9] rounded-sm overflow-hidden">
-              <iframe
-                src="https://maps.google.com/maps?q=9764+Stephens+St,+Delhi,+CA+95315&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Delhi Feed and Supply location map"
-                className="w-full h-full"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-heading text-lg font-bold text-charcoal mb-3">
+                  Delhi
+                </h3>
+                <div className="aspect-[4/3] rounded-sm overflow-hidden">
+                  <iframe
+                    src="https://maps.google.com/maps?q=9764+Stephens+St,+Delhi,+CA+95315&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Delhi Feed and Supply — Delhi location"
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+              <div>
+                <h3 className="font-heading text-lg font-bold text-charcoal mb-3">
+                  Denair
+                </h3>
+                <div className="aspect-[4/3] rounded-sm overflow-hidden">
+                  <iframe
+                    src="https://maps.google.com/maps?q=4448+Main+St,+Denair,+CA+95316&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Delhi Feed and Supply — Denair location"
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
             </div>
           </ScrollReveal>
         </Container>

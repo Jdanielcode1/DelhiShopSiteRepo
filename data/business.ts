@@ -4,13 +4,24 @@ export const businessInfo = {
   taglineEs: "Arraigados en Calidad, Creciendo Juntos",
   phone: "(555) 123-4567",
   email: "delhifeed@gmail.com",
-  address: {
-    street: "9764 Stephens St",
-    city: "Delhi",
-    state: "CA",
-    zip: "95315",
-    country: "United States",
-  },
+  addresses: [
+    {
+      label: "Delhi",
+      street: "9764 Stephens St",
+      city: "Delhi",
+      state: "CA",
+      zip: "95315",
+      country: "United States",
+    },
+    {
+      label: "Denair",
+      street: "4448 Main St",
+      city: "Denair",
+      state: "CA",
+      zip: "95316",
+      country: "United States",
+    },
+  ],
   hours: {
     fall: "Fall Hours (Mon-Sat): 9:00 AM - 6:00 PM",
     spring: "Spring Hours (Mon-Sat): 9:00 AM - 8:00 PM",

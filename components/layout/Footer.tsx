@@ -62,12 +62,12 @@ export function Footer() {
                 {t.contactUs}
               </h3>
               <address className="not-italic space-y-2 text-cream/70 text-sm">
-                <p>
-                  {businessInfo.address.street}
-                  <br />
-                  {businessInfo.address.city}, {businessInfo.address.state}{" "}
-                  {businessInfo.address.zip}
-                </p>
+                {businessInfo.addresses.map((addr) => (
+                  <p key={addr.label}>
+                    <span className="text-cream/90 font-medium">{addr.label}:</span>{" "}
+                    {addr.street}, {addr.city}, {addr.state} {addr.zip}
+                  </p>
+                ))}
                 <p>
                   <a
                     href={`tel:${businessInfo.phone}`}

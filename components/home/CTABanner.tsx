@@ -33,13 +33,16 @@ export function CTABanner() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-cream/20">
             <div>
               <h3 className="font-heading text-secondary-300 font-bold mb-1">
-                {t.location}
+                {t.locations}
               </h3>
-              <p className="text-cream/70 text-sm">
-                {businessInfo.address.street}
-                <br />
-                {businessInfo.address.city}, {businessInfo.address.state}
-              </p>
+              <div className="space-y-2">
+                {businessInfo.addresses.map((addr) => (
+                  <p key={addr.label} className="text-cream/70 text-sm">
+                    <span className="text-cream/90">{addr.label}:</span>{" "}
+                    {addr.street}, {addr.city}, {addr.state}
+                  </p>
+                ))}
+              </div>
             </div>
             <div>
               <h3 className="font-heading text-secondary-300 font-bold mb-1">
