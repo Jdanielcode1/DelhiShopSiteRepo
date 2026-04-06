@@ -2,7 +2,7 @@ export const businessInfo = {
   name: "Delhi Feed and Supply",
   tagline: "Rooted in Quality, Growing Together",
   taglineEs: "Arraigados en Calidad, Creciendo Juntos",
-  phone: "(555) 123-4567",
+  phone: "209-449-6585",
   email: "delhifeed@gmail.com",
   addresses: [
     {

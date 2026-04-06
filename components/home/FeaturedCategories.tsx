@@ -36,11 +36,8 @@ export function FeaturedCategories() {
     <Section variant="default" padding="xl">
       <Container>
         <ScrollReveal className="text-center mb-12 md:mb-16">
-          <span className="inline-block text-primary-600 text-sm uppercase tracking-[0.15em] mb-3">
+          <Heading as="h2" size="xl" className="text-primary-600 uppercase tracking-[0.15em]">
             {t.whatWeOffer}
-          </span>
-          <Heading as="h2" size="xl" className="text-charcoal">
-            {t.everythingYourFarm}
           </Heading>
         </ScrollReveal>
 

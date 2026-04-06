@@ -30,7 +30,7 @@ export function PageHero({ title, subtitle, backgroundImage }: PageHeroProps) {
             {title}
           </Heading>
           {subtitle && (
-            <p className="text-cream/80 text-lg md:text-xl animate-fade-in-up delay-100">
+            <p className="text-cream/80 text-xl md:text-2xl mt-4 animate-fade-in-up delay-100">
               {subtitle}
             </p>
           )}

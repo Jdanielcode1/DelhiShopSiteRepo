@@ -10,6 +10,7 @@ interface Category {
   description: string;
   image: string;
   items: string[];
+  itemsLabel?: string;
 }
 
 interface CategoryCardProps {
@@ -43,13 +44,15 @@ export function CategoryCard({ category, reverse = false }: CategoryCardProps) {
         <Heading as="h2" size="xl" className="text-charcoal mb-4">
           {category.name}
         </Heading>
-        <p className="text-charcoal-light leading-relaxed mb-6">
-          {category.description}
-        </p>
+        {category.description && (
+          <p className="text-charcoal-light leading-relaxed mb-6">
+            {category.description}
+          </p>
+        )}
 
         <div className="mb-8">
           <h3 className="text-sm uppercase tracking-wider text-primary-600 mb-3">
-            {t.whatWeCarry}
+            {category.itemsLabel || t.whatWeCarry}
           </h3>
           <ul className="grid grid-cols-2 gap-2">
             {category.items.map((item) => (

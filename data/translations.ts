@@ -12,7 +12,7 @@ export const translations = {
     // Home Hero
     welcomeTo: "Welcome to",
     heroDescription:
-      "Your trusted neighborhood farm supply store. We provide premium animal feed, quality farm equipment, and the expertise you need to help your operation thrive.",
+      "Your trusted neighborhood feed store. We provide pet supplies and premium animal feed!",
     browseProducts: "Browse Products",
     visitUsToday: "Visit Us Today",
 
@@ -24,25 +24,23 @@ export const translations = {
     // Featured category names/descriptions
     catAnimalFeed: "Animal Feed",
     catAnimalFeedDesc: "Premium feed for poultry, livestock, horses, and pets",
-    catFarmEquipment: "Farm Equipment",
+    catFarmEquipment: "Pet Care Supplies",
     catFarmEquipmentDesc: "Quality tools and supplies for your farm",
-    catSeedsSupplies: "Seeds & Supplies",
+    catSeedsSupplies: "Pest Control",
     catSeedsSuppliesDesc: "Everything you need to grow your own",
 
     // About Teaser
     ourStory: "Our Story",
-    familyTradition: "A Family Tradition of Service",
-    aboutTeaser1:
-      "For generations, Delhi Feed and Supply has been more than just a farm store—we've been a cornerstone of our agricultural community. What started as a small feed shop has grown into a trusted destination for farmers, ranchers, and homesteaders alike.",
-    aboutTeaser2:
-      "We believe in the value of hard work, the importance of quality products, and the strength of community connections. When you walk through our doors, you're not just a customer—you're a neighbor.",
+    familyTradition: "Products We Carry",
+    aboutTeaser1: "",
+    aboutTeaser2: "",
     learnOurStory: "Learn Our Story",
     yearsServing: "Years Serving",
 
     // CTA Banner
     readyToStart: "Ready to Get Started?",
     ctaDescription:
-      "Stop by our store today and see why local farmers have trusted us for over 25 years. Our friendly staff is ready to help you find exactly what you need.",
+      "Our friendly staff is ready to help you find exactly what you need.",
     getDirections: "Get Directions",
     orCall: "or call",
     location: "Location",
@@ -91,15 +89,17 @@ export const translations = {
     productsHeroSubtitle:
       "Quality supplies for every aspect of your farming operation. From feed to equipment, we've got you covered.",
     whatWeCarry: "What We Carry",
+    weCarryProductsFor: "We carry products for:",
     askAboutAvailability: "Ask About Availability",
 
     // Product category details
     animalFeedName: "Animal Feed",
     animalFeedDesc:
-      "Premium quality feed for all your livestock and poultry needs. We carry trusted brands that keep your animals healthy and thriving.",
-    farmEquipmentName: "Farm Equipment",
-    farmEquipmentDesc:
-      "Everything you need to keep your farm running smoothly. From fencing to feeders, we've got you covered.",
+      "Premium quality feed for all your livestock and pet needs. We carry trusted brands that keep your animals healthy and thriving.",
+    farmEquipmentName: "Pet Care Supplies",
+    farmEquipmentDesc: "",
+    pestControlName: "Pest Control",
+    pestControlDesc: "",
 
     // Product items
     poultryFeed: "Poultry Feed",
@@ -161,7 +161,7 @@ export const translations = {
 
     welcomeTo: "Bienvenidos a",
     heroDescription:
-      "Su tienda local de confianza para suministros agrícolas. Ofrecemos alimento premium para animales, equipo agrícola de calidad y la experiencia que necesita para que su operación prospere.",
+      "Su tienda local de confianza. Ofrecemos suministros para mascotas y alimento premium para animales!",
     browseProducts: "Ver Productos",
     visitUsToday: "Visítenos Hoy",
 
@@ -171,23 +171,21 @@ export const translations = {
 
     catAnimalFeed: "Alimento para Animales",
     catAnimalFeedDesc: "Alimento premium para aves, ganado, caballos y mascotas",
-    catFarmEquipment: "Equipo Agrícola",
+    catFarmEquipment: "Suministros para Mascotas",
     catFarmEquipmentDesc: "Herramientas y suministros de calidad para su granja",
-    catSeedsSupplies: "Semillas y Suministros",
+    catSeedsSupplies: "Control de Plagas",
     catSeedsSuppliesDesc: "Todo lo que necesita para cultivar",
 
     ourStory: "Nuestra Historia",
-    familyTradition: "Una Tradición Familiar de Servicio",
-    aboutTeaser1:
-      "Por generaciones, Delhi Feed and Supply ha sido más que una tienda agrícola—hemos sido una piedra angular de nuestra comunidad agrícola. Lo que comenzó como una pequeña tienda de alimento ha crecido hasta convertirse en un destino confiable para agricultores y ganaderos por igual.",
-    aboutTeaser2:
-      "Creemos en el valor del trabajo duro, la importancia de productos de calidad y la fuerza de las conexiones comunitarias. Cuando camina por nuestras puertas, no es solo un cliente—es un vecino.",
+    familyTradition: "Productos Que Ofrecemos",
+    aboutTeaser1: "",
+    aboutTeaser2: "",
     learnOurStory: "Conozca Nuestra Historia",
     yearsServing: "Años Sirviendo",
 
     readyToStart: "¿Listo Para Empezar?",
     ctaDescription:
-      "Pase por nuestra tienda hoy y vea por qué los agricultores locales han confiado en nosotros por más de 25 años. Nuestro amable personal está listo para ayudarle a encontrar exactamente lo que necesita.",
+      "Nuestro amable personal está listo para ayudarle a encontrar exactamente lo que necesita.",
     getDirections: "Cómo Llegar",
     orCall: "o llame al",
     location: "Ubicación",
@@ -233,14 +231,16 @@ export const translations = {
     productsHeroSubtitle:
       "Suministros de calidad para cada aspecto de su operación agrícola. Desde alimento hasta equipo, lo tenemos cubierto.",
     whatWeCarry: "Lo Que Ofrecemos",
+    weCarryProductsFor: "Llevamos productos para:",
     askAboutAvailability: "Pregunte por Disponibilidad",
 
     animalFeedName: "Alimento para Animales",
     animalFeedDesc:
-      "Alimento de primera calidad para todas sus necesidades de ganado y aves. Llevamos marcas de confianza que mantienen a sus animales sanos y prósperos.",
-    farmEquipmentName: "Equipo Agrícola",
-    farmEquipmentDesc:
-      "Todo lo que necesita para mantener su granja funcionando sin problemas. Desde cercas hasta comederos, lo tenemos cubierto.",
+      "Alimento de primera calidad para todas sus necesidades de ganado y mascotas. Llevamos marcas de confianza que mantienen a sus animales sanos y prósperos.",
+    farmEquipmentName: "Suministros para Mascotas",
+    farmEquipmentDesc: "",
+    pestControlName: "Control de Plagas",
+    pestControlDesc: "",
 
     poultryFeed: "Alimento para Aves",
     livestockFeed: "Alimento para Ganado",

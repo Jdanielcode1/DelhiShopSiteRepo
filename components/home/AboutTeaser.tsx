@@ -17,12 +17,26 @@ export function AboutTeaser() {
             <Heading as="h2" size="xl" className="text-charcoal mb-6">
               {t.familyTradition}
             </Heading>
-            <div className="space-y-4 text-charcoal-light leading-relaxed">
-              <p>{t.aboutTeaser1}</p>
-              <p>{t.aboutTeaser2}</p>
+            <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-charcoal-light leading-relaxed mb-6">
+              <ul className="list-disc list-inside space-y-2">
+                <li>Farmers Best Dairy Feed</li>
+                <li>El Ranchero</li>
+                <li>Leach Grain and Milling</li>
+                <li>Swanson Scratch</li>
+                <li>ZBONG</li>
+              </ul>
+              <ul className="list-disc list-inside space-y-2">
+                <li>El Rey</li>
+                <li>Jose Guerrero</li>
+                <li>TMC</li>
+                <li>Winners Cup</li>
+                <li>Diamond</li>
+                <li>Victor</li>
+                <li>Eagle Mountain</li>
+              </ul>
             </div>
-            <Button href="/about" variant="primary" className="mt-8">
-              {t.learnOurStory}
+            <Button href="/products" variant="primary" className="mt-6">
+              and more!
             </Button>
           </ScrollReveal>
 

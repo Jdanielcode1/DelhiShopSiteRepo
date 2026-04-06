@@ -91,24 +91,14 @@ export function Header() {
                   priority
                   unoptimized
                 />
-                <div className="flex flex-col">
-                  <span
-                    className={cn(
-                      "font-heading text-lg font-bold leading-none transition-colors duration-300",
-                      isScrolled ? "text-charcoal" : "text-cream"
-                    )}
-                  >
-                    {businessInfo.name}
-                  </span>
-                  <span
-                    className={cn(
-                      "text-xs tracking-wider uppercase transition-colors duration-300",
-                      isScrolled ? "text-charcoal-light" : "text-cream/80"
-                    )}
-                  >
-                    {t.farmSupply}
-                  </span>
-                </div>
+                <span
+                  className={cn(
+                    "font-heading text-lg font-bold leading-none transition-colors duration-300",
+                    isScrolled ? "text-charcoal" : "text-cream"
+                  )}
+                >
+                  {businessInfo.name}
+                </span>
               </Link>
 
               <div className="hidden md:flex items-center gap-8">
