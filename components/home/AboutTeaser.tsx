@@ -41,25 +41,15 @@ export function AboutTeaser() {
           </ScrollReveal>
 
           <ScrollReveal delay={150} className="order-1 lg:order-2">
-            <div className="relative">
-              <div
-                className="aspect-[4/3] rounded-sm bg-cover bg-center"
-                style={{
-                  backgroundImage: "url('/images/products_we_carry.png')",
-                  backgroundColor: "var(--color-secondary-300)",
-                }}
-                role="img"
-                aria-label="Feed and supply products stacked in the store"
-              />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary-600 rounded-sm hidden lg:flex items-center justify-center">
-                <div className="text-center text-cream">
-                  <span className="block font-heading text-3xl font-bold">
-                    25+
-                  </span>
-                  <span className="text-sm text-cream/80">{t.yearsServing}</span>
-                </div>
-              </div>
-            </div>
+            <div
+              className="aspect-[4/3] rounded-sm bg-cover bg-center"
+              style={{
+                backgroundImage: "url('/images/products_we_carry.png')",
+                backgroundColor: "var(--color-secondary-300)",
+              }}
+              role="img"
+              aria-label="Feed and supply products stacked in the store"
+            />
           </ScrollReveal>
         </div>
       </Container>
