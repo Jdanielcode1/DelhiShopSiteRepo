@@ -9,6 +9,8 @@ interface Category {
   name: string;
   description: string;
   image: string;
+  /** Use contain + padding for wide transparent PNGs */
+  imageContain?: boolean;
   items: string[];
   itemsLabel?: string;
 }
@@ -30,7 +32,12 @@ export function CategoryCard({ category, reverse = false }: CategoryCardProps) {
     >
       <div className={cn(reverse && "lg:col-start-2")}>
         <div
-          className="aspect-[4/3] rounded-sm bg-cover bg-center"
+          className={cn(
+            "aspect-[4/3] rounded-sm bg-center bg-no-repeat",
+            category.imageContain
+              ? "bg-contain bg-origin-content p-6 sm:p-10"
+              : "bg-cover"
+          )}
           style={{
             backgroundImage: `url('${category.image}')`,
             backgroundColor: "var(--color-secondary-300)",

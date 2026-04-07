@@ -10,19 +10,18 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-no-repeat bg-[position:center_32%] sm:bg-center"
         style={{
           backgroundImage: `linear-gradient(
-            to bottom,
-            rgba(24, 28, 20, 0.6) 0%,
-            rgba(24, 28, 20, 0.7) 50%,
-            rgba(24, 28, 20, 0.85) 100%
-          ), url('/images/hero-bg.jpg')`,
+              to bottom,
+              rgba(12, 16, 12, 0.48) 0%,
+              rgba(12, 16, 12, 0.58) 45%,
+              rgba(10, 14, 10, 0.88) 100%
+            ),
+            url('/images/front_store_delhi.png')`,
         }}
         aria-hidden="true"
       />
-
-      <div className="absolute inset-0 bg-primary-900/30" aria-hidden="true" />
 
       <Container className="relative z-10 text-center py-20">
         <div className="max-w-4xl mx-auto">

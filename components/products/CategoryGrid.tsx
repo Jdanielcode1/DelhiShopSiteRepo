@@ -12,7 +12,7 @@ export function CategoryGrid() {
       id: "animal-feed",
       name: t.animalFeedName,
       description: t.animalFeedDesc,
-      image: "/images/animal-feed.jpg",
+      image: "/images/animal_feed_store.png",
       itemsLabel: t.weCarryProductsFor,
       items: [
         "Poultry Feed",
@@ -33,7 +33,7 @@ export function CategoryGrid() {
       id: "pet-care",
       name: t.farmEquipmentName,
       description: t.farmEquipmentDesc,
-      image: "/images/farm-equipment.jpg",
+      image: "/images/pet_care_supplies_store.jpeg",
       items: [
         "Nesting Boxes",
         "Feeders & Waterers",
@@ -49,7 +49,7 @@ export function CategoryGrid() {
       id: "pest-control",
       name: t.pestControlName,
       description: t.pestControlDesc,
-      image: "/images/seeds-hero.jpg",
+      image: "/images/pest_control_store.jpeg",
       items: [
         "Poultry Dust",
         "Martin's Flea, Tick and Manage Dip",

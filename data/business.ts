@@ -1,3 +1,7 @@
+/** Canonical site URL for metadata, sitemap, and robots. Override via NEXT_PUBLIC_SITE_URL. */
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://delhifeedandsupply.com";
+
 export const businessInfo = {
   name: "Delhi Feed and Supply",
   tagline: "Rooted in Quality, Growing Together",
