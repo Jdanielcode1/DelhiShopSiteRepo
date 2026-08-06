@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Button, ContactLinks, Container, Heading, Section } from "@/components/ui";
 import { businessInfo, whatsappUrl } from "@/data/business";
@@ -29,21 +28,8 @@ export function CustomFeedDetail({ feed }: CustomFeedDetailProps) {
             <span aria-current="page">{feed.name}</span>
           </nav>
 
-          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
-            <div className="overflow-hidden rounded-sm border border-secondary-200 bg-background shadow-sm">
-              <div className="relative aspect-[4/5]">
-                <Image
-                  src={feed.image}
-                  alt={`${feed.name} feed label`}
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 38vw, 100vw"
-                  className="object-contain p-4"
-                />
-              </div>
-            </div>
-
-            <article>
+          <div className="mx-auto max-w-4xl">
+            <article className="rounded-sm border border-secondary-200 bg-background p-6 shadow-sm sm:p-8 lg:p-10">
               <span className="text-sm font-medium uppercase tracking-[0.18em] text-primary-600">
                 {isSpanish ? "Alimento Especial" : "Custom Feed"}
               </span>

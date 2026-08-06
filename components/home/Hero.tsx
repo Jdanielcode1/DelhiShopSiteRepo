@@ -39,7 +39,7 @@ export function Hero() {
         <div className="grid grid-cols-1 gap-6 text-left animate-fade-in-up delay-200 md:grid-cols-2">
           <article className="flex flex-col overflow-hidden rounded-sm border border-cream/20 bg-charcoal/70 shadow-2xl">
             <Image
-              src="/images/front_store_delhi.png"
+              src="/images/delhifrontnew.png"
               alt="Delhi Feed and Supply storefront"
               width={2048}
               height={1536}

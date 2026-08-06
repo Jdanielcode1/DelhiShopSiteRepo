@@ -50,7 +50,7 @@ export function LocationDetail({ slug }: LocationDetailProps) {
         subtitle={description}
         backgroundImage={
           isDelhi
-            ? "/images/front_store_delhi.png"
+            ? "/images/delhifrontnew.png"
             : "/images/front_store_denair.png"
         }
       />

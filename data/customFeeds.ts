@@ -8,7 +8,6 @@ export type CustomFeed = {
   kilograms: string;
   bestFor: string;
   bestForEs: string;
-  image: string;
 };
 
 export const customFeeds: CustomFeed[] = [
@@ -24,7 +23,6 @@ export const customFeeds: CustomFeed[] = [
     kilograms: "22.7 kg",
     bestFor: "Mature Poultry",
     bestForEs: "Aves Adultas",
-    image: "/images/products/custom-feeds/monse-mix.png",
   },
   {
     slug: "delhi-el-justo-game-bird-mix",
@@ -38,7 +36,6 @@ export const customFeeds: CustomFeed[] = [
     kilograms: "34.0 kg",
     bestFor: "Mature Game Birds",
     bestForEs: "Aves de Caza Adultas",
-    image: "/images/products/custom-feeds/delhi-el-justo-game-bird-mix.png",
   },
   {
     slug: "gutierrez-game-bird-summer-mix",
@@ -52,7 +49,6 @@ export const customFeeds: CustomFeed[] = [
     kilograms: "22.7 kg",
     bestFor: "Mature Game Birds",
     bestForEs: "Aves de Caza Adultas",
-    image: "/images/products/custom-feeds/gutierrez-game-bird-summer-mix.png",
   },
   {
     slug: "economy-stag-game-bird-mix",
@@ -66,7 +62,6 @@ export const customFeeds: CustomFeed[] = [
     kilograms: "34.0 kg",
     bestFor: "Mature Game Birds",
     bestForEs: "Aves de Caza Adultas",
-    image: "/images/products/custom-feeds/economy-stag-game-bird-mix.png",
   },
   {
     slug: "delhi-super-egg",
@@ -80,7 +75,6 @@ export const customFeeds: CustomFeed[] = [
     kilograms: "22.7 kg",
     bestFor: "Mature Game Birds",
     bestForEs: "Aves de Caza Adultas",
-    image: "/images/products/custom-feeds/delhi-super-egg.png",
   },
   {
     slug: "delhi-game-bird-summer-mix-no-milo",
@@ -94,7 +88,6 @@ export const customFeeds: CustomFeed[] = [
     kilograms: "34.0 kg",
     bestFor: "Mature Game Birds",
     bestForEs: "Aves de Caza Adultas",
-    image: "/images/products/custom-feeds/delhi-game-bird-summer-mix-no-milo.png",
   },
 ];
 

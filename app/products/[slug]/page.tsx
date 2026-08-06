@@ -44,13 +44,11 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
       url: canonical,
       title,
       description,
-      images: [{ url: feed.image, alt: `${feed.name} feed label` }],
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title,
       description,
-      images: [feed.image],
     },
   };
 }
@@ -69,7 +67,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
     "@type": "Product",
     "@id": `${productUrl}#product`,
     name: feed.name,
-    image: [`${siteUrl}${feed.image}`],
     description: feed.description,
     brand: {
       "@type": "Brand",
