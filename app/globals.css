@@ -165,3 +165,45 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Continuously scrolling brand-logo rows */
+.brand-marquee {
+  width: 100dvw;
+  margin-left: calc(50% - 50dvw);
+}
+
+@keyframes brandMarqueeForward {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes brandMarqueeReverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.brand-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: brandMarqueeForward 55s linear infinite;
+  will-change: transform;
+}
+
+.brand-marquee-track-reverse {
+  animation-name: brandMarqueeReverse;
+  animation-duration: 62s;
+}
+
+.brand-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-marquee-track,
+  .brand-marquee-track-reverse {
+    animation-play-state: paused;
+  }
+}
