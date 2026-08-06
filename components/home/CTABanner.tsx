@@ -1,7 +1,7 @@
 "use client";
 
-import { Container, Section, Heading, Button, ScrollReveal } from "@/components/ui";
-import { businessInfo } from "@/data/business";
+import { ContactLinks, Container, Section, Heading, Button, ScrollReveal } from "@/components/ui";
+import { businessInfo, whatsappUrl } from "@/data/business";
 import { useLanguage } from "@/lib/LanguageContext";
 
 export function CTABanner() {
@@ -22,12 +22,13 @@ export function CTABanner() {
             <Button href="/contact" variant="accent" size="lg">
               {t.getDirections}
             </Button>
-            <a
-              href={`tel:${businessInfo.phone}`}
-              className="text-cream hover:text-secondary-300 transition-colors font-medium"
-            >
-              {t.orCall} {businessInfo.phone}
-            </a>
+            <ContactLinks
+              phone={businessInfo.phone}
+              whatsappUrl={whatsappUrl}
+              whatsappLabel={t.whatsapp}
+              callLabel={t.callUs}
+              appearance="light"
+            />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-cream/20">
@@ -49,7 +50,9 @@ export function CTABanner() {
                 {t.fallHours}
               </h3>
               <p className="text-cream/70 text-sm">
-                {t.monSat}: {t.fallMonSat}
+                {t.weekdays}: {t.fallWeekdays}
+                <br />
+                {t.saturday}: {t.saturdayHours}
                 <br />
                 {t.sundayClosed}
               </p>
@@ -59,7 +62,21 @@ export function CTABanner() {
                 {t.springHours}
               </h3>
               <p className="text-cream/70 text-sm">
-                {t.monSat}: {t.springMonSat}
+                {t.weekdays}: {t.springWeekdays}
+                <br />
+                {t.saturday}: {t.saturdayHours}
+                <br />
+                {t.sundayClosed}
+              </p>
+            </div>
+            <div>
+              <h3 className="font-heading text-secondary-300 font-bold mb-1">
+                {t.afterAugustHours}
+              </h3>
+              <p className="text-cream/70 text-sm">
+                {t.weekdays}: {t.afterAugustWeekdays}
+                <br />
+                {t.saturday}: {t.saturdayHours}
                 <br />
                 {t.sundayClosed}
               </p>

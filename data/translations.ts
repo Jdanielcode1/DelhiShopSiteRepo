@@ -14,6 +14,10 @@ export const translations = {
     heroDescription:
       "Your trusted neighborhood feed store. We provide pet supplies and premium animal feed!",
     browseProducts: "Browse Products",
+    browseDelhiProducts: "Delhi Products",
+    browseDenairProducts: "Denair Products",
+    exploreDelhiStore: "Explore Delhi Store",
+    exploreDenairStore: "Explore Denair Store",
     visitUsToday: "Visit Us Today",
 
     // Featured Categories
@@ -42,13 +46,18 @@ export const translations = {
     ctaDescription:
       "Our friendly staff is ready to help you find exactly what you need.",
     getDirections: "Get Directions",
-    orCall: "or call",
+    orCall: "or message us on WhatsApp at",
+    whatsapp: "WhatsApp",
+    callUs: "Call Us",
     location: "Location",
     locations: "Locations",
     fallHours: "Fall Hours",
-    springHours: "Spring Hours",
-    fallSchedule: "Mon - Sat: 9:00 AM - 6:00 PM",
-    springSchedule: "Mon - Sat: 9:00 AM - 8:00 PM",
+    springHours: "Spring Hours (August)",
+    afterAugustHours: "After August",
+    fallSchedule: "Mon - Fri: 9:00 AM - 6:00 PM",
+    springSchedule: "Mon - Fri: 8:30 AM - 8:30 PM",
+    afterAugustSchedule: "Mon - Fri: 8:30 AM - 7:30 PM",
+    saturdaySchedule: "Saturday: 9:00 AM - 5:30 PM",
     sundayClosed: "Sunday: Closed",
 
     // About Page
@@ -88,9 +97,70 @@ export const translations = {
     productsHeroTitle: "Our Products",
     productsHeroSubtitle:
       "Quality supplies for every aspect of your farming operation. From feed to equipment, we've got you covered.",
+    chooseStore: "Choose Your Store",
+    chooseStoreDescription:
+      "Select a location to browse its products and store information.",
+    delhiProductsTitle: "Products at Our Delhi Store",
+    delhiProductsDescription:
+      "Browse the product categories available from our Delhi location.",
+    denairProductsTitle: "Products at Our Denair Store",
+    denairProductsDescription:
+      "Inventory can vary by location. Contact our Denair team for current products and availability.",
+    viewDelhiProducts: "View Delhi Products",
+    viewDenairProducts: "View Denair Products",
+    callForAvailability: "Message on WhatsApp for Availability",
+    viewStoreDetails: "View Store Details",
+
+    // Locations
+    locationsHeroTitle: "Our Locations",
+    locationsHeroSubtitle:
+      "Choose your neighborhood store for location-specific products, directions, hours, and social updates.",
+    chooseLocation: "Choose a Location",
+    delhiLocationTitle: "Delhi Location",
+    denairLocationTitle: "Denair Location",
+    delhiLocationDescription:
+      "Visit our Delhi store for animal feed, pet care supplies, pest control, and friendly local expertise.",
+    denairLocationDescription:
+      "Visit our Denair store and contact the team for current products, availability, and local updates.",
+    locationContact: "Store Information",
+    locationProducts: "Products at This Location",
+    followThisStore: "Follow This Store",
+    followOurStores: "Follow Our Stores",
+    followStoreDescription:
+      "Get product arrivals, seasonal updates, and store news directly from this location.",
+    socialLinksPending: "Social profiles will appear here once they are available.",
+    otherLocation: "Looking for Our Other Store?",
     whatWeCarry: "What We Carry",
     weCarryProductsFor: "We carry products for:",
     askAboutAvailability: "Ask About Availability",
+    brandsWeCarry: "Brands We Carry",
+    brandsDescription:
+      "Trusted feed, animal health, grooming, and pet care brands available in our stores.",
+    productCatalog: "Browse Our Product Catalog",
+    productCatalogDescription:
+      "Open a category to see the full selection. Availability may vary by location.",
+    viewMore: "View more",
+    showLess: "Show less",
+    customFeeds: "Custom Feeds",
+    customFeedsDescription:
+      "Specialty blends selected for practical feeding needs and dependable everyday value.",
+    monseMixDescription:
+      "A textured grain-and-seed blend made for mature poultry.",
+    gameBirdMixDescription:
+      "A complete grain-based ration formulated for mature game birds.",
+    summerGameBirdMixDescription:
+      "A seasonal grain-based ration formulated for mature game birds.",
+    economyStagMixDescription:
+      "A complete game bird ration featuring cracked corn for mature birds.",
+    superEggDescription:
+      "A high-protein complete ration formulated for mature game birds.",
+    noMiloMixDescription:
+      "A seasonal grain-based ration for mature game birds, formulated without milo.",
+    minimumCrudeProtein: "Minimum Crude Protein",
+    bagWeight: "Bag Weight",
+    bestFor: "Best For",
+    maturePoultry: "Mature Poultry",
+    matureGameBirds: "Mature Game Birds",
 
     // Product category details
     animalFeedName: "Animal Feed",
@@ -147,11 +217,14 @@ export const translations = {
       "Your trusted local farm supply store, proudly serving the agricultural community with quality products and expert advice.",
 
     // Seasonal hours labels
-    monSat: "Monday - Saturday",
+    weekdays: "Monday - Friday",
+    saturday: "Saturday",
     sunday: "Sunday",
     closed: "Closed",
-    fallMonSat: "9:00 AM - 6:00 PM",
-    springMonSat: "9:00 AM - 8:00 PM",
+    fallWeekdays: "9:00 AM - 6:00 PM",
+    springWeekdays: "8:30 AM - 8:30 PM",
+    afterAugustWeekdays: "8:30 AM - 7:30 PM",
+    saturdayHours: "9:00 AM - 5:30 PM",
   },
   es: {
     farmSupply: "Tienda Agrícola",
@@ -163,6 +236,10 @@ export const translations = {
     heroDescription:
       "Su tienda local de confianza. Ofrecemos suministros para mascotas y alimento premium para animales!",
     browseProducts: "Ver Productos",
+    browseDelhiProducts: "Productos de Delhi",
+    browseDenairProducts: "Productos de Denair",
+    exploreDelhiStore: "Explorar Tienda de Delhi",
+    exploreDenairStore: "Explorar Tienda de Denair",
     visitUsToday: "Visítenos Hoy",
 
     whatWeOffer: "Lo Que Ofrecemos",
@@ -187,13 +264,18 @@ export const translations = {
     ctaDescription:
       "Nuestro amable personal está listo para ayudarle a encontrar exactamente lo que necesita.",
     getDirections: "Cómo Llegar",
-    orCall: "o llame al",
+    orCall: "o envíenos un mensaje por WhatsApp al",
+    whatsapp: "WhatsApp",
+    callUs: "Llámenos",
     location: "Ubicación",
     locations: "Ubicaciones",
     fallHours: "Horario de Otoño",
-    springHours: "Horario de Primavera",
-    fallSchedule: "Lun - Sáb: 9:00 AM - 6:00 PM",
-    springSchedule: "Lun - Sáb: 9:00 AM - 8:00 PM",
+    springHours: "Horario de Primavera (Agosto)",
+    afterAugustHours: "Después de Agosto",
+    fallSchedule: "Lun - Vie: 9:00 AM - 6:00 PM",
+    springSchedule: "Lun - Vie: 8:30 AM - 8:30 PM",
+    afterAugustSchedule: "Lun - Vie: 8:30 AM - 7:30 PM",
+    saturdaySchedule: "Sábado: 9:00 AM - 5:30 PM",
     sundayClosed: "Domingo: Cerrado",
 
     aboutHeroTitle: "Nuestra Historia",
@@ -230,9 +312,69 @@ export const translations = {
     productsHeroTitle: "Nuestros Productos",
     productsHeroSubtitle:
       "Suministros de calidad para cada aspecto de su operación agrícola. Desde alimento hasta equipo, lo tenemos cubierto.",
+    chooseStore: "Elija Su Tienda",
+    chooseStoreDescription:
+      "Seleccione una ubicación para ver sus productos e información.",
+    delhiProductsTitle: "Productos en Nuestra Tienda de Delhi",
+    delhiProductsDescription:
+      "Vea las categorías de productos disponibles en nuestra ubicación de Delhi.",
+    denairProductsTitle: "Productos en Nuestra Tienda de Denair",
+    denairProductsDescription:
+      "El inventario puede variar según la ubicación. Comuníquese con nuestro equipo de Denair para conocer los productos y su disponibilidad.",
+    viewDelhiProducts: "Ver Productos de Delhi",
+    viewDenairProducts: "Ver Productos de Denair",
+    callForAvailability: "Consulte Disponibilidad por WhatsApp",
+    viewStoreDetails: "Ver Detalles de la Tienda",
+
+    locationsHeroTitle: "Nuestras Ubicaciones",
+    locationsHeroSubtitle:
+      "Elija su tienda local para ver productos, direcciones, horarios y redes sociales específicos de esa ubicación.",
+    chooseLocation: "Elija una Ubicación",
+    delhiLocationTitle: "Ubicación de Delhi",
+    denairLocationTitle: "Ubicación de Denair",
+    delhiLocationDescription:
+      "Visite nuestra tienda de Delhi para alimento para animales, suministros para mascotas, control de plagas y asesoría local.",
+    denairLocationDescription:
+      "Visite nuestra tienda de Denair y comuníquese con el equipo para conocer los productos, la disponibilidad y las novedades locales.",
+    locationContact: "Información de la Tienda",
+    locationProducts: "Productos en Esta Ubicación",
+    followThisStore: "Siga Esta Tienda",
+    followOurStores: "Siga Nuestras Tiendas",
+    followStoreDescription:
+      "Reciba noticias sobre productos nuevos, temporadas y novedades directamente de esta ubicación.",
+    socialLinksPending: "Los perfiles sociales aparecerán aquí cuando estén disponibles.",
+    otherLocation: "¿Busca Nuestra Otra Tienda?",
     whatWeCarry: "Lo Que Ofrecemos",
     weCarryProductsFor: "Llevamos productos para:",
     askAboutAvailability: "Pregunte por Disponibilidad",
+    brandsWeCarry: "Marcas Que Ofrecemos",
+    brandsDescription:
+      "Marcas confiables de alimento, salud animal, cuidado y suministros para mascotas disponibles en nuestras tiendas.",
+    productCatalog: "Explore Nuestro Catálogo",
+    productCatalogDescription:
+      "Abra una categoría para ver la selección completa. La disponibilidad puede variar según la ubicación.",
+    viewMore: "Ver más",
+    showLess: "Ver menos",
+    customFeeds: "Alimentos Especiales",
+    customFeedsDescription:
+      "Mezclas especiales seleccionadas para necesidades prácticas de alimentación y un valor confiable.",
+    monseMixDescription:
+      "Una mezcla de granos y semillas preparada para aves adultas.",
+    gameBirdMixDescription:
+      "Una ración completa a base de granos formulada para aves de caza adultas.",
+    summerGameBirdMixDescription:
+      "Una ración estacional a base de granos formulada para aves de caza adultas.",
+    economyStagMixDescription:
+      "Una ración completa con maíz quebrado para aves de caza adultas.",
+    superEggDescription:
+      "Una ración completa alta en proteína formulada para aves de caza adultas.",
+    noMiloMixDescription:
+      "Una ración estacional para aves de caza adultas, formulada sin milo.",
+    minimumCrudeProtein: "Proteína Cruda Mínima",
+    bagWeight: "Peso de la Bolsa",
+    bestFor: "Recomendado Para",
+    maturePoultry: "Aves Adultas",
+    matureGameBirds: "Aves de Caza Adultas",
 
     animalFeedName: "Alimento para Animales",
     animalFeedDesc:
@@ -283,10 +425,13 @@ export const translations = {
     footerDescription:
       "Su tienda local de confianza para suministros agrícolas, sirviendo con orgullo a la comunidad agrícola con productos de calidad y asesoría experta.",
 
-    monSat: "Lunes - Sábado",
+    weekdays: "Lunes - Viernes",
+    saturday: "Sábado",
     sunday: "Domingo",
     closed: "Cerrado",
-    fallMonSat: "9:00 AM - 6:00 PM",
-    springMonSat: "9:00 AM - 8:00 PM",
+    fallWeekdays: "9:00 AM - 6:00 PM",
+    springWeekdays: "8:30 AM - 8:30 PM",
+    afterAugustWeekdays: "8:30 AM - 7:30 PM",
+    saturdayHours: "9:00 AM - 5:30 PM",
   },
 } as const;

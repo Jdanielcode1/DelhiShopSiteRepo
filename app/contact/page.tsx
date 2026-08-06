@@ -45,7 +45,7 @@ export default function ContactPage() {
               {t.findUsDescription}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
+              <div id="delhi" className="scroll-mt-24">
                 <h3 className="font-heading text-lg font-bold text-charcoal mb-3">
                   Delhi
                 </h3>
@@ -63,7 +63,7 @@ export default function ContactPage() {
                   />
                 </div>
               </div>
-              <div>
+              <div id="denair" className="scroll-mt-24">
                 <h3 className="font-heading text-lg font-bold text-charcoal mb-3">
                   Denair
                 </h3>

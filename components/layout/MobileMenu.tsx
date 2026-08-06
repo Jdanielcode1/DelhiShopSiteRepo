@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui";
-import { navigation, businessInfo } from "@/data/business";
+import { Button, ContactLinks } from "@/components/ui";
+import { navigation, businessInfo, whatsappUrl } from "@/data/business";
 import { useLanguage } from "@/lib/LanguageContext";
 
 interface MobileMenuProps {
@@ -115,7 +115,17 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             </Button>
             <div className="text-center text-sm text-charcoal-light space-y-1">
               <p>{businessInfo.phone}</p>
+              <ContactLinks
+                phone={businessInfo.phone}
+                whatsappUrl={whatsappUrl}
+                whatsappLabel={t.whatsapp}
+                callLabel={t.callUs}
+                className="justify-center py-2"
+              />
               <p>{t.fallSchedule} ({t.fallHours})</p>
+              <p>{t.springSchedule} ({t.springHours})</p>
+              <p>{t.afterAugustSchedule} ({t.afterAugustHours})</p>
+              <p>{t.saturdaySchedule}</p>
               <p>{t.sundayClosed}</p>
             </div>
           </div>

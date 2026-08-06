@@ -5,3 +5,5 @@ export { Heading } from "./Heading";
 export { Card, CardImage, CardContent } from "./Card";
 export { GrainOverlay } from "./GrainOverlay";
 export { ScrollReveal } from "./ScrollReveal";
+export { SocialLinks } from "./SocialLinks";
+export { ContactLinks } from "./ContactLinks";

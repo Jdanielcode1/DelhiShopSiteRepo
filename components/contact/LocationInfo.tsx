@@ -1,7 +1,7 @@
 "use client";
 
-import { Heading } from "@/components/ui";
-import { businessInfo } from "@/data/business";
+import { ContactLinks, Heading, SocialLinks } from "@/components/ui";
+import { businessInfo, whatsappUrl } from "@/data/business";
 import { useLanguage } from "@/lib/LanguageContext";
 
 export function LocationInfo() {
@@ -31,30 +31,31 @@ export function LocationInfo() {
 
       <div>
         <Heading as="h3" size="md" className="text-charcoal mb-4">
+          {t.followOurStores}
+        </Heading>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {businessInfo.addresses.map((location) => (
+            <div key={location.slug} className="rounded-sm border border-secondary-200 bg-cream p-4">
+              <p className="mb-3 font-heading font-bold text-charcoal">{location.label}</p>
+              <SocialLinks social={location.social} storeName={location.label} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <Heading as="h3" size="md" className="text-charcoal mb-4">
           {t.contactInfo}
         </Heading>
         <ul className="space-y-3 text-charcoal-light">
-          <li className="flex items-center gap-3">
-            <svg
-              className="w-5 h-5 text-primary-600 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-              />
-            </svg>
-            <a
-              href={`tel:${businessInfo.phone}`}
-              className="hover:text-primary-600 transition-colors"
-            >
-              {businessInfo.phone}
-            </a>
+          <li>
+            <p className="mb-3 font-medium text-charcoal">{businessInfo.phone}</p>
+            <ContactLinks
+              phone={businessInfo.phone}
+              whatsappUrl={whatsappUrl}
+              whatsappLabel={t.whatsapp}
+              callLabel={t.callUs}
+            />
           </li>
           <li className="flex items-center gap-3">
             <svg
@@ -89,16 +90,27 @@ export function LocationInfo() {
           <li>
             <span className="text-charcoal font-medium block text-sm">{t.fallHours}</span>
             <span className="flex justify-between">
-              <span>{t.monSat}</span>
-              <span className="text-charcoal">{t.fallMonSat}</span>
+              <span>{t.weekdays}</span>
+              <span className="text-charcoal">{t.fallWeekdays}</span>
             </span>
           </li>
           <li>
             <span className="text-charcoal font-medium block text-sm">{t.springHours}</span>
             <span className="flex justify-between">
-              <span>{t.monSat}</span>
-              <span className="text-charcoal">{t.springMonSat}</span>
+              <span>{t.weekdays}</span>
+              <span className="text-charcoal">{t.springWeekdays}</span>
             </span>
+          </li>
+          <li>
+            <span className="text-charcoal font-medium block text-sm">{t.afterAugustHours}</span>
+            <span className="flex justify-between">
+              <span>{t.weekdays}</span>
+              <span className="text-charcoal">{t.afterAugustWeekdays}</span>
+            </span>
+          </li>
+          <li className="flex justify-between pt-1 border-t border-secondary-200">
+            <span>{t.saturday}</span>
+            <span className="text-charcoal">{t.saturdayHours}</span>
           </li>
           <li className="flex justify-between pt-1 border-t border-secondary-200">
             <span>{t.sunday}</span>
