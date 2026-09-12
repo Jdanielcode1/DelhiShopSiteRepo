@@ -91,6 +91,25 @@ export function Footer() {
                   </a>
                 </p>
               </address>
+              <div className="mt-6">
+                <h3 className="font-heading text-lg font-bold mb-4 text-secondary-300">
+                  {locale === "es" ? "Redes Sociales" : "Social Media"}
+                </h3>
+                <div className="space-y-3">
+                  {businessInfo.addresses.map((location) => (
+                    <div key={location.slug} className="flex flex-wrap items-center gap-3">
+                      <span className="text-sm font-medium text-cream/80">
+                        {location.label}
+                      </span>
+                      <SocialLinks
+                        social={location.social}
+                        storeName={location.label}
+                        appearance="light"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div>
