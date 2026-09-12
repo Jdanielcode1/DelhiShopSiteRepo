@@ -55,6 +55,7 @@ export const businessInfo = {
       social: {
         facebook: "https://www.facebook.com/p/Denair-feedSupply-61581701369918/",
         instagram: "https://www.instagram.com/denair_feedsupply/",
+        tiktok: "https://www.tiktok.com/@denairfeed?_r=1&_t=ZT-99ewkjfHM7S",
       },
     },
   ],
