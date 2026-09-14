@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteUrl } from "@/data/business";
 import { customFeeds } from "@/data/customFeeds";
+import { animalProductGroups } from "@/data/animalProducts";
 
 export const dynamic = "force-static";
 
@@ -29,5 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...productRoutes];
+  const animalRoutes = animalProductGroups.map((group) => ({
+    url: `${siteUrl}/products/animals/${group.id}`,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...animalRoutes, ...productRoutes];
 }

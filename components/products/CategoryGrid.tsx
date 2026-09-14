@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { Button, Container, Heading, Section, ScrollReveal } from "@/components/ui";
+import Link from "next/link";
+import { Container, Heading, Section, ScrollReveal } from "@/components/ui";
 import { animalProductGroups } from "@/data/animalProducts";
-import { customFeeds } from "@/data/customFeeds";
 import { useLanguage } from "@/lib/LanguageContext";
-import { AnimalProductAccordion } from "./AnimalProductAccordion";
 
 interface CategoryGridProps {
   sectionId?: string;
@@ -54,15 +53,6 @@ const brandLogoRows = [brandLogos.slice(0, 11), brandLogos.slice(11, 22), brandL
 export function CategoryGrid({ sectionId, title, description }: CategoryGridProps) {
   const { locale, t } = useLanguage();
 
-  const openAnimalGroup = (groupId: string) => {
-    const section = document.getElementById(groupId);
-    if (section instanceof HTMLDetailsElement) {
-      section.open = true;
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-      window.history.replaceState(null, "", `#${groupId}`);
-    }
-  };
-
   return (
     <Section id={sectionId} variant="default" padding="xl" className="scroll-mt-24">
       <Container>
@@ -98,57 +88,28 @@ export function CategoryGrid({ sectionId, title, description }: CategoryGridProp
             </div>
           </ScrollReveal>
 
-          <div>
-            <Heading as="h2" size="lg" className="mb-3 text-charcoal">{locale === "es" ? "Comprar por Animal" : "Shop by Animal"}</Heading>
-            <p className="mb-6 max-w-3xl text-charcoal-light">
-              {locale === "es"
-                ? "Elija un animal y luego explore alimento, salud, aseo, equipo y otros suministros en categorías fáciles de encontrar."
-                : "Choose an animal, then browse feed, health, grooming, equipment, and other supplies in easy-to-find categories."}
-            </p>
-
-            <nav aria-label={locale === "es" ? "Tipos de animales" : "Animal types"} className="mb-8 flex gap-2 overflow-x-auto pb-2">
-              {animalProductGroups.map((group) => (
-                <button key={group.id} type="button" onClick={() => openAnimalGroup(group.id)} className="flex shrink-0 items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-800 transition hover:border-primary-400 hover:bg-primary-100">
-                  <span aria-hidden="true">{group.icon}</span>
-                  {locale === "es" ? group.nameEs : group.nameEn}
-                </button>
-              ))}
-            </nav>
-
-            <div className="space-y-4">
-              {animalProductGroups.map((group, index) => (
-                <ScrollReveal key={group.id} delay={Math.min(index * 35, 210)}>
-                  <AnimalProductAccordion group={group} locale={locale} defaultOpen={index === 0}>
-                    {group.includesCustomFeeds && (
-                      <section className="mt-7 border-t border-secondary-200 pt-7" aria-labelledby="custom-game-bird-feeds">
-                        <Heading as="h4" size="md" className="text-charcoal" id="custom-game-bird-feeds">
-                          {locale === "es" ? "Alimentos Especiales para Aves" : "Custom Poultry & Game-Bird Feeds"}
-                        </Heading>
-                        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-charcoal-light">{t.customFeedsDescription}</p>
-                        <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-                          {customFeeds.map((feed) => (
-                            <article key={feed.name} className="flex h-full flex-col rounded-sm border border-primary-200 bg-background p-5 shadow-sm">
-                              <div className="flex-1">
-                                <span className="text-xs font-medium uppercase tracking-[0.16em] text-primary-600">{t.customFeeds}</span>
-                                <h5 className="mt-2 font-heading text-xl font-bold text-charcoal xl:min-h-[5.25rem]">{feed.name}</h5>
-                                <p className="mt-2 text-sm leading-relaxed text-charcoal-light">{locale === "es" ? feed.descriptionEs : feed.description}</p>
-                              </div>
-                              <dl className="mt-5 divide-y divide-secondary-200 rounded-sm border border-secondary-200 bg-secondary-50">
-                                <div className="flex items-center justify-between gap-4 p-3"><dt className="text-[0.65rem] uppercase leading-tight tracking-wider text-charcoal-light">{t.minimumCrudeProtein}</dt><dd className="shrink-0 font-bold text-primary-700">{feed.protein}</dd></div>
-                                <div className="flex items-center justify-between gap-4 p-3"><dt className="text-[0.65rem] uppercase leading-tight tracking-wider text-charcoal-light">{t.bagWeight}</dt><dd className="shrink-0 text-right font-bold text-primary-700">{feed.weight}<span className="ml-1 text-xs font-normal text-charcoal-light">({feed.kilograms})</span></dd></div>
-                                <div className="flex items-center justify-between gap-4 p-3"><dt className="text-[0.65rem] uppercase leading-tight tracking-wider text-charcoal-light">{t.bestFor}</dt><dd className="max-w-[60%] text-right text-sm font-bold leading-tight text-primary-700">{locale === "es" ? feed.bestForEs : feed.bestFor}</dd></div>
-                              </dl>
-                              <Button href={`/products/${feed.slug}`} variant="ghost" size="sm" className="mt-3 self-start px-0">{locale === "es" ? "Ver Detalles" : "View Product Details"} →</Button>
-                            </article>
-                          ))}
-                        </div>
-                      </section>
-                    )}
-                  </AnimalProductAccordion>
-                </ScrollReveal>
-              ))}
+          <ScrollReveal>
+            <div>
+              <Heading as="h2" size="lg" className="mb-3 text-charcoal">{locale === "es" ? "Comprar por Animal" : "Shop by Animal"}</Heading>
+              <p className="mb-6 max-w-3xl text-charcoal-light">
+                {locale === "es" ? "Elija un animal para abrir su propia página de alimentos, cuidado y suministros." : "Choose an animal to open its own page of feed, care, and supplies."}
+              </p>
+              <nav aria-label={locale === "es" ? "Comprar por tipo de animal" : "Shop by animal type"} className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-5">
+                {animalProductGroups.map((group) => (
+                  <Link key={group.id} href={`/products/animals/${group.id}`} className="group flex min-h-44 w-56 shrink-0 snap-start flex-col justify-between rounded-sm border border-secondary-200 bg-secondary-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500">
+                    <span aria-hidden="true" className="flex h-14 w-14 items-center justify-center rounded-full bg-primary-50 text-3xl">{group.icon}</span>
+                    <span>
+                      <span className="block font-heading text-xl font-bold text-charcoal">{locale === "es" ? group.nameEs : group.nameEn}</span>
+                      <span className="mt-2 flex items-center justify-between gap-3 text-sm font-semibold text-primary-700">
+                        {locale === "es" ? "Ver productos" : "View products"}
+                        <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+                      </span>
+                    </span>
+                  </Link>
+                ))}
+              </nav>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </Container>
     </Section>
