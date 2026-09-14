@@ -196,7 +196,7 @@ export const animalProductGroups: AnimalProductGroup[] = [
         id: "seed",
         titleEn: "Seed & Feed",
         titleEs: "Semillas y Alimento",
-        items: ["Bird Seed", "Parakeet Feed", "Parrot Safflower Fortified", "Dove & Quail", "Canary Fortified", "Parrot Sunflower Premium", "Small Hookbill Fortified", "Cockatiel Fancy", "Parakeet Fortified", "Small Black Oil Sunflower 40lb", "Canary Seed"],
+        items: ["Parakeet Feed", "Parrot Safflower Fortified", "Dove & Quail", "Canary Fortified", "Parrot Sunflower Premium", "Small Hookbill Fortified", "Cockatiel Fancy", "Parakeet Fortified", "Small Black Oil Sunflower 40lb", "Canary Seed"],
         itemImages: {
           "Parakeet Feed": "/images/pet-birds/finch.png",
           "Parrot Safflower Fortified": "/images/pet-birds/cockatiel.png",
