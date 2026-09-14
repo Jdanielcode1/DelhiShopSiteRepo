@@ -2,6 +2,7 @@
 
 import { ContactLinks, Heading, SocialLinks } from "@/components/ui";
 import { businessInfo, whatsappUrl } from "@/data/business";
+import { StoreHours } from "@/components/ui/StoreHours";
 import { useLanguage } from "@/lib/LanguageContext";
 
 export function LocationInfo() {
@@ -86,37 +87,14 @@ export function LocationInfo() {
         <Heading as="h3" size="md" className="text-charcoal mb-4">
           {t.storeHours}
         </Heading>
-        <ul className="space-y-3 text-charcoal-light">
-          <li>
-            <span className="text-charcoal font-medium block text-sm">{t.fallHours}</span>
-            <span className="flex justify-between">
-              <span>{t.weekdays}</span>
-              <span className="text-charcoal">{t.fallWeekdays}</span>
-            </span>
-          </li>
-          <li>
-            <span className="text-charcoal font-medium block text-sm">{t.springHours}</span>
-            <span className="flex justify-between">
-              <span>{t.weekdays}</span>
-              <span className="text-charcoal">{t.springWeekdays}</span>
-            </span>
-          </li>
-          <li>
-            <span className="text-charcoal font-medium block text-sm">{t.afterAugustHours}</span>
-            <span className="flex justify-between">
-              <span>{t.weekdays}</span>
-              <span className="text-charcoal">{t.afterAugustWeekdays}</span>
-            </span>
-          </li>
-          <li className="flex justify-between pt-1 border-t border-secondary-200">
-            <span>{t.saturday}</span>
-            <span className="text-charcoal">{t.saturdayHours}</span>
-          </li>
-          <li className="flex justify-between pt-1 border-t border-secondary-200">
-            <span>{t.sunday}</span>
-            <span className="text-charcoal">{t.closed}</span>
-          </li>
-        </ul>
+        <div className="space-y-4 text-charcoal-light">
+          {businessInfo.addresses.map((location) => (
+            <div key={location.slug}>
+              <h4 className="mb-1 font-medium text-charcoal">{location.label}</h4>
+              <StoreHours location={location} />
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="pt-4 border-t border-secondary-200 space-y-3">

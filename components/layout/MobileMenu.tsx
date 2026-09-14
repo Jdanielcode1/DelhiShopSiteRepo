@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button, ContactLinks } from "@/components/ui";
 import { navigation, businessInfo, whatsappUrl } from "@/data/business";
+import { StoreHours } from "@/components/ui/StoreHours";
 import { useLanguage } from "@/lib/LanguageContext";
 
 interface MobileMenuProps {
@@ -122,11 +123,12 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 callLabel={t.callUs}
                 className="justify-center py-2"
               />
-              <p>{t.fallSchedule} ({t.fallHours})</p>
-              <p>{t.springSchedule} ({t.springHours})</p>
-              <p>{t.afterAugustSchedule} ({t.afterAugustHours})</p>
-              <p>{t.saturdaySchedule}</p>
-              <p>{t.sundayClosed}</p>
+              {businessInfo.addresses.map((location) => (
+                <div key={location.slug} className="pt-3">
+                  <p className="mb-1 font-medium">{location.label}</p>
+                  <StoreHours location={location} />
+                </div>
+              ))}
             </div>
           </div>
         </div>

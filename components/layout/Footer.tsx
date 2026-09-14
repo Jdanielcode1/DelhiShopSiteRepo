@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ContactLinks, Container, SocialLinks } from "@/components/ui";
 import { navigation, businessInfo, whatsappUrl } from "@/data/business";
+import { StoreHours } from "@/components/ui/StoreHours";
 import { useLanguage } from "@/lib/LanguageContext";
 
 export function Footer() {
@@ -123,25 +124,14 @@ export function Footer() {
               <h3 className="font-heading text-lg font-bold mb-4 text-secondary-300">
                 {t.storeHours}
               </h3>
-              <ul className="space-y-2 text-cream/70 text-sm">
-                <li>
-                  <span className="text-cream/90 font-medium">{t.fallHours}</span>
-                  <br />
-                  {t.weekdays}: {t.fallWeekdays}
-                </li>
-                <li>
-                  <span className="text-cream/90 font-medium">{t.springHours}</span>
-                  <br />
-                  {t.weekdays}: {t.springWeekdays}
-                </li>
-                <li>
-                  <span className="text-cream/90 font-medium">{t.afterAugustHours}</span>
-                  <br />
-                  {t.weekdays}: {t.afterAugustWeekdays}
-                </li>
-                <li>{t.saturday}: {t.saturdayHours}</li>
-                <li>{t.sundayClosed}</li>
-              </ul>
+              <div className="space-y-4 text-cream/70">
+                {businessInfo.addresses.map((location) => (
+                  <div key={location.slug}>
+                    <h4 className="mb-1 font-medium text-cream/90">{location.label}</h4>
+                    <StoreHours location={location} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

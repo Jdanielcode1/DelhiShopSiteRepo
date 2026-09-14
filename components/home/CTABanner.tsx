@@ -2,6 +2,7 @@
 
 import { ContactLinks, Container, Section, Heading, Button, ScrollReveal } from "@/components/ui";
 import { businessInfo, whatsappUrl } from "@/data/business";
+import { StoreHours } from "@/components/ui/StoreHours";
 import { useLanguage } from "@/lib/LanguageContext";
 
 export function CTABanner() {
@@ -45,42 +46,16 @@ export function CTABanner() {
                 ))}
               </div>
             </div>
-            <div>
-              <h3 className="font-heading text-secondary-300 font-bold mb-1">
-                {t.fallHours}
-              </h3>
-              <p className="text-cream/70 text-sm">
-                {t.weekdays}: {t.fallWeekdays}
-                <br />
-                {t.saturday}: {t.saturdayHours}
-                <br />
-                {t.sundayClosed}
-              </p>
-            </div>
-            <div>
-              <h3 className="font-heading text-secondary-300 font-bold mb-1">
-                {t.springHours}
-              </h3>
-              <p className="text-cream/70 text-sm">
-                {t.weekdays}: {t.springWeekdays}
-                <br />
-                {t.saturday}: {t.saturdayHours}
-                <br />
-                {t.sundayClosed}
-              </p>
-            </div>
-            <div>
-              <h3 className="font-heading text-secondary-300 font-bold mb-1">
-                {t.afterAugustHours}
-              </h3>
-              <p className="text-cream/70 text-sm">
-                {t.weekdays}: {t.afterAugustWeekdays}
-                <br />
-                {t.saturday}: {t.saturdayHours}
-                <br />
-                {t.sundayClosed}
-              </p>
-            </div>
+            {businessInfo.addresses.map((location) => (
+              <div key={location.slug}>
+                <h3 className="font-heading text-secondary-300 font-bold mb-1">
+                  {location.label} — {t.storeHours}
+                </h3>
+                <div className="text-cream/70">
+                  <StoreHours location={location} />
+                </div>
+              </div>
+            ))}
           </div>
         </ScrollReveal>
       </Container>

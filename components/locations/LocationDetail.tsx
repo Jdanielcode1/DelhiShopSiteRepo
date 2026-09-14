@@ -3,6 +3,7 @@
 import { PageHero } from "@/components/about";
 import { Button, ContactLinks, Container, Heading, Section, SocialLinks } from "@/components/ui";
 import { businessInfo, siteUrl, whatsappUrl } from "@/data/business";
+import { StoreHours } from "@/components/ui/StoreHours";
 import { useLanguage } from "@/lib/LanguageContext";
 
 interface LocationDetailProps {
@@ -87,18 +88,7 @@ export function LocationDetail({ slug }: LocationDetailProps) {
                 <Heading as="h3" size="sm" className="mb-4 text-charcoal">
                   {t.storeHours}
                 </Heading>
-                <dl className="grid grid-cols-[1fr_auto] gap-x-6 gap-y-2 text-sm text-charcoal-light">
-                  <dt>{t.fallHours} · {t.weekdays}</dt>
-                  <dd className="font-medium text-charcoal">{location.hours.fallWeekdays}</dd>
-                  <dt>{t.springHours} · {t.weekdays}</dt>
-                  <dd className="font-medium text-charcoal">{location.hours.springAugustWeekdays}</dd>
-                  <dt>{t.afterAugustHours} · {t.weekdays}</dt>
-                  <dd className="font-medium text-charcoal">{location.hours.afterAugustWeekdays}</dd>
-                  <dt>{t.saturday}</dt>
-                  <dd className="font-medium text-charcoal">{location.hours.saturday}</dd>
-                  <dt>{t.sunday}</dt>
-                  <dd className="font-medium text-charcoal">{t.closed}</dd>
-                </dl>
+                <StoreHours location={location} />
               </div>
 
               <div className="mt-8 space-y-3">

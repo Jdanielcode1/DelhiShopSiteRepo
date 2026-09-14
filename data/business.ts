@@ -23,9 +23,7 @@ export const businessInfo = {
       phone: "209-449-6585",
       email: "delhifeed@gmail.com",
       hours: {
-        fallWeekdays: "9:00 AM - 6:00 PM",
-        springAugustWeekdays: "8:30 AM - 8:30 PM",
-        afterAugustWeekdays: "8:30 AM - 7:30 PM",
+        weekdays: "8:30 AM - 7:30 PM",
         saturday: "9:00 AM - 5:30 PM",
         sunday: "Closed",
       },
@@ -45,9 +43,7 @@ export const businessInfo = {
       country: "United States",
       phone: "(209) 447-8447",
       hours: {
-        fallWeekdays: "9:00 AM - 6:00 PM",
-        springAugustWeekdays: "8:30 AM - 8:30 PM",
-        afterAugustWeekdays: "8:30 AM - 7:30 PM",
+        weekdays: "9:00 AM - 5:30 PM",
         saturday: "9:00 AM - 5:30 PM",
         sunday: "Closed",
       },
@@ -58,13 +54,6 @@ export const businessInfo = {
       },
     },
   ],
-  hours: {
-    fall: "Fall Hours (Mon-Fri): 9:00 AM - 6:00 PM",
-    spring: "Spring Hours in August (Mon-Fri): 8:30 AM - 8:30 PM",
-    afterAugust: "After August (Mon-Fri): 8:30 AM - 7:30 PM",
-    saturday: "Saturday: 9:00 AM - 5:30 PM",
-    sunday: "Sunday: Closed",
-  },
   social: {
     facebook: "",
     instagram: "",
