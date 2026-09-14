@@ -4,6 +4,7 @@ export interface AnimalProductCategory {
   titleEs: string;
   items: string[];
   itemImages?: Record<string, string>;
+  itemDetails?: Record<string, { description?: string; sizes: string[] }>;
 }
 
 export interface AnimalProductGroup {
@@ -196,9 +197,9 @@ export const animalProductGroups: AnimalProductGroup[] = [
         id: "seed",
         titleEn: "Seed & Feed",
         titleEs: "Semillas y Alimento",
-        items: ["Parakeet Feed", "Parrot Safflower Fortified", "Dove & Quail", "Canary Fortified", "Parrot Sunflower Premium", "Small Hookbill Fortified", "Cockatiel Fancy", "Parakeet Fortified", "Small Black Oil Sunflower 40lb", "Canary Seed"],
+        items: ["Parakeet 25%", "Parrot Safflower Fortified", "Dove & Quail", "Canary Fortified", "Parrot Sunflower Premium", "Small Hookbill Fortified", "Cockatiel Fancy", "Parakeet Fortified", "Small Black Oil Sunflower", "Canary Seed"],
         itemImages: {
-          "Parakeet Feed": "/images/pet-birds/finch.png",
+          "Parakeet 25%": "/images/pet-birds/finch.png",
           "Parrot Safflower Fortified": "/images/pet-birds/cockatiel.png",
           "Dove & Quail": "/images/pet-birds/dove-quail.png",
           "Canary Fortified": "/images/pet-birds/parakeet.png",
@@ -206,8 +207,44 @@ export const animalProductGroups: AnimalProductGroup[] = [
           "Small Hookbill Fortified": "/images/pet-birds/pigeon.png",
           "Cockatiel Fancy": "/images/pet-birds/small-hookbill.png",
           "Parakeet Fortified": "/images/pet-birds/canary.png",
-          "Small Black Oil Sunflower 40lb": "/images/pet-birds/small-black-oil-sunflower.png",
+          "Small Black Oil Sunflower": "/images/pet-birds/small-black-oil-sunflower.png",
           "Canary Seed": "/images/pet-birds/safflower-seeds.png",
+        },
+        itemDetails: {
+          "Parakeet 25%": {
+            description: "A clean premium seed blend with no artificial colors, flavors, or fillers.",
+            sizes: ["5 lb", "20 lb", "40 lb"],
+          },
+          "Parrot Safflower Fortified": {
+            description: "A sunflower-free mix with vitamin-coated oats, fortified pellets, and dried fruits and vegetables.",
+            sizes: ["20 lb", "40 lb"],
+          },
+          "Dove & Quail": {
+            description: "A feeder blend made to attract doves and quail.",
+            sizes: ["20 lb"],
+          },
+          "Canary Fortified": {
+            description: "A vitamin-enriched blend with canola, flax, coated oats, and fortified pellets for healthy feathers.",
+            sizes: ["5 lb", "20 lb", "40 lb"],
+          },
+          "Parrot Sunflower Premium": {
+            description: "A safflower-based blend with shell-free nuts and California Grey Stripe sunflower for varied flavor and texture.",
+            sizes: ["20 lb", "40 lb"],
+          },
+          "Small Hookbill Fortified": {
+            description: "A citrus-scented mix with vitamin-coated oats and fortified pellets for cockatiels, lovebirds, and other small hookbills.",
+            sizes: ["20 lb", "40 lb"],
+          },
+          "Cockatiel Fancy": {
+            description: "A hearty grain-and-seed blend that encourages natural foraging and supports everyday wellness.",
+            sizes: ["5 lb", "20 lb", "40 lb"],
+          },
+          "Parakeet Fortified": {
+            description: "High-quality seeds and dried vegetables with vitamin-coated oats and fortified pellets.",
+            sizes: ["5 lb", "20 lb", "40 lb"],
+          },
+          "Small Black Oil Sunflower": { sizes: ["40 lb"] },
+          "Canary Seed": { sizes: ["50 lb"] },
         },
       },
       { id: "supplies", titleEn: "Feeding Supplies", titleEs: "Suministros de Alimentación", items: ["Feeders & Waterers", "Feed Scoops & Buckets"] },

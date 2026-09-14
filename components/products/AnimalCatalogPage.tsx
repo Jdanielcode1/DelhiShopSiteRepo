@@ -66,7 +66,7 @@ export function AnimalCatalogPage({ group }: AnimalCatalogPageProps) {
                       className={cn(
                         "text-base leading-snug text-charcoal-light",
                         category.itemImages?.[item]
-                          ? "overflow-hidden rounded-sm border border-secondary-200 bg-secondary-50"
+                          ? "flex flex-col overflow-hidden rounded-sm border border-secondary-200 bg-secondary-50"
                           : category.itemImages
                             ? "flex min-h-14 items-center gap-2.5 rounded-sm border border-secondary-200 px-4 py-3"
                             : "flex items-start gap-2.5"
@@ -83,7 +83,31 @@ export function AnimalCatalogPage({ group }: AnimalCatalogPageProps) {
                               className="object-cover transition-transform duration-300 hover:scale-[1.03]"
                             />
                           </div>
-                          <span className="block px-4 py-3 font-semibold text-charcoal">{item}</span>
+                          <div className="flex flex-1 flex-col px-4 py-4">
+                            <span className="block font-semibold text-charcoal">{item}</span>
+                            {category.itemDetails?.[item]?.description && (
+                              <p className="mt-2 text-sm leading-relaxed text-charcoal-light">
+                                {category.itemDetails[item].description}
+                              </p>
+                            )}
+                            {category.itemDetails?.[item]?.sizes.length ? (
+                              <div className="mt-4 pt-1">
+                                <span className="text-xs font-semibold uppercase tracking-wide text-charcoal-light">
+                                  {locale === "es" ? "Disponible en" : "Available in"}
+                                </span>
+                                <div className="mt-2 flex flex-wrap gap-2">
+                                  {category.itemDetails[item].sizes.map((size) => (
+                                    <span
+                                      key={size}
+                                      className="rounded-full bg-primary-100 px-2.5 py-1 text-xs font-semibold text-primary-800"
+                                    >
+                                      {size}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
                         </>
                       ) : (
                         <>
