@@ -28,9 +28,9 @@ export const customFeeds: CustomFeed[] = [
     slug: "delhi-el-justo-game-bird-mix",
     name: "Delhi El Justo Game Bird Mix",
     description:
-      "A complete, protein-rich grain blend formulated as a sole ration for mature game birds.",
+      "A complete, protein-rich grain blend formulated as a sole ration for mature game birds. Available with whole or cracked corn.",
     descriptionEs:
-      "Una mezcla completa de granos, rica en proteína y formulada como ración única para aves de caza adultas.",
+      "Una mezcla completa de granos, rica en proteína y formulada como ración única para aves de caza adultas. Disponible con maíz entero o quebrado.",
     protein: "16.25%",
     weight: "75 lb",
     kilograms: "34.0 kg",
@@ -41,22 +41,22 @@ export const customFeeds: CustomFeed[] = [
     slug: "gutierrez-game-bird-summer-mix",
     name: "Gutierrez Game Bird Summer Mix",
     description:
-      "A balanced summer grain and seed mix designed as a complete ration for mature game birds.",
+      "A balanced summer grain and seed mix designed as a complete ration for mature game birds. Available in 50 lb and 80 lb bags, each with whole or cracked corn.",
     descriptionEs:
-      "Una mezcla balanceada de verano con granos y semillas, diseñada como ración completa para aves de caza adultas.",
+      "Una mezcla balanceada de verano con granos y semillas, diseñada como ración completa para aves de caza adultas. Disponible en bolsas de 50 lb y 80 lb, ambas con maíz entero o quebrado.",
     protein: "14.70%",
-    weight: "50 lb",
-    kilograms: "22.7 kg",
+    weight: "50 / 80 lb",
+    kilograms: "22.7 / 36.3 kg",
     bestFor: "Mature Game Birds",
     bestForEs: "Aves de Caza Adultas",
   },
   {
     slug: "economy-stag-game-bird-mix",
-    name: "Economy Stag Game Bird Mix with Cracked Corn",
+    name: "Economy Stag Game Bird Mix",
     description:
-      "An economical cracked-corn grain blend formulated as a complete ration for mature game birds.",
+      "An economical grain blend formulated as a complete ration for mature game birds. Available with whole or cracked corn.",
     descriptionEs:
-      "Una mezcla económica de granos con maíz quebrado, formulada como ración completa para aves de caza adultas.",
+      "Una mezcla económica de granos, formulada como ración completa para aves de caza adultas. Disponible con maíz entero o quebrado.",
     protein: "11.50%",
     weight: "75 lb",
     kilograms: "34.0 kg",
@@ -80,9 +80,9 @@ export const customFeeds: CustomFeed[] = [
     slug: "delhi-game-bird-summer-mix-no-milo",
     name: "Delhi Game Bird Summer Mix No Milo",
     description:
-      "A no-milo summer grain blend formulated as a complete ration for mature game birds.",
+      "A no-milo summer grain blend formulated as a complete ration for mature game birds. Available with whole or cracked corn.",
     descriptionEs:
-      "Una mezcla de granos de verano sin milo, formulada como ración completa para aves de caza adultas.",
+      "Una mezcla de granos de verano sin milo, formulada como ración completa para aves de caza adultas. Disponible con maíz entero o quebrado.",
     protein: "14.90%",
     weight: "75 lb",
     kilograms: "34.0 kg",
