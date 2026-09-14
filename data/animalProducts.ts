@@ -3,6 +3,7 @@ export interface AnimalProductCategory {
   titleEn: string;
   titleEs: string;
   items: string[];
+  itemImages?: Record<string, string>;
 }
 
 export interface AnimalProductGroup {
@@ -191,7 +192,24 @@ export const animalProductGroups: AnimalProductGroup[] = [
     descriptionEn: "Seed blends and feeding supplies for popular companion birds.",
     descriptionEs: "Mezclas de semillas y suministros de alimentación para aves de compañía populares.",
     categories: [
-      { id: "seed", titleEn: "Seed & Feed", titleEs: "Semillas y Alimento", items: ["Bird Seed", "Finch", "Cockatiel", "Dove & Quail", "Parakeet", "Parrot", "Pigeon", "Small Hookbill", "Canary", "Small Black Oil Sunflower 40lb", "Safflower Seeds", "Volkman Pet Products"] },
+      {
+        id: "seed",
+        titleEn: "Seed & Feed",
+        titleEs: "Semillas y Alimento",
+        items: ["Bird Seed", "Finch", "Cockatiel", "Dove & Quail", "Parakeet", "Parrot", "Pigeon", "Small Hookbill", "Canary", "Small Black Oil Sunflower 40lb", "Safflower Seeds", "Volkman Pet Products"],
+        itemImages: {
+          Finch: "/images/pet-birds/finch.png",
+          Cockatiel: "/images/pet-birds/cockatiel.png",
+          "Dove & Quail": "/images/pet-birds/dove-quail.png",
+          Parakeet: "/images/pet-birds/parakeet.png",
+          Parrot: "/images/pet-birds/parrot.png",
+          Pigeon: "/images/pet-birds/pigeon.png",
+          "Small Hookbill": "/images/pet-birds/small-hookbill.png",
+          Canary: "/images/pet-birds/canary.png",
+          "Small Black Oil Sunflower 40lb": "/images/pet-birds/small-black-oil-sunflower.png",
+          "Safflower Seeds": "/images/pet-birds/safflower-seeds.png",
+        },
+      },
       { id: "supplies", titleEn: "Feeding Supplies", titleEs: "Suministros de Alimentación", items: ["Feeders & Waterers", "Feed Scoops & Buckets"] },
     ],
   },

@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 import { Button, Container, Heading, Section } from "@/components/ui";
 import type { AnimalProductGroup } from "@/data/animalProducts";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -39,17 +41,58 @@ export function AnimalCatalogPage({ group }: AnimalCatalogPageProps) {
         <Container>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
             {group.categories.map((category) => (
-              <section key={category.id} aria-labelledby={`${group.id}-${category.id}`} className="rounded-sm border border-secondary-200 bg-background p-6 shadow-sm">
+              <section
+                key={category.id}
+                aria-labelledby={`${group.id}-${category.id}`}
+                className={cn(
+                  "rounded-sm border border-secondary-200 bg-background p-6 shadow-sm",
+                  category.itemImages && "md:col-span-2 xl:col-span-3"
+                )}
+              >
                 <h2 id={`${group.id}-${category.id}`} className="font-heading text-xl font-bold text-charcoal">
                   {locale === "es" ? category.titleEs : category.titleEn}
                 </h2>
-                <ul className="mt-5 space-y-3">
+                <ul
+                  className={cn(
+                    "mt-5",
+                    category.itemImages
+                      ? "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                      : "space-y-3"
+                  )}
+                >
                   {category.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-base leading-snug text-charcoal-light">
-                      <svg className="mt-1 h-4 w-4 shrink-0 text-primary-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 0 1 0 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L8 12.586l7.293-7.293a1 1 0 0 1 1.414 0Z" clipRule="evenodd" />
-                      </svg>
-                      <span>{item}</span>
+                    <li
+                      key={item}
+                      className={cn(
+                        "text-base leading-snug text-charcoal-light",
+                        category.itemImages?.[item]
+                          ? "overflow-hidden rounded-sm border border-secondary-200 bg-secondary-50"
+                          : category.itemImages
+                            ? "flex min-h-14 items-center gap-2.5 rounded-sm border border-secondary-200 px-4 py-3"
+                            : "flex items-start gap-2.5"
+                      )}
+                    >
+                      {category.itemImages?.[item] ? (
+                        <>
+                          <div className="relative aspect-[4/3] w-full overflow-hidden bg-secondary-100">
+                            <Image
+                              src={category.itemImages[item]}
+                              alt={`${item} seed mix`}
+                              fill
+                              sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                              className="object-cover transition-transform duration-300 hover:scale-[1.03]"
+                            />
+                          </div>
+                          <span className="block px-4 py-3 font-semibold text-charcoal">{item}</span>
+                        </>
+                      ) : (
+                        <>
+                          <svg className="h-4 w-4 shrink-0 text-primary-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 0 1 0 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L8 12.586l7.293-7.293a1 1 0 0 1 1.414 0Z" clipRule="evenodd" />
+                          </svg>
+                          <span>{item}</span>
+                        </>
+                      )}
                     </li>
                   ))}
                 </ul>
