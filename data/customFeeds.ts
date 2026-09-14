@@ -21,8 +21,8 @@ export const customFeeds: CustomFeed[] = [
     protein: "15.60%",
     weight: "75 lb",
     kilograms: "34.0 kg",
-    bestFor: "See Product Label",
-    bestForEs: "Consulte la Etiqueta",
+    bestFor: "Mature Game Birds",
+    bestForEs: "Aves de Caza Adultas",
   },
   {
     slug: "delhi-el-patron",
@@ -34,8 +34,8 @@ export const customFeeds: CustomFeed[] = [
     protein: "16%",
     weight: "75 lb",
     kilograms: "34.0 kg",
-    bestFor: "See Product Label",
-    bestForEs: "Consulte la Etiqueta",
+    bestFor: "Mature Game Birds",
+    bestForEs: "Aves de Caza Adultas",
   },
   {
     slug: "monse-mix",
@@ -47,8 +47,8 @@ export const customFeeds: CustomFeed[] = [
     protein: "10.10%",
     weight: "50 lb",
     kilograms: "22.7 kg",
-    bestFor: "Mature Poultry",
-    bestForEs: "Aves Adultas",
+    bestFor: "Bantams",
+    bestForEs: "Gallinas Bantam",
   },
   {
     slug: "delhi-el-justo-game-bird-mix",
