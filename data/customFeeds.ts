@@ -12,6 +12,32 @@ export type CustomFeed = {
 
 export const customFeeds: CustomFeed[] = [
   {
+    slug: "martinos-mix",
+    name: "Martino's Mix",
+    description:
+      "A custom mix with 15.60% protein, available in 75 lb bags with cracked corn only.",
+    descriptionEs:
+      "Una mezcla especial con 15.60% de proteína, disponible en bolsas de 75 lb únicamente con maíz quebrado.",
+    protein: "15.60%",
+    weight: "75 lb",
+    kilograms: "34.0 kg",
+    bestFor: "See Product Label",
+    bestForEs: "Consulte la Etiqueta",
+  },
+  {
+    slug: "delhi-el-patron",
+    name: "Delhi El Patron",
+    description:
+      "A custom mix with 16% protein, available in 75 lb bags with whole or cracked corn.",
+    descriptionEs:
+      "Una mezcla especial con 16% de proteína, disponible en bolsas de 75 lb con maíz entero o quebrado.",
+    protein: "16%",
+    weight: "75 lb",
+    kilograms: "34.0 kg",
+    bestFor: "See Product Label",
+    bestForEs: "Consulte la Etiqueta",
+  },
+  {
     slug: "monse-mix",
     name: "Monse Mix",
     description:
