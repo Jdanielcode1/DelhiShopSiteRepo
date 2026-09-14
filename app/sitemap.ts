@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { siteUrl } from "@/data/business";
 import { customFeeds } from "@/data/customFeeds";
 
+export const dynamic = "force-static";
+
 const routes = [
   "",
   "/locations",

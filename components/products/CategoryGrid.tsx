@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import { Button, Container, Heading, Section, ScrollReveal } from "@/components/ui";
+import { animalProductGroups } from "@/data/animalProducts";
 import { customFeeds } from "@/data/customFeeds";
 import { useLanguage } from "@/lib/LanguageContext";
-import { ProductAccordion } from "./ProductAccordion";
+import { AnimalProductAccordion } from "./AnimalProductAccordion";
 
 interface CategoryGridProps {
   sectionId?: string;
@@ -48,349 +49,44 @@ const brandLogos = [
   { name: "Martin’s Products", image: "33-transparent.png" },
 ] as const;
 
-const brandLogoRows = [
-  brandLogos.slice(0, 11),
-  brandLogos.slice(11, 22),
-  brandLogos.slice(22),
-];
-
-const productCategories = [
-  {
-    titleEn: "Animal Feed",
-    titleEs: "Alimento para Animales",
-    featured: true,
-    items: [
-      "Farmer’s Best Feed",
-      "Volkman Pet Products",
-      "Manna Pro",
-      "Horse Feed",
-      "Cattle Feed",
-      "Goat Feed",
-      "Pig Feed",
-      "Poultry Feed",
-      "Show Animal Feed",
-      "Organic Feed",
-      "Bird Seed",
-      "Aquatic Pet Feed",
-      "Rabbit Pellets",
-      "Dog Food",
-      "Cat Food",
-      "Alfalfa",
-      "Straw",
-      "Hay",
-    ],
-  },
-  {
-    titleEn: "Animal Health & Veterinary Products",
-    titleEs: "Salud Animal y Productos Veterinarios",
-    featured: true,
-    items: [
-      "Merck Animal Health",
-      "Elanco Animal Health",
-      "Zoetis",
-      "Huvepharma",
-      "Durvet",
-      "Safe-Guard (Fenbendazole)",
-      "Rooster Booster",
-      "Dr. Naylor",
-      "Supplements",
-      "Electrolytes",
-      "Minerals",
-      "Vitamins",
-      "Dewormers",
-      "Livestock Health Supplies",
-      "Poultry Health Products",
-      "Milk Replacers",
-    ],
-  },
-  {
-    titleEn: "Pest Control & Fly Control",
-    titleEs: "Control de Plagas y Moscas",
-    featured: true,
-    items: [
-      "Pyranha Animal Health",
-      "ADAMS Plus",
-      "Prozap",
-      "Country Vet",
-      "Martin’s Products",
-      "Pour-On Insecticide",
-      "Y-Tex Python Dust Livestock Insecticide",
-      "Poultry Dust",
-      "Fly Control",
-      "Fly Spray",
-      "Insecticides",
-      "Flea & Tick Products",
-      "Mange Dip",
-      "Livestock Fly Control",
-      "Barn Pest Control",
-    ],
-  },
-  {
-    titleEn: "Poultry Supplies",
-    titleEs: "Suministros para Aves",
-    featured: true,
-    items: [
-      "Happy Hen",
-      "Sav-A-Chick Products",
-      "Rooster Booster",
-      "Little Giant",
-      "Safe-Guard (Fenbendazole)",
-      "Nesting Boxes",
-      "Feeders & Waterers",
-      "Heat Lamps",
-      "Poultry Dust",
-      "Chick Starter Supplies",
-      "Egg Layer Supplies",
-      "Poultry Treats",
-      "Bedding & Nesting Material",
-      "Poultry Conditioning Products",
-      "Poultry Health Products",
-      "Mealworms & Grubs",
-      "Oyster Shell",
-      "Limestone & Calcium Supplements",
-      "Poultry Vitamins & Minerals",
-      "Electrolytes",
-      "Probiotics",
-      "Poultry Supplements",
-      "Poultry Dewormers",
-      "Poultry Wound Care",
-      "Lice & Mite Control",
-      "Fly & Pest Control",
-    ],
-  },
-  {
-    titleEn: "Horse Care, Feed & Grooming",
-    titleEs: "Alimento, Cuidado y Aseo para Caballos",
-    items: [
-      "Shapley’s Grooming Products",
-      "Cowboy Magic",
-      "Mane ’n Tail",
-      "Pyranha Animal Health",
-      "Stock Fattener with Molasses",
-      "COB Dry (No Molasses)",
-      "Grooming Tools & Supplies",
-      "Fly Spray",
-      "Shampoos",
-      "Conditioners",
-      "Brushes & Curry Combs",
-      "Hoof Care Products",
-      "Steam-Flaked & Rolled Corn",
-      "Alfalfa Pellets",
-      "Rice Bran Pellets",
-      "Wheat Bran",
-      "Beet Pulp Shred",
-      "Purina Products",
-      "Halters & Lead Ropes",
-      "Hoof Picks",
-      "Hoof Conditioners & Dressings",
-      "Liniments & Muscle Care",
-      "Horse Treats",
-      "Feed Scoops & Buckets",
-      "Feeders & Waterers",
-      "First Aid Supplies",
-      "Coat & Skin Supplements",
-      "Calming Supplements",
-      "Mineral & Salt Blocks",
-      "Horse Dewormers",
-      "Deworming Pastes",
-      "Vitamins & Minerals",
-      "Electrolytes",
-      "Joint Supplements",
-    ],
-  },
-  {
-    titleEn: "Pet Care Supplies",
-    titleEs: "Suministros para Mascotas",
-    items: [
-      "Diamond Pet Foods",
-      "Victor Super Premium Pet Food",
-      "First Companion Veterinary Products",
-      "Aspen Veterinary Resources",
-      "Dr. Naylor",
-      "Dog Leashes & Collars",
-      "Feeders & Waterers",
-      "Grooming Tools & Supplies",
-      "Pet Cleaning & Odor Control",
-      "Pet Bowls & Feeding Accessories",
-      "Pet Health & Wellness Products",
-      "Pet Toys",
-      "Cat Litter & Litter Supplies",
-      "Skin & Coat Supplements",
-      "Digestive & Probiotic Supplements",
-      "Flea & Tick Control",
-      "Dog & Cat Dewormers",
-      "Ear Care",
-      "Eye Care",
-      "Dental Care",
-      "Wound Care & First Aid",
-      "Antiseptic Sprays & Ointments",
-      "Hot Spot & Skin Care",
-      "Medicated Shampoos",
-      "Pet Shampoos & Conditioners",
-      "Paw & Nose Care",
-      "Multivitamins",
-      "Electrolytes & Nutritional Supplements",
-      "Dog & Cat Food",
-      "Puppy & Kitten Care",
-      "Tuffy’s Pet Foods",
-      "Pedigree",
-      "Eagle Mountain Pet Food",
-      "Nutra Nuggets Super Premium Pet Food",
-      "Farmers Best Dog Food",
-      "Purina",
-    ],
-  },
-  {
-    titleEn: "Livestock Supplies",
-    titleEs: "Suministros para Ganado",
-    descriptionEn: "Supplies for goats, sheep, pigs, and cattle owners.",
-    descriptionEs: "Suministros para dueños de cabras, ovejas, cerdos y ganado.",
-    items: [
-      "Nursing Bottles",
-      "Milk Replacer",
-      "Sav-A-Caf Products",
-      "Feeders & Waterers",
-      "Minerals",
-      "Supplements",
-      "Electrolytes",
-      "Dewormers",
-      "Heat Lamps & Bulbs",
-      "Livestock Health Products",
-      "Wound Care",
-      "First Aid Supplies",
-      "Fly & Insect Control",
-      "Pink Eye Care Products",
-      "Hoof Care",
-      "Udder Care",
-      "Syringes & Needles",
-      "Drenching Supplies",
-      "Livestock Identification Supplies",
-      "Bedding & Shavings",
-      "Livestock Grooming Supplies",
-      "Feed Scoops & Buckets",
-      "Castrating Supplies",
-    ],
-  },
-  {
-    titleEn: "Pig Feed",
-    titleEs: "Alimento para Cerdos",
-    items: [
-      "Pot Bellied Pig Feed",
-      "Pig Grower",
-      "Pig Finisher",
-      "Medicated Meat Maker",
-    ],
-  },
-  {
-    titleEn: "Supplements & Minerals",
-    titleEs: "Suplementos y Minerales",
-    items: [
-      "Plain White Salt Block (4 lb or 50 lb Brick)",
-      "Selenium Salt Block",
-      "Mineral Salt Block",
-      "Ultra 24 Milk Replacer",
-      "Electrolytes",
-      "Vitamins",
-      "Dewormers",
-    ],
-  },
-  {
-    titleEn: "Grains",
-    titleEs: "Granos",
-    items: [
-      "Whole Barley",
-      "Whole Corn",
-      "Cracked Corn",
-      "Rolled Corn",
-      "Whole Oats",
-      "Whole Wheat",
-      "Whole Milo",
-      "Organic Oats",
-    ],
-  },
-  {
-    titleEn: "Bedding",
-    titleEs: "Material para Camas",
-    items: [
-      "Wood Shavings",
-      "Mini Flakes (Sawdust)",
-      "Rice Hulls",
-      "Diatomaceous Earth",
-    ],
-  },
-  {
-    titleEn: "Bird Seeds",
-    titleEs: "Semillas para Aves",
-    items: [
-      "Finch",
-      "Cockatiel",
-      "Dove & Quail",
-      "Parakeet",
-      "Parrot",
-      "Pigeon",
-      "Small Hookbill",
-      "Canary",
-      "Black Sunflower Seeds",
-      "Safflower Seeds",
-    ],
-  },
-] as const;
+const brandLogoRows = [brandLogos.slice(0, 11), brandLogos.slice(11, 22), brandLogos.slice(22)];
 
 export function CategoryGrid({ sectionId, title, description }: CategoryGridProps) {
   const { locale, t } = useLanguage();
+
+  const openAnimalGroup = (groupId: string) => {
+    const section = document.getElementById(groupId);
+    if (section instanceof HTMLDetailsElement) {
+      section.open = true;
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", `#${groupId}`);
+    }
+  };
 
   return (
     <Section id={sectionId} variant="default" padding="xl" className="scroll-mt-24">
       <Container>
         {(title || description) && (
           <div className="mb-14 max-w-3xl md:mb-20">
-            {title && (
-              <Heading as="h2" size="xl" className="mb-4 text-charcoal">
-                {title}
-              </Heading>
-            )}
-            {description && (
-              <p className="text-lg leading-relaxed text-charcoal-light">
-                {description}
-              </p>
-            )}
+            {title && <Heading as="h2" size="xl" className="mb-4 text-charcoal">{title}</Heading>}
+            {description && <p className="text-lg leading-relaxed text-charcoal-light">{description}</p>}
           </div>
         )}
 
-        <div className="space-y-12">
+        <div className="space-y-16">
           <ScrollReveal>
             <div>
-              <Heading as="h2" size="lg" className="mb-3 text-charcoal">
-                {t.brandsWeCarry}
-              </Heading>
-              <p className="mb-6 max-w-3xl text-charcoal-light">
-                {t.brandsDescription}
-              </p>
+              <Heading as="h2" size="lg" className="mb-3 text-charcoal">{t.brandsWeCarry}</Heading>
+              <p className="mb-6 max-w-3xl text-charcoal-light">{t.brandsDescription}</p>
               <div className="brand-marquee space-y-3 overflow-hidden py-5">
                 {brandLogoRows.map((row, rowIndex) => (
                   <div key={rowIndex} className="overflow-hidden">
-                    <div
-                      className={`brand-marquee-track ${rowIndex === 1 ? "brand-marquee-track-reverse" : ""}`}
-                    >
+                    <div className={`brand-marquee-track ${rowIndex === 1 ? "brand-marquee-track-reverse" : ""}`}>
                       {[false, true].map((duplicate) => (
-                        <div
-                          key={duplicate ? "duplicate" : "original"}
-                          className="brand-marquee-group"
-                          aria-hidden={duplicate || undefined}
-                        >
+                        <div key={duplicate ? "duplicate" : "original"} className="brand-marquee-group" aria-hidden={duplicate || undefined}>
                           {row.map((brand) => (
-                            <div
-                              key={brand.name}
-                              className="flex h-28 w-48 shrink-0 items-center justify-center p-2 sm:h-32 sm:w-56"
-                            >
-                              <Image
-                                src={`/images/imagesforDelhi/${brand.image}`}
-                                alt={`${brand.name} logo`}
-                                width={1080}
-                                height={1080}
-                                sizes="192px"
-                                className="h-full w-full object-contain"
-                              />
+                            <div key={brand.name} className="flex h-28 w-48 shrink-0 items-center justify-center p-2 sm:h-32 sm:w-56">
+                              <Image src={`/images/imagesforDelhi/${brand.image}`} alt={`${brand.name} logo`} width={1080} height={1080} sizes="192px" className="h-full w-full object-contain" />
                             </div>
                           ))}
                         </div>
@@ -402,97 +98,53 @@ export function CategoryGrid({ sectionId, title, description }: CategoryGridProp
             </div>
           </ScrollReveal>
 
-          <ScrollReveal>
-            <div>
-              <Heading as="h2" size="lg" className="mb-3 text-charcoal">
-                {t.customFeeds}
-              </Heading>
-              <p className="mb-6 max-w-3xl text-charcoal-light">
-                {t.customFeedsDescription}
-              </p>
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {customFeeds.map((feed) => (
-                  <article
-                    key={feed.name}
-                    className="flex h-full flex-col rounded-sm border border-primary-200 bg-background p-5 shadow-sm"
-                  >
-                    <div className="flex-1">
-                      <span className="text-xs font-medium uppercase tracking-[0.16em] text-primary-600">
-                        {t.customFeeds}
-                      </span>
-                      <Heading as="h3" size="md" className="mt-2 text-charcoal xl:min-h-[5.25rem]">
-                        {feed.name}
-                      </Heading>
-                      <p className="mt-2 text-sm leading-relaxed text-charcoal-light">
-                        {locale === "es" ? feed.descriptionEs : feed.description}
-                      </p>
-                    </div>
-
-                    <dl className="mt-5 divide-y divide-secondary-200 rounded-sm border border-secondary-200 bg-secondary-50">
-                      <div className="flex items-center justify-between gap-4 p-3">
-                        <dt className="text-[0.65rem] uppercase leading-tight tracking-wider text-charcoal-light">
-                          {t.minimumCrudeProtein}
-                        </dt>
-                        <dd className="shrink-0 font-bold text-primary-700">{feed.protein}</dd>
-                      </div>
-                      <div className="flex items-center justify-between gap-4 p-3">
-                        <dt className="text-[0.65rem] uppercase leading-tight tracking-wider text-charcoal-light">
-                          {t.bagWeight}
-                        </dt>
-                        <dd className="shrink-0 text-right font-bold text-primary-700">
-                          {feed.weight}
-                          <span className="ml-1 text-xs font-normal text-charcoal-light">({feed.kilograms})</span>
-                        </dd>
-                      </div>
-                      <div className="flex items-center justify-between gap-4 p-3">
-                        <dt className="text-[0.65rem] uppercase leading-tight tracking-wider text-charcoal-light">
-                          {t.bestFor}
-                        </dt>
-                        <dd className="max-w-[60%] text-right text-sm font-bold leading-tight text-primary-700">
-                          {locale === "es" ? feed.bestForEs : feed.bestFor}
-                        </dd>
-                      </div>
-                    </dl>
-
-                    <Button
-                      href={`/products/${feed.slug}`}
-                      variant="ghost"
-                      size="sm"
-                      className="mt-3 self-start px-0"
-                    >
-                      {locale === "es" ? "Ver Detalles" : "View Product Details"} →
-                    </Button>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-
           <div>
-            <Heading as="h2" size="lg" className="mb-3 text-charcoal">
-              {t.productCatalog}
-            </Heading>
-            <p className="mb-8 max-w-3xl text-charcoal-light">
-              {t.productCatalogDescription}
+            <Heading as="h2" size="lg" className="mb-3 text-charcoal">{locale === "es" ? "Comprar por Animal" : "Shop by Animal"}</Heading>
+            <p className="mb-6 max-w-3xl text-charcoal-light">
+              {locale === "es"
+                ? "Elija un animal y luego explore alimento, salud, aseo, equipo y otros suministros en categorías fáciles de encontrar."
+                : "Choose an animal, then browse feed, health, grooming, equipment, and other supplies in easy-to-find categories."}
             </p>
+
+            <nav aria-label={locale === "es" ? "Tipos de animales" : "Animal types"} className="mb-8 flex gap-2 overflow-x-auto pb-2">
+              {animalProductGroups.map((group) => (
+                <button key={group.id} type="button" onClick={() => openAnimalGroup(group.id)} className="flex shrink-0 items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-800 transition hover:border-primary-400 hover:bg-primary-100">
+                  <span aria-hidden="true">{group.icon}</span>
+                  {locale === "es" ? group.nameEs : group.nameEn}
+                </button>
+              ))}
+            </nav>
+
             <div className="space-y-4">
-              {productCategories.map((category, index) => (
-                <ScrollReveal key={category.titleEn} delay={Math.min(index * 40, 240)}>
-                  <ProductAccordion
-                    title={locale === "es" ? category.titleEs : category.titleEn}
-                    description={
-                      "descriptionEn" in category
-                        ? locale === "es"
-                          ? category.descriptionEs
-                          : category.descriptionEn
-                        : undefined
-                    }
-                    items={[...category.items]}
-                    viewLabel={t.viewMore}
-                    hideLabel={t.showLess}
-                    defaultOpen={index === 0}
-                    featured={"featured" in category && category.featured}
-                  />
+              {animalProductGroups.map((group, index) => (
+                <ScrollReveal key={group.id} delay={Math.min(index * 35, 210)}>
+                  <AnimalProductAccordion group={group} locale={locale} defaultOpen={index === 0}>
+                    {group.includesCustomFeeds && (
+                      <section className="mt-7 border-t border-secondary-200 pt-7" aria-labelledby="custom-game-bird-feeds">
+                        <Heading as="h4" size="md" className="text-charcoal" id="custom-game-bird-feeds">
+                          {locale === "es" ? "Alimentos Especiales para Aves" : "Custom Poultry & Game-Bird Feeds"}
+                        </Heading>
+                        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-charcoal-light">{t.customFeedsDescription}</p>
+                        <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                          {customFeeds.map((feed) => (
+                            <article key={feed.name} className="flex h-full flex-col rounded-sm border border-primary-200 bg-background p-5 shadow-sm">
+                              <div className="flex-1">
+                                <span className="text-xs font-medium uppercase tracking-[0.16em] text-primary-600">{t.customFeeds}</span>
+                                <h5 className="mt-2 font-heading text-xl font-bold text-charcoal xl:min-h-[5.25rem]">{feed.name}</h5>
+                                <p className="mt-2 text-sm leading-relaxed text-charcoal-light">{locale === "es" ? feed.descriptionEs : feed.description}</p>
+                              </div>
+                              <dl className="mt-5 divide-y divide-secondary-200 rounded-sm border border-secondary-200 bg-secondary-50">
+                                <div className="flex items-center justify-between gap-4 p-3"><dt className="text-[0.65rem] uppercase leading-tight tracking-wider text-charcoal-light">{t.minimumCrudeProtein}</dt><dd className="shrink-0 font-bold text-primary-700">{feed.protein}</dd></div>
+                                <div className="flex items-center justify-between gap-4 p-3"><dt className="text-[0.65rem] uppercase leading-tight tracking-wider text-charcoal-light">{t.bagWeight}</dt><dd className="shrink-0 text-right font-bold text-primary-700">{feed.weight}<span className="ml-1 text-xs font-normal text-charcoal-light">({feed.kilograms})</span></dd></div>
+                                <div className="flex items-center justify-between gap-4 p-3"><dt className="text-[0.65rem] uppercase leading-tight tracking-wider text-charcoal-light">{t.bestFor}</dt><dd className="max-w-[60%] text-right text-sm font-bold leading-tight text-primary-700">{locale === "es" ? feed.bestForEs : feed.bestFor}</dd></div>
+                              </dl>
+                              <Button href={`/products/${feed.slug}`} variant="ghost" size="sm" className="mt-3 self-start px-0">{locale === "es" ? "Ver Detalles" : "View Product Details"} →</Button>
+                            </article>
+                          ))}
+                        </div>
+                      </section>
+                    )}
+                  </AnimalProductAccordion>
                 </ScrollReveal>
               ))}
             </div>

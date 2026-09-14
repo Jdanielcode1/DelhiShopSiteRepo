@@ -1,11 +1,13 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface ProductAccordionProps {
   title: string;
   description?: string;
   items: string[];
+  itemImages?: Record<string, string>;
   viewLabel: string;
   hideLabel: string;
   defaultOpen?: boolean;
@@ -16,6 +18,7 @@ export function ProductAccordion({
   title,
   description,
   items,
+  itemImages = {},
   viewLabel,
   hideLabel,
   defaultOpen = false,
@@ -82,7 +85,19 @@ export function ProductAccordion({
                   clipRule="evenodd"
                 />
               </svg>
-              <span>{item}</span>
+              <div className="min-w-0">
+                <span>{item}</span>
+                {itemImages[item] && (
+                  <Image
+                    src={itemImages[item]}
+                    alt={item}
+                    width={684}
+                    height={910}
+                    sizes="160px"
+                    className="mt-3 h-auto w-40 rounded-sm"
+                  />
+                )}
+              </div>
             </li>
           ))}
         </ul>
