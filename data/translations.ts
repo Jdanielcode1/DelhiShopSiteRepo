@@ -75,7 +75,7 @@ export const translations = {
     specialRequestContactPlaceholder: "you@example.com or (209) 555-1234",
     specialRequestDetailsPlaceholder:
       "Include the product, brand, quantity, or any other helpful details.",
-    specialRequestChooseMethod: "Choose how to contact us",
+    specialRequestChooseMethod: "To submit, please select your form of contact below",
     specialRequestEmail: "Email us",
     specialRequestText: "Text us",
     specialRequestCall: "Call us",
@@ -316,7 +316,7 @@ export const translations = {
     specialRequestContactPlaceholder: "usted@ejemplo.com o (209) 555-1234",
     specialRequestDetailsPlaceholder:
       "Incluya el producto, la marca, la cantidad u otros detalles útiles.",
-    specialRequestChooseMethod: "Elija cómo contactarnos",
+    specialRequestChooseMethod: "Para enviar su solicitud, seleccione su forma de contacto a continuación",
     specialRequestEmail: "Enviar correo",
     specialRequestText: "Enviar texto",
     specialRequestCall: "Llamar",

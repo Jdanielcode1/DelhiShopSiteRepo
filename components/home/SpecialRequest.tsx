@@ -136,7 +136,7 @@ export function SpecialRequest() {
                   <legend className="mb-3 text-sm font-semibold text-charcoal">
                     {t.specialRequestChooseMethod}
                   </legend>
-                  <div className="grid gap-3 sm:grid-cols-3">
+                  <div className="grid gap-3 sm:grid-cols-2">
                     <button
                       type="submit"
                       name="method"
@@ -155,13 +155,6 @@ export function SpecialRequest() {
                       <span aria-hidden="true">▣</span>
                       {t.specialRequestText}
                     </button>
-                    <a
-                      href={`tel:${phoneHref}`}
-                      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm border-2 border-primary-600 px-4 py-3 text-base font-semibold text-primary-700 transition hover:bg-primary-50"
-                    >
-                      <span aria-hidden="true">☎</span>
-                      {t.specialRequestCall}
-                    </a>
                   </div>
                 </fieldset>
                 <p className="text-sm leading-relaxed text-charcoal-light">
