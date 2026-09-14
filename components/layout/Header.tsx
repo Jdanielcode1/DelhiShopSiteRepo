@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Container, Button } from "@/components/ui";
 import { navigation, businessInfo } from "@/data/business";
+import { animalProductGroups } from "@/data/animalProducts";
 import { useLanguage } from "@/lib/LanguageContext";
 import { MobileMenu } from "./MobileMenu";
 import { LanguageToggle } from "./LanguageToggle";
@@ -102,27 +103,56 @@ export function Header() {
               </Link>
 
               <div className="hidden md:flex items-center gap-8">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={cn(
-                      "relative font-medium transition-colors duration-200",
-                      "after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0",
-                      "after:bg-current after:transition-all after:duration-200",
-                      "hover:after:w-full",
-                      pathname === item.href
-                        ? isScrolled
-                          ? "text-primary-600 after:w-full"
-                          : "text-cream after:w-full"
-                        : isScrolled
-                          ? "text-charcoal hover:text-primary-600"
-                          : "text-cream/90 hover:text-cream"
-                    )}
-                  >
-                    {locale === "es" ? item.nameEs : item.name}
-                  </Link>
-                ))}
+                {navigation.map((item) => {
+                  const isProducts = item.href === "/products";
+                  const isActive = isProducts ? pathname.startsWith("/products") : pathname === item.href;
+                  const navLink = (
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        "relative flex items-center gap-1 font-medium transition-colors duration-200",
+                        "after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0",
+                        "after:bg-current after:transition-all after:duration-200 hover:after:w-full",
+                        isActive
+                          ? isScrolled ? "text-primary-600 after:w-full" : "text-cream after:w-full"
+                          : isScrolled ? "text-charcoal hover:text-primary-600" : "text-cream/90 hover:text-cream"
+                      )}
+                    >
+                      {locale === "es" ? item.nameEs : item.name}
+                      {isProducts && (
+                        <svg className="h-4 w-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m6 9 6 6 6-6" />
+                        </svg>
+                      )}
+                    </Link>
+                  );
+
+                  if (!isProducts) return <div key={item.name}>{navLink}</div>;
+
+                  return (
+                    <div key={item.name} className="group relative py-2">
+                      {navLink}
+                      <div className="pointer-events-none invisible absolute left-1/2 top-full w-[34rem] -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                        <div className="rounded-sm border border-secondary-200 bg-cream p-4 shadow-xl">
+                          <div className="mb-3 flex items-center justify-between border-b border-secondary-200 pb-3">
+                            <span className="font-heading font-bold text-charcoal">{locale === "es" ? "Comprar por Animal" : "Shop by Animal"}</span>
+                            <Link href="/products#delhi" className="text-sm font-semibold text-primary-700 hover:underline">
+                              {locale === "es" ? "Ver todos" : "View all"}
+                            </Link>
+                          </div>
+                          <div className="grid grid-cols-2 gap-1">
+                            {animalProductGroups.map((group) => (
+                              <Link key={group.id} href={`/products/animals/${group.id}`} className="flex items-center gap-3 rounded-sm px-3 py-2.5 text-sm font-semibold text-charcoal transition hover:bg-primary-50 hover:text-primary-700">
+                                <span aria-hidden="true" className="text-xl">{group.icon}</span>
+                                {locale === "es" ? group.nameEs : group.nameEn}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
                 <LanguageToggle variant={isScrolled ? "dark" : "light"} />
                 <Button
                   href="/contact"
