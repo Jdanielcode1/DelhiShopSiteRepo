@@ -80,7 +80,7 @@ export const translations = {
     specialRequestText: "Text us",
     specialRequestCall: "Call us",
     specialRequestOpensApp:
-      "Email and text options open your device’s messaging app with your request ready to send.",
+      "Email and text options will open your device’s messaging app with your request ready to send.",
     specialRequestEmailSubject: "Special product request",
 
     // About Page
@@ -321,7 +321,7 @@ export const translations = {
     specialRequestText: "Enviar texto",
     specialRequestCall: "Llamar",
     specialRequestOpensApp:
-      "Las opciones de correo y texto abren la aplicación de mensajes de su dispositivo con la solicitud lista para enviar.",
+      "Las opciones de correo y texto abrirán la aplicación de mensajes de su dispositivo con la solicitud lista para enviar.",
     specialRequestEmailSubject: "Solicitud especial de producto",
 
     aboutHeroTitle: "Nuestra Historia",
