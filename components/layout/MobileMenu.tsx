@@ -9,6 +9,7 @@ import { navigation, businessInfo, whatsappUrl } from "@/data/business";
 import { animalProductGroups } from "@/data/animalProducts";
 import { StoreHours } from "@/components/ui/StoreHours";
 import { useLanguage } from "@/lib/LanguageContext";
+import { ProductSearch } from "./ProductSearch";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -88,6 +89,10 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 />
               </svg>
             </button>
+          </div>
+
+          <div className="border-b border-secondary-200 p-4">
+            <ProductSearch appearance="mobile" onNavigate={onClose} />
           </div>
 
           <nav className="flex-1 overflow-y-auto p-4">

@@ -11,6 +11,7 @@ import { animalProductGroups } from "@/data/animalProducts";
 import { useLanguage } from "@/lib/LanguageContext";
 import { MobileMenu } from "./MobileMenu";
 import { LanguageToggle } from "./LanguageToggle";
+import { ProductSearch } from "./ProductSearch";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -102,7 +103,7 @@ export function Header() {
                 </span>
               </Link>
 
-              <div className="hidden md:flex items-center gap-8">
+              <div className="hidden lg:flex items-center gap-5 xl:gap-7">
                 {navigation.map((item) => {
                   const isProducts = item.href === "/products";
                   const isActive = isProducts ? pathname.startsWith("/products") : pathname === item.href;
@@ -153,6 +154,7 @@ export function Header() {
                     </div>
                   );
                 })}
+                <ProductSearch appearance={isScrolled ? "dark" : "light"} />
                 <LanguageToggle variant={isScrolled ? "dark" : "light"} />
                 <Button
                   href="/contact"
@@ -166,7 +168,7 @@ export function Header() {
                 </Button>
               </div>
 
-              <div className="flex items-center gap-2 md:hidden">
+              <div className="flex items-center gap-2 lg:hidden">
                 <LanguageToggle variant={isScrolled ? "dark" : "light"} />
                 <button
                   type="button"
