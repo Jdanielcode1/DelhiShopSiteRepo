@@ -74,11 +74,13 @@ export function LocationDetail({ slug }: LocationDetailProps) {
                   callLabel={t.callUs}
                   className="mt-3"
                 />
-                <p>
-                  <a className="text-primary-700 hover:underline" href={`mailto:${location.email}`}>
-                    {location.email}
-                  </a>
-                </p>
+                {location.email && (
+                  <p>
+                    <a className="text-primary-700 hover:underline" href={`mailto:${location.email}`}>
+                      {location.email}
+                    </a>
+                  </p>
+                )}
               </address>
 
               <div className="mt-8 border-t border-secondary-200 pt-6">

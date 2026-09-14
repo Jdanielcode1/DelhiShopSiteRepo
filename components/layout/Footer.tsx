@@ -62,7 +62,7 @@ export function Footer() {
               </h3>
               <address className="not-italic space-y-2 text-cream/70 text-sm">
                 {businessInfo.addresses.map((addr) => (
-                  <p key={addr.label}>
+                  <div key={addr.label} className="space-y-1">
                     <Link
                       href={`/locations/${addr.slug}`}
                       className="hover:text-cream transition-colors"
@@ -70,9 +70,16 @@ export function Footer() {
                       <span className="text-cream/90 font-medium">{addr.label}:</span>{" "}
                       {addr.street}, {addr.city}, {addr.state} {addr.zip}
                     </Link>
-                  </p>
+                    <p>
+                      <a
+                        href={`tel:+1${addr.phone.replace(/\D/g, "")}`}
+                        className="hover:text-cream transition-colors"
+                      >
+                        {addr.phone}
+                      </a>
+                    </p>
+                  </div>
                 ))}
-                <p>{businessInfo.phone}</p>
                 <ContactLinks
                   phone={businessInfo.phone}
                   whatsappUrl={whatsappUrl}

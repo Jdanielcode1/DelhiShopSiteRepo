@@ -43,8 +43,7 @@ export const businessInfo = {
       state: "CA",
       zip: "95316",
       country: "United States",
-      phone: "209-449-6585",
-      email: "delhifeed@gmail.com",
+      phone: "(209) 447-8447",
       hours: {
         fallWeekdays: "9:00 AM - 6:00 PM",
         springAugustWeekdays: "8:30 AM - 8:30 PM",
