@@ -64,9 +64,9 @@ export const translations = {
     specialRequestEyebrow: "Special Requests Welcome",
     specialRequestTitle: "Didn’t find what you were looking for?",
     specialRequestDescription:
-      "Tell us what you need and our team will be happy to help with a special request.",
+      "Tell us what you need, and our team will be happy to provide quotes for special requests.",
     specialRequestNoFee:
-      "There is no additional fee to submit a special request.",
+      "Examples include show feeds, specific birdseed blends, pallet pricing, and more.",
     specialRequestDirectContact: "Prefer to reach us directly?",
     specialRequestName: "Your name",
     specialRequestContact: "Email or phone number",
@@ -305,9 +305,9 @@ export const translations = {
     specialRequestEyebrow: "Aceptamos Solicitudes Especiales",
     specialRequestTitle: "¿No encontró lo que buscaba?",
     specialRequestDescription:
-      "Cuéntenos qué necesita y nuestro equipo con gusto le ayudará con una solicitud especial.",
+      "Cuéntenos qué necesita y nuestro equipo con gusto le proporcionará cotizaciones para solicitudes especiales.",
     specialRequestNoFee:
-      "No hay ningún cargo adicional por enviar una solicitud especial.",
+      "Algunos ejemplos incluyen alimento para animales de exhibición, mezclas específicas de semillas para aves, precios por tarima y más.",
     specialRequestDirectContact: "¿Prefiere comunicarse directamente?",
     specialRequestName: "Su nombre",
     specialRequestContact: "Correo electrónico o teléfono",
