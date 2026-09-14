@@ -70,15 +70,12 @@ export function SpecialRequest() {
                 </p>
 
                 <div className="mt-10 border-t border-cream/20 pt-6">
-                  <p className="text-sm text-cream/70">{t.specialRequestDirectContact}</p>
-                  <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-base font-semibold">
-                    <a className="underline decoration-secondary-300 underline-offset-4 hover:text-secondary-200" href={`mailto:${businessInfo.email}`}>
-                      {businessInfo.email}
+                  <p className="text-base text-cream/80">
+                    {t.specialRequestDirectContact}{" "}
+                    <a className="font-semibold text-cream underline decoration-secondary-300 underline-offset-4 hover:text-secondary-200" href={`tel:${phoneHref}`}>
+                      (209) 449-6585
                     </a>
-                    <a className="underline decoration-secondary-300 underline-offset-4 hover:text-secondary-200" href={`tel:${phoneHref}`}>
-                      {businessInfo.phone}
-                    </a>
-                  </div>
+                  </p>
                 </div>
               </div>
             </ScrollReveal>

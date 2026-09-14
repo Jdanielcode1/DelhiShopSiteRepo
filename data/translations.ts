@@ -67,7 +67,7 @@ export const translations = {
       "Tell us what you need, and our team will be happy to provide quotes for special requests.",
     specialRequestNoFee:
       "Examples include show feeds, specific birdseed blends, pallet pricing, and more.",
-    specialRequestDirectContact: "Prefer to reach us directly?",
+    specialRequestDirectContact: "Prefer to reach us immediately? Call us at",
     specialRequestName: "Your name",
     specialRequestContact: "Email or phone number",
     specialRequestDetails: "What are you looking for?",
@@ -308,7 +308,7 @@ export const translations = {
       "Cuéntenos qué necesita y nuestro equipo con gusto le proporcionará cotizaciones para solicitudes especiales.",
     specialRequestNoFee:
       "Algunos ejemplos incluyen alimento para animales de exhibición, mezclas específicas de semillas para aves, precios por tarima y más.",
-    specialRequestDirectContact: "¿Prefiere comunicarse directamente?",
+    specialRequestDirectContact: "¿Prefiere comunicarse de inmediato? Llámenos al",
     specialRequestName: "Su nombre",
     specialRequestContact: "Correo electrónico o teléfono",
     specialRequestDetails: "¿Qué está buscando?",
