@@ -1,15 +1,13 @@
 import {
   Hero,
-  FeaturedCategories,
-  CTABanner,
+  SpecialRequest,
 } from "@/components/home";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <FeaturedCategories />
-      <CTABanner />
+      <SpecialRequest />
     </>
   );
 }

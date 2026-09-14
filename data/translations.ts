@@ -60,6 +60,29 @@ export const translations = {
     saturdaySchedule: "Saturday: 9:00 AM - 5:30 PM",
     sundayClosed: "Sunday: Closed",
 
+    // Special Request
+    specialRequestEyebrow: "Special Requests Welcome",
+    specialRequestTitle: "Didn’t find what you were looking for?",
+    specialRequestDescription:
+      "Tell us what you need and our team will be happy to help with a special request.",
+    specialRequestNoFee:
+      "There is no additional fee to submit a special request.",
+    specialRequestDirectContact: "Prefer to reach us directly?",
+    specialRequestName: "Your name",
+    specialRequestContact: "Email or phone number",
+    specialRequestDetails: "What are you looking for?",
+    specialRequestNamePlaceholder: "Enter your name",
+    specialRequestContactPlaceholder: "you@example.com or (209) 555-1234",
+    specialRequestDetailsPlaceholder:
+      "Include the product, brand, quantity, or any other helpful details.",
+    specialRequestChooseMethod: "Choose how to contact us",
+    specialRequestEmail: "Email us",
+    specialRequestText: "Text us",
+    specialRequestCall: "Call us",
+    specialRequestOpensApp:
+      "Email and text options open your device’s messaging app with your request ready to send.",
+    specialRequestEmailSubject: "Special product request",
+
     // About Page
     aboutHeroTitle: "Our Story",
     aboutHeroSubtitle:
@@ -277,6 +300,29 @@ export const translations = {
     afterAugustSchedule: "Lun - Vie: 8:30 AM - 7:30 PM",
     saturdaySchedule: "Sábado: 9:00 AM - 5:30 PM",
     sundayClosed: "Domingo: Cerrado",
+
+    // Solicitud especial
+    specialRequestEyebrow: "Aceptamos Solicitudes Especiales",
+    specialRequestTitle: "¿No encontró lo que buscaba?",
+    specialRequestDescription:
+      "Cuéntenos qué necesita y nuestro equipo con gusto le ayudará con una solicitud especial.",
+    specialRequestNoFee:
+      "No hay ningún cargo adicional por enviar una solicitud especial.",
+    specialRequestDirectContact: "¿Prefiere comunicarse directamente?",
+    specialRequestName: "Su nombre",
+    specialRequestContact: "Correo electrónico o teléfono",
+    specialRequestDetails: "¿Qué está buscando?",
+    specialRequestNamePlaceholder: "Escriba su nombre",
+    specialRequestContactPlaceholder: "usted@ejemplo.com o (209) 555-1234",
+    specialRequestDetailsPlaceholder:
+      "Incluya el producto, la marca, la cantidad u otros detalles útiles.",
+    specialRequestChooseMethod: "Elija cómo contactarnos",
+    specialRequestEmail: "Enviar correo",
+    specialRequestText: "Enviar texto",
+    specialRequestCall: "Llamar",
+    specialRequestOpensApp:
+      "Las opciones de correo y texto abren la aplicación de mensajes de su dispositivo con la solicitud lista para enviar.",
+    specialRequestEmailSubject: "Solicitud especial de producto",
 
     aboutHeroTitle: "Nuestra Historia",
     aboutHeroSubtitle:
