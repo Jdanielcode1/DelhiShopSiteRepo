@@ -79,11 +79,7 @@ export function Hero() {
                   {denair.street}, {denair.city}
                 </p>
               </div>
-              <Button
-                href="/locations/denair"
-                variant="secondary"
-                className="border-cream text-cream hover:bg-cream/10"
-              >
+              <Button href="/locations/denair" variant="accent">
                 {t.exploreDenairStore}
               </Button>
             </div>
