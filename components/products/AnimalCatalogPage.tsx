@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { Button, Container, Heading, Section } from "@/components/ui";
 import type { AnimalProductGroup } from "@/data/animalProducts";
-import { customFeeds } from "@/data/customFeeds";
 import { useLanguage } from "@/lib/LanguageContext";
 
 interface AnimalCatalogPageProps {
@@ -11,7 +10,7 @@ interface AnimalCatalogPageProps {
 }
 
 export function AnimalCatalogPage({ group }: AnimalCatalogPageProps) {
-  const { locale, t } = useLanguage();
+  const { locale } = useLanguage();
   const name = locale === "es" ? group.nameEs : group.nameEn;
   const description = locale === "es" ? group.descriptionEs : group.descriptionEn;
 
@@ -57,32 +56,6 @@ export function AnimalCatalogPage({ group }: AnimalCatalogPageProps) {
               </section>
             ))}
           </div>
-
-          {group.includesCustomFeeds && (
-            <section className="mt-12 border-t border-secondary-200 pt-10" aria-labelledby="custom-game-bird-feeds">
-              <Heading as="h2" size="lg" className="text-charcoal" id="custom-game-bird-feeds">
-                {locale === "es" ? "Alimentos Especiales para Aves" : "Custom Poultry & Game-Bird Feeds"}
-              </Heading>
-              <p className="mt-3 max-w-3xl text-charcoal-light">{t.customFeedsDescription}</p>
-              <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {customFeeds.map((feed) => (
-                  <article key={feed.name} className="flex h-full flex-col rounded-sm border border-primary-200 bg-primary-50/35 p-5 shadow-sm">
-                    <div className="flex-1">
-                      <h3 className="font-heading text-xl font-bold text-charcoal">{feed.name}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-charcoal-light">{locale === "es" ? feed.descriptionEs : feed.description}</p>
-                    </div>
-                    <dl className="mt-5 grid grid-cols-2 gap-3 border-y border-secondary-200 py-4 text-sm">
-                      <div><dt className="text-charcoal-light">{t.minimumCrudeProtein}</dt><dd className="mt-1 font-bold text-primary-700">{feed.protein}</dd></div>
-                      <div><dt className="text-charcoal-light">{t.bagWeight}</dt><dd className="mt-1 font-bold text-primary-700">{feed.weight}</dd></div>
-                    </dl>
-                    <Button href={`/products/${feed.slug}`} variant="ghost" size="sm" className="mt-3 self-start px-0">
-                      {locale === "es" ? "Ver Detalles" : "View Product Details"} →
-                    </Button>
-                  </article>
-                ))}
-              </div>
-            </section>
-          )}
 
           <div className="mt-12 flex flex-col items-start justify-between gap-5 rounded-sm bg-secondary-100 p-6 sm:flex-row sm:items-center md:p-8">
             <div>
