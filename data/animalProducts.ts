@@ -202,13 +202,18 @@ export const animalProductGroups: AnimalProductGroup[] = [
       },
       {
         id: "scratch",
-        titleEn: "Scratch",
-        titleEs: "Mezclas Scratch",
+        titleEn: "Scratch & Treats",
+        titleEs: "Mezclas Scratch y Premios",
         items: [
           "El Ranchero Cracked Corn",
           "Winner’s Scratch",
           "Super Scratch",
           "Farmers Best Scratch",
+          "Re-Cleaned Yellow Whole Corn",
+          "Yellow Popcorn",
+          "Bug Buffet",
+          "Petfu Apollo 1",
+          "Pumpkin Spice & Everything Nice",
         ],
         itemImages: {
           "El Ranchero Cracked Corn": [
