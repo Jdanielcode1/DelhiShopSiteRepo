@@ -110,13 +110,21 @@ export const animalProductGroups: AnimalProductGroup[] = [
         titleEs: "Alimento de Mantenimiento",
         items: [
           "Jose Guerrero Conditioner",
-          "Jose Guerrero Keep Feed — 22% protein, 25 lb",
-          "High Octane with Cracked Corn — 17.40% protein, 50 lb",
+          "Jose Guerrero Keep Feed",
+          "High Octane with Cracked Corn",
         ],
         itemImages: {
           "Jose Guerrero Conditioner": [
             "/images/poultry-game-birds/jose-guerrero-conditioner-bag.png",
             "/images/poultry-game-birds/jose-guerrero-conditioner-feed.png",
+          ],
+          "Jose Guerrero Keep Feed": [
+            "/images/poultry-game-birds/jose-guerrero-keep-feed-bag.png",
+            "/images/poultry-game-birds/jose-guerrero-keep-feed.png",
+          ],
+          "High Octane with Cracked Corn": [
+            "/images/poultry-game-birds/high-octane-cracked-corn-bag.png",
+            "/images/poultry-game-birds/high-octane-cracked-corn-feed.png",
           ],
         },
         itemDetails: {
@@ -130,6 +138,24 @@ export const animalProductGroups: AnimalProductGroup[] = [
               "Fortified with essential nutrients",
             ],
             highlights: ["50 lb bag", "19.5% protein"],
+            sizes: [],
+          },
+          "Jose Guerrero Keep Feed": {
+            description:
+              "A whole-corn, pellet-based blend of clean grains and protein-rich pellets, with limestone added to support digestion in chickens and roosters.",
+            highlights: ["25 lb bag", "22% protein"],
+            sizes: [],
+          },
+          "High Octane with Cracked Corn": {
+            description:
+              "A high-energy textured blend of whole grains and legumes that gives birds sustained fuel for strong performance and conditioning.",
+            benefits: [
+              "Includes vitamins, minerals, and fish oil for healthy, vibrant plumage",
+              "Features corn, wheat, oats, split peas, red lentils, hulled sunflower, and safflower",
+              "Provides healthy fats and probiotics to support overall vitality",
+              "Made for endurance, appearance, and superior conditioning",
+            ],
+            highlights: ["50 lb bag", "17.40% protein"],
             sizes: [],
           },
         },
