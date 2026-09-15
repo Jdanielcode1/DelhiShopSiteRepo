@@ -237,7 +237,7 @@ export const translations = {
     quickLinks: "Quick Links",
     contactUs: "Contact Us",
     footerDescription:
-      "Your trusted local farm supply store, proudly serving the agricultural community with quality products and expert advice.",
+      "Delhi Feed and Supply and Denair Feed and Supply are your trusted local farm supply stores, proudly serving the agricultural community with quality products and expert advice.",
 
     // Seasonal hours labels
     weekdays: "Monday - Friday",
@@ -469,7 +469,7 @@ export const translations = {
     quickLinks: "Enlaces Rápidos",
     contactUs: "Contáctenos",
     footerDescription:
-      "Su tienda local de confianza para suministros agrícolas, sirviendo con orgullo a la comunidad agrícola con productos de calidad y asesoría experta.",
+      "Delhi Feed and Supply y Denair Feed and Supply son sus tiendas locales de confianza para suministros agrícolas, sirviendo con orgullo a la comunidad agrícola con productos de calidad y asesoría experta.",
 
     weekdays: "Lunes - Viernes",
     saturday: "Sábado",
