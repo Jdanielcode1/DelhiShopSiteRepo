@@ -232,6 +232,7 @@ export const animalProductGroups: AnimalProductGroup[] = [
             "/images/poultry-game-birds/farmers-best-scratch-bag.png",
             "/images/poultry-game-birds/farmers-best-scratch-feed.png",
           ],
+          "Re-Cleaned Yellow Whole Corn": "/images/poultry-game-birds/recleaned-yellow-whole-corn.png",
           "Yellow Popcorn": "/images/poultry-game-birds/yellow-popcorn.png",
         },
         itemDetails: {
@@ -257,6 +258,10 @@ export const animalProductGroups: AnimalProductGroup[] = [
             description:
               "A clean, straightforward scratch blend made with cracked corn, recleaned whole grain sorghum, and recleaned whole wheat for everyday poultry feeding.",
             highlights: ["50 lb bag", "8.25% protein"],
+            sizes: [],
+          },
+          "Re-Cleaned Yellow Whole Corn": {
+            highlights: ["75 lb bag", "9% protein"],
             sizes: [],
           },
           "Yellow Popcorn": {
