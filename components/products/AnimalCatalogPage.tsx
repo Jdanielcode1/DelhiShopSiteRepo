@@ -106,14 +106,28 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
                     >
                       {category.itemImages?.[item] ? (
                         <>
-                          <div className="relative aspect-[4/3] w-full overflow-hidden bg-secondary-100">
-                            <Image
-                              src={category.itemImages[item]}
-                              alt={`${item} seed mix`}
-                              fill
-                              sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                              className="object-cover transition-transform duration-300 hover:scale-[1.03]"
-                            />
+                          <div
+                            className={cn(
+                              "grid w-full overflow-hidden bg-secondary-100",
+                              Array.isArray(category.itemImages[item])
+                                ? "grid-cols-2"
+                                : "grid-cols-1"
+                            )}
+                          >
+                            {(Array.isArray(category.itemImages[item])
+                              ? category.itemImages[item]
+                              : [category.itemImages[item]]
+                            ).map((image, index) => (
+                              <div key={image} className="relative aspect-square overflow-hidden">
+                                <Image
+                                  src={image}
+                                  alt={`${item}${index === 0 ? " bag" : " feed close-up"}`}
+                                  fill
+                                  sizes="(min-width: 1280px) 12.5vw, (min-width: 1024px) 16.5vw, (min-width: 640px) 25vw, 50vw"
+                                  className="object-cover transition-transform duration-300 hover:scale-[1.03]"
+                                />
+                              </div>
+                            ))}
                           </div>
                           <div className="flex flex-1 flex-col px-4 py-4">
                             <span className="block font-semibold text-charcoal">{displayProductName(item)}</span>
@@ -122,6 +136,18 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
                                 {category.itemDetails[item].description}
                               </p>
                             )}
+                            {category.itemDetails?.[item]?.highlights?.length ? (
+                              <div className="mt-4 flex flex-wrap gap-2">
+                                {category.itemDetails[item].highlights.map((highlight) => (
+                                  <span
+                                    key={highlight}
+                                    className="rounded-full bg-primary-700 px-3 py-1.5 text-sm font-bold text-cream"
+                                  >
+                                    {highlight}
+                                  </span>
+                                ))}
+                              </div>
+                            ) : null}
                             {category.itemDetails?.[item]?.sizes.length ? (
                               <div className="mt-4 pt-1">
                                 <span className="text-xs font-semibold uppercase tracking-wide text-charcoal-light">

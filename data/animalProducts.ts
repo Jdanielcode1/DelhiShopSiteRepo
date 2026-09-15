@@ -3,8 +3,11 @@ export interface AnimalProductCategory {
   titleEn: string;
   titleEs: string;
   items: string[];
-  itemImages?: Record<string, string>;
-  itemDetails?: Record<string, { description?: string; sizes: string[] }>;
+  itemImages?: Record<string, string | string[]>;
+  itemDetails?: Record<
+    string,
+    { description?: string; highlights?: string[]; sizes: string[] }
+  >;
 }
 
 export interface AnimalProductGroup {
@@ -79,11 +82,25 @@ export const animalProductGroups: AnimalProductGroup[] = [
         titleEn: "Scratch",
         titleEs: "Mezclas Scratch",
         items: [
-          "El Ranchero Cracked Corn — 80 lb",
+          "El Ranchero Cracked Corn",
           "Winner’s Scratch — 7-grain scratch with cracked corn, 9.5% protein, 75 lb",
           "Super Scratch — 6-grain scratch with whole corn, 8.50% protein, 75 lb",
           "Farmers Best Scratch",
         ],
+        itemImages: {
+          "El Ranchero Cracked Corn": [
+            "/images/poultry-game-birds/el-ranchero-cracked-corn-bag.png",
+            "/images/poultry-game-birds/el-ranchero-cracked-corn-feed.png",
+          ],
+        },
+        itemDetails: {
+          "El Ranchero Cracked Corn": {
+            description:
+              "A quality cracked-corn feed that gives poultry and livestock a dependable energy source. Its broken texture is easy to eat and helps minimize feed waste.",
+            highlights: ["80 lb bag", "11.50% protein"],
+            sizes: [],
+          },
+        },
       },
       { id: "treats-nutrition", titleEn: "Treats & Nutrition", titleEs: "Premios y Nutrición", items: ["Organic Feed", "Show Animal Feed", "Poultry Treats", "Mealworms & Grubs", "Oyster Shell", "Limestone & Calcium Supplements"] },
       { id: "health", titleEn: "Health & Supplements", titleEs: "Salud y Suplementos", items: ["Happy Hen", "Sav-A-Chick Products", "Rooster Booster", "Safe-Guard (Fenbendazole)", "Poultry Conditioning Products", "Poultry Health Products", "Poultry Vitamins & Minerals", "Electrolytes", "Probiotics", "Poultry Supplements", "Poultry Dewormers", "Poultry Wound Care"] },
