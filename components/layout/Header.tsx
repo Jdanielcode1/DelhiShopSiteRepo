@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Container, Button } from "@/components/ui";
 import { navigation, businessInfo } from "@/data/business";
-import { animalProductGroups } from "@/data/animalProducts";
 import { useLanguage } from "@/lib/LanguageContext";
 import { MobileMenu } from "./MobileMenu";
 import { LanguageToggle } from "./LanguageToggle";
@@ -133,19 +132,19 @@ export function Header() {
                   return (
                     <div key={item.name} className="group relative py-2">
                       {navLink}
-                      <div className="pointer-events-none invisible absolute left-1/2 top-full w-[34rem] -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                      <div className="pointer-events-none invisible absolute left-1/2 top-full w-80 -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
                         <div className="rounded-sm border border-secondary-200 bg-cream p-4 shadow-xl">
-                          <div className="mb-3 flex items-center justify-between border-b border-secondary-200 pb-3">
-                            <span className="font-heading font-bold text-charcoal">{locale === "es" ? "Comprar por Animal" : "Shop by Animal"}</span>
-                            <Link href="/products#delhi" className="text-sm font-semibold text-primary-700 hover:underline">
-                              {locale === "es" ? "Ver todos" : "View all"}
-                            </Link>
+                          <div className="mb-3 border-b border-secondary-200 pb-3">
+                            <span className="font-heading font-bold text-charcoal">{locale === "es" ? "Elija Su Tienda" : "Choose Your Store"}</span>
                           </div>
-                          <div className="grid grid-cols-2 gap-1">
-                            {animalProductGroups.map((group) => (
-                              <Link key={group.id} href={`/products/animals/${group.id}`} className="flex items-center gap-3 rounded-sm px-3 py-2.5 text-sm font-semibold text-charcoal transition hover:bg-primary-50 hover:text-primary-700">
-                                <span aria-hidden="true" className="text-xl">{group.icon}</span>
-                                {locale === "es" ? group.nameEs : group.nameEn}
+                          <div className="space-y-1">
+                            {businessInfo.addresses.map((store) => (
+                              <Link key={store.label} href={`/products/${store.label.toLowerCase()}`} className="flex items-center gap-3 rounded-sm px-3 py-3 text-sm font-semibold text-charcoal transition hover:bg-primary-50 hover:text-primary-700">
+                                <span aria-hidden="true" className="text-xl">📍</span>
+                                <span>
+                                  <span className="block">{store.label}</span>
+                                  <span className="block text-xs font-normal text-charcoal-light">{store.street}, {store.city}</span>
+                                </span>
                               </Link>
                             ))}
                           </div>

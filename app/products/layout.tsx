@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { siteUrl } from "@/data/business";
 
-const title = "Animal Feed & Farm Supply Products in Delhi & Denair, CA";
+const title = "Choose a Store | Delhi Feed and Supply";
 const description =
-  "Browse poultry feed, game bird feed, livestock supplies, pet food, grains, bedding, animal health products, and custom feeds available near Delhi and Denair, California.";
+  "Choose the Delhi or Denair store to view location-specific products and availability.";
 
 export const metadata: Metadata = {
   title,

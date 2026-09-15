@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button, ContactLinks } from "@/components/ui";
 import { navigation, businessInfo, whatsappUrl } from "@/data/business";
-import { animalProductGroups } from "@/data/animalProducts";
 import { StoreHours } from "@/components/ui/StoreHours";
 import { useLanguage } from "@/lib/LanguageContext";
 import { ProductSearch } from "./ProductSearch";
@@ -119,16 +118,14 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                         </svg>
                       </summary>
                       <ul className="space-y-1 border-t border-secondary-200 px-3 py-3">
-                        <li>
-                          <Link href="/products#delhi" onClick={onClose} className="block rounded-sm px-3 py-2 text-sm font-bold text-primary-700 hover:bg-primary-50">
-                            {locale === "es" ? "Todos los Productos" : "All Products"}
-                          </Link>
-                        </li>
-                        {animalProductGroups.map((group) => (
-                          <li key={group.id}>
-                            <Link href={`/products/animals/${group.id}`} onClick={onClose} className={cn("flex items-center gap-3 rounded-sm px-3 py-2 text-sm font-semibold transition-colors", pathname === `/products/animals/${group.id}` ? "bg-primary-100 text-primary-800" : "text-charcoal hover:bg-primary-50")}>
-                              <span aria-hidden="true" className="text-lg">{group.icon}</span>
-                              {locale === "es" ? group.nameEs : group.nameEn}
+                        {businessInfo.addresses.map((store) => (
+                          <li key={store.label}>
+                            <Link href={`/products/${store.label.toLowerCase()}`} onClick={onClose} className={cn("flex items-center gap-3 rounded-sm px-3 py-3 text-sm font-semibold transition-colors", pathname === `/products/${store.label.toLowerCase()}` ? "bg-primary-100 text-primary-800" : "text-charcoal hover:bg-primary-50")}>
+                              <span aria-hidden="true" className="text-lg">📍</span>
+                              <span>
+                                <span className="block">{store.label}</span>
+                                <span className="block text-xs font-normal text-charcoal-light">{store.street}, {store.city}</span>
+                              </span>
                             </Link>
                           </li>
                         ))}

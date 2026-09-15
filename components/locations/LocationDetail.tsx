@@ -92,7 +92,7 @@ export function LocationDetail({ slug }: LocationDetailProps) {
               </div>
 
               <div className="mt-8 space-y-3">
-                <Button href={`/products#${slug}`} variant="primary">
+                <Button href={`/products/${slug}`} variant="primary">
                   {t.locationProducts}
                 </Button>
                 <Button
