@@ -10,6 +10,7 @@ interface CategoryGridProps {
   sectionId?: string;
   title?: string;
   description?: string;
+  storeSlug?: "delhi" | "denair";
 }
 
 const brandLogos = [
@@ -50,8 +51,12 @@ const brandLogos = [
 
 const brandLogoRows = [brandLogos.slice(0, 11), brandLogos.slice(11, 22), brandLogos.slice(22)];
 
-export function CategoryGrid({ sectionId, title, description }: CategoryGridProps) {
+export function CategoryGrid({ sectionId, title, description, storeSlug = "delhi" }: CategoryGridProps) {
   const { locale, t } = useLanguage();
+  const animalHref = (animalId: string) =>
+    storeSlug === "denair"
+      ? `/products/denair/animals/${animalId}`
+      : `/products/animals/${animalId}`;
 
   return (
     <Section id={sectionId} variant="default" padding="xl" className="scroll-mt-24">
@@ -96,7 +101,7 @@ export function CategoryGrid({ sectionId, title, description }: CategoryGridProp
               </p>
               <nav aria-label={locale === "es" ? "Comprar por tipo de animal" : "Shop by animal type"} className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-5">
                 {animalProductGroups.map((group) => (
-                  <Link key={group.id} href={`/products/animals/${group.id}`} className="group flex min-h-44 w-56 shrink-0 snap-start flex-col justify-between rounded-sm border border-secondary-200 bg-secondary-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500">
+                  <Link key={group.id} href={animalHref(group.id)} className="group flex min-h-44 w-56 shrink-0 snap-start flex-col justify-between rounded-sm border border-secondary-200 bg-secondary-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500">
                     <span aria-hidden="true" className="flex h-14 w-14 items-center justify-center rounded-full bg-primary-50 text-3xl">{group.icon}</span>
                     <span>
                       <span className="block font-heading text-xl font-bold text-charcoal">{locale === "es" ? group.nameEs : group.nameEn}</span>

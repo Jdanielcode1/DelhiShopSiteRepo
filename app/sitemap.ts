@@ -36,5 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...animalRoutes, ...productRoutes];
+  const denairAnimalRoutes = animalProductGroups.map((group) => ({
+    url: `${siteUrl}/products/denair/animals/${group.id}`,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...animalRoutes, ...denairAnimalRoutes, ...productRoutes];
 }

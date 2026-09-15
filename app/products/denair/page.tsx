@@ -22,7 +22,7 @@ export default function DenairProductsPage() {
           </Link>
         </Container>
       </Section>
-      <CategoryGrid />
+      <CategoryGrid storeSlug="denair" />
     </>
   );
 }

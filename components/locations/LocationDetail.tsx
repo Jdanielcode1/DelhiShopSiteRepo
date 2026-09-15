@@ -57,7 +57,7 @@ export function LocationDetail({ slug }: LocationDetailProps) {
         }
       />
 
-      <CategoryGrid />
+      <CategoryGrid storeSlug={slug} />
 
       <Section variant="default" padding="xl">
         <Container>

@@ -9,21 +9,35 @@ import { useLanguage } from "@/lib/LanguageContext";
 
 interface AnimalCatalogPageProps {
   group: AnimalProductGroup;
+  storeSlug?: "delhi" | "denair";
 }
 
-export function AnimalCatalogPage({ group }: AnimalCatalogPageProps) {
+export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogPageProps) {
   const { locale } = useLanguage();
   const name = locale === "es" ? group.nameEs : group.nameEn;
   const description = locale === "es" ? group.descriptionEs : group.descriptionEn;
+  const isDenair = storeSlug === "denair";
+  const storeName = isDenair ? "Denair" : "Delhi";
+  const storeProductsHref = `/products/${storeSlug}`;
+  const heroImage = isDenair && group.id === "poultry-game-birds"
+    ? "/images/denair-poultry-game-birds.png"
+    : group.image;
+  const heroImageAlt = isDenair && group.id === "poultry-game-birds"
+    ? locale === "es"
+      ? "Gallinas y aves de caza vivas en una granja cerca de Denair"
+      : "Live chickens and game birds on a farm near Denair"
+    : locale === "es"
+      ? group.imageAltEs ?? name
+      : group.imageAltEn ?? name;
 
   return (
     <>
       <Section variant="dark" padding="md" className="relative overflow-hidden pt-36 md:pt-40">
-        {group.image && (
+        {heroImage && (
           <>
             <Image
-              src={group.image}
-              alt={locale === "es" ? group.imageAltEs ?? name : group.imageAltEn ?? name}
+              src={heroImage}
+              alt={heroImageAlt}
               fill
               priority
               sizes="100vw"
@@ -34,7 +48,7 @@ export function AnimalCatalogPage({ group }: AnimalCatalogPageProps) {
         )}
 
         <Container className="relative z-10">
-          <Link href="/products#delhi" className="inline-flex items-center gap-2 text-sm font-semibold text-secondary-300 transition hover:text-cream">
+          <Link href={storeProductsHref} className="inline-flex items-center gap-2 text-sm font-semibold text-secondary-300 transition hover:text-cream">
             <span aria-hidden="true">←</span>
             {locale === "es" ? "Todos los animales" : "All animals"}
           </Link>
@@ -43,7 +57,7 @@ export function AnimalCatalogPage({ group }: AnimalCatalogPageProps) {
               <span aria-hidden="true" className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-cream/10 text-4xl md:h-20 md:w-20 md:text-5xl">{group.icon}</span>
               <div>
                 <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-secondary-300">
-                  {locale === "es" ? "Productos de la Tienda de Delhi" : "Delhi Store Products"}
+                  {locale === "es" ? `Productos de la Tienda de ${storeName}` : `${storeName} Store Products`}
                 </p>
                 <Heading as="h1" size="xl" className="text-cream">{name}</Heading>
                 <p className="mt-4 max-w-3xl text-lg leading-relaxed text-cream/75">{description}</p>
@@ -143,9 +157,9 @@ export function AnimalCatalogPage({ group }: AnimalCatalogPageProps) {
           <div className="mt-12 flex flex-col items-start justify-between gap-5 rounded-sm bg-secondary-100 p-6 sm:flex-row sm:items-center md:p-8">
             <div>
               <Heading as="h2" size="md" className="text-charcoal">{locale === "es" ? "¿Busca otro animal?" : "Shopping for another animal?"}</Heading>
-              <p className="mt-2 text-charcoal-light">{locale === "es" ? "Regrese a la lista de animales de la tienda de Delhi." : "Return to the Delhi store’s animal list."}</p>
+              <p className="mt-2 text-charcoal-light">{locale === "es" ? `Regrese a la lista de animales de la tienda de ${storeName}.` : `Return to the ${storeName} store’s animal list.`}</p>
             </div>
-            <Button href="/products#delhi" variant="primary">{locale === "es" ? "Ver todos los animales" : "View all animals"}</Button>
+            <Button href={storeProductsHref} variant="primary">{locale === "es" ? "Ver todos los animales" : "View all animals"}</Button>
           </div>
         </Container>
       </Section>
