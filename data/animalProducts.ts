@@ -67,9 +67,20 @@ export const animalProductGroups: AnimalProductGroup[] = [
         titleEs: "Alimento para Ponedoras",
         items: [
           "Layer Crumble — 16% protein, 50 lb",
-          "Layer Pellet — 16% protein, 50 lb",
+          "Farmers Best Layer Pellet",
           "Delhi Super Egg — 20.80% protein, 50 lb",
         ],
+        itemImages: {
+          "Farmers Best Layer Pellet": "/images/poultry-game-birds/farmers-best-layer-pellet-bag.png",
+        },
+        itemDetails: {
+          "Farmers Best Layer Pellet": {
+            description:
+              "A complete layer feed formulated to support healthy laying hens and consistent egg production.",
+            highlights: ["50 lb bag", "16% protein"],
+            sizes: [],
+          },
+        },
       },
       {
         id: "chick-starter",
