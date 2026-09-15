@@ -84,7 +84,7 @@ export const animalProductGroups: AnimalProductGroup[] = [
         items: [
           "El Ranchero Cracked Corn",
           "Winner’s Scratch — 7-grain scratch with cracked corn, 9.5% protein, 75 lb",
-          "Super Scratch — 6-grain scratch with whole corn, 8.50% protein, 75 lb",
+          "Super Scratch",
           "Farmers Best Scratch",
         ],
         itemImages: {
@@ -92,12 +92,22 @@ export const animalProductGroups: AnimalProductGroup[] = [
             "/images/poultry-game-birds/el-ranchero-cracked-corn-bag.png",
             "/images/poultry-game-birds/el-ranchero-cracked-corn-feed.png",
           ],
+          "Super Scratch": [
+            "/images/poultry-game-birds/super-scratch-bag.png",
+            "/images/poultry-game-birds/super-scratch-feed.png",
+          ],
         },
         itemDetails: {
           "El Ranchero Cracked Corn": {
             description:
               "A quality cracked-corn feed that gives poultry and livestock a dependable energy source. Its broken texture is easy to eat and helps minimize feed waste.",
             highlights: ["80 lb bag", "11.50% protein"],
+            sizes: [],
+          },
+          "Super Scratch": {
+            description:
+              "A hearty six-grain scratch blend with whole corn for a satisfying, energy-rich feeding option for poultry.",
+            highlights: ["75 lb bag", "8.50% protein"],
             sizes: [],
           },
         },
