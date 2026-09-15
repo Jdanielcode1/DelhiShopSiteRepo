@@ -100,6 +100,10 @@ export const animalProductGroups: AnimalProductGroup[] = [
             "/images/poultry-game-birds/super-scratch-bag.png",
             "/images/poultry-game-birds/super-scratch-feed.png",
           ],
+          "Farmers Best Scratch": [
+            "/images/poultry-game-birds/farmers-best-scratch-bag.png",
+            "/images/poultry-game-birds/farmers-best-scratch-feed.png",
+          ],
         },
         itemDetails: {
           "El Ranchero Cracked Corn": {
@@ -118,6 +122,12 @@ export const animalProductGroups: AnimalProductGroup[] = [
             description:
               "A hearty six-grain scratch blend with whole corn for a satisfying, energy-rich feeding option for poultry.",
             highlights: ["75 lb bag", "8.50% protein"],
+            sizes: [],
+          },
+          "Farmers Best Scratch": {
+            description:
+              "A clean, straightforward scratch blend made with cracked corn, recleaned whole grain sorghum, and recleaned whole wheat for everyday poultry feeding.",
+            highlights: ["50 lb bag", "8.25% protein"],
             sizes: [],
           },
         },
