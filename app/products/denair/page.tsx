@@ -13,7 +13,7 @@ export default function DenairProductsPage() {
     <>
       <PageHero
         title={locale === "es" ? "Productos de Denair" : "Denair Products"}
-        backgroundImage="/images/products_we_carry.png"
+        backgroundImage="/images/front_store_denair.png"
       />
       <Section variant="cream" padding="sm">
         <Container>
