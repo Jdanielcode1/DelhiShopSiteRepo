@@ -18,20 +18,36 @@ export function AnimalCatalogPage({ group }: AnimalCatalogPageProps) {
 
   return (
     <>
-      <Section variant="dark" padding="md" className="pt-36 md:pt-40">
-        <Container>
+      <Section variant="dark" padding="md" className="relative overflow-hidden pt-36 md:pt-40">
+        {group.image && (
+          <>
+            <Image
+              src={group.image}
+              alt={locale === "es" ? group.imageAltEs ?? name : group.imageAltEn ?? name}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/75 to-charcoal/35" aria-hidden="true" />
+          </>
+        )}
+
+        <Container className="relative z-10">
           <Link href="/products#delhi" className="inline-flex items-center gap-2 text-sm font-semibold text-secondary-300 transition hover:text-cream">
             <span aria-hidden="true">←</span>
             {locale === "es" ? "Todos los animales" : "All animals"}
           </Link>
-          <div className="mt-7 flex max-w-4xl items-start gap-5 md:gap-7">
-            <span aria-hidden="true" className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-cream/10 text-4xl md:h-20 md:w-20 md:text-5xl">{group.icon}</span>
-            <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-secondary-300">
-                {locale === "es" ? "Productos de la Tienda de Delhi" : "Delhi Store Products"}
-              </p>
-              <Heading as="h1" size="xl" className="text-cream">{name}</Heading>
-              <p className="mt-4 max-w-3xl text-lg leading-relaxed text-cream/75">{description}</p>
+          <div className="mt-7">
+            <div className="flex max-w-4xl items-start gap-5 md:gap-7">
+              <span aria-hidden="true" className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-cream/10 text-4xl md:h-20 md:w-20 md:text-5xl">{group.icon}</span>
+              <div>
+                <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-secondary-300">
+                  {locale === "es" ? "Productos de la Tienda de Delhi" : "Delhi Store Products"}
+                </p>
+                <Heading as="h1" size="xl" className="text-cream">{name}</Heading>
+                <p className="mt-4 max-w-3xl text-lg leading-relaxed text-cream/75">{description}</p>
+              </div>
             </div>
           </div>
         </Container>

@@ -10,6 +10,9 @@ export interface AnimalProductCategory {
 export interface AnimalProductGroup {
   id: string;
   icon: string;
+  image?: string;
+  imageAltEn?: string;
+  imageAltEs?: string;
   nameEn: string;
   nameEs: string;
   descriptionEn: string;
@@ -22,6 +25,9 @@ export const animalProductGroups: AnimalProductGroup[] = [
   {
     id: "poultry-game-birds",
     icon: "🐓",
+    image: "/images/chickens.jpeg",
+    imageAltEn: "Live chickens in their outdoor coop",
+    imageAltEs: "Gallinas vivas en su gallinero al aire libre",
     nameEn: "Poultry & Game Birds",
     nameEs: "Aves de Corral y de Caza",
     descriptionEn: "Feed, flock care, housing supplies, and pest control for chicks, layers, poultry, and mature game birds.",
