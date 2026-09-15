@@ -19,6 +19,8 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
   const isDenair = storeSlug === "denair";
   const storeName = isDenair ? "Denair" : "Delhi";
   const storeProductsHref = `/products/${storeSlug}`;
+  const displayProductName = (item: string) =>
+    isDenair ? item.replace(/\bDelhi\b/g, "Denair") : item;
   const heroImage = isDenair && group.id === "poultry-game-birds"
     ? "/images/denair-poultry-game-birds.png"
     : group.image;
@@ -114,7 +116,7 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
                             />
                           </div>
                           <div className="flex flex-1 flex-col px-4 py-4">
-                            <span className="block font-semibold text-charcoal">{item}</span>
+                            <span className="block font-semibold text-charcoal">{displayProductName(item)}</span>
                             {category.itemDetails?.[item]?.description && (
                               <p className="mt-2 text-sm leading-relaxed text-charcoal-light">
                                 {category.itemDetails[item].description}
@@ -144,7 +146,7 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
                           <svg className="h-4 w-4 shrink-0 text-primary-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 0 1 0 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L8 12.586l7.293-7.293a1 1 0 0 1 1.414 0Z" clipRule="evenodd" />
                           </svg>
-                          <span>{item}</span>
+                          <span>{displayProductName(item)}</span>
                         </>
                       )}
                     </li>
