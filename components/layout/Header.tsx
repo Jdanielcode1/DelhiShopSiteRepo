@@ -17,6 +17,10 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const { locale, t, toggleLocale } = useLanguage();
+  const isDenairProductsPage = pathname === "/products/denair";
+  const headerBusinessName = isDenairProductsPage
+    ? "Denair Feed and Supply"
+    : businessInfo.name;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,11 +85,11 @@ export function Header() {
               <Link
                 href="/"
                 className="flex items-center gap-2 group"
-                aria-label="Delhi Feed and Supply Home"
+                aria-label={`${headerBusinessName} Home`}
               >
                 <Image
                   src="/images/delhiii-modified.png"
-                  alt={businessInfo.name}
+                  alt={headerBusinessName}
                   width={200}
                   height={200}
                   className="h-12 w-12 object-contain"
@@ -98,7 +102,7 @@ export function Header() {
                     isScrolled ? "text-charcoal" : "text-cream"
                   )}
                 >
-                  {businessInfo.name}
+                  {headerBusinessName}
                 </span>
               </Link>
 
