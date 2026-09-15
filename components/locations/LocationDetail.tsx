@@ -1,6 +1,7 @@
 "use client";
 
 import { PageHero } from "@/components/about";
+import { CategoryGrid } from "@/components/products";
 import { Button, ContactLinks, Container, Heading, Section, SocialLinks } from "@/components/ui";
 import { businessInfo, siteUrl, whatsappUrl } from "@/data/business";
 import { StoreHours } from "@/components/ui/StoreHours";
@@ -55,6 +56,8 @@ export function LocationDetail({ slug }: LocationDetailProps) {
             : "/images/front_store_denair.png"
         }
       />
+
+      {isDelhi && <CategoryGrid />}
 
       <Section variant="default" padding="xl">
         <Container>
