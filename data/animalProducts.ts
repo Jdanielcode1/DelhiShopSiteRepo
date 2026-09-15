@@ -83,7 +83,7 @@ export const animalProductGroups: AnimalProductGroup[] = [
         titleEs: "Mezclas Scratch",
         items: [
           "El Ranchero Cracked Corn",
-          "Winner’s Scratch — 7-grain scratch with cracked corn, 9.5% protein, 75 lb",
+          "Winner’s Scratch",
           "Super Scratch",
           "Farmers Best Scratch",
         ],
@@ -91,6 +91,10 @@ export const animalProductGroups: AnimalProductGroup[] = [
           "El Ranchero Cracked Corn": [
             "/images/poultry-game-birds/el-ranchero-cracked-corn-bag.png",
             "/images/poultry-game-birds/el-ranchero-cracked-corn-feed.png",
+          ],
+          "Winner’s Scratch": [
+            "/images/poultry-game-birds/winners-scratch-bag.png",
+            "/images/poultry-game-birds/winners-scratch-feed.png",
           ],
           "Super Scratch": [
             "/images/poultry-game-birds/super-scratch-bag.png",
@@ -102,6 +106,12 @@ export const animalProductGroups: AnimalProductGroup[] = [
             description:
               "A quality cracked-corn feed that gives poultry and livestock a dependable energy source. Its broken texture is easy to eat and helps minimize feed waste.",
             highlights: ["80 lb bag", "11.50% protein"],
+            sizes: [],
+          },
+          "Winner’s Scratch": {
+            description:
+              "A seven-grain scratch blend with cracked corn, made as a great warm-weather feeding choice for poultry.",
+            highlights: ["75 lb bag", "9.5% protein"],
             sizes: [],
           },
           "Super Scratch": {
