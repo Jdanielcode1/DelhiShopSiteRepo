@@ -112,7 +112,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   <li key={item.name}>
                     <details open={pathname.startsWith("/products")} className="group rounded-sm border border-secondary-200 bg-secondary-50/60">
                       <summary className="flex cursor-pointer list-none items-center justify-between rounded-sm px-4 py-3 text-lg font-medium text-charcoal marker:hidden hover:bg-secondary-100 [&::-webkit-details-marker]:hidden">
-                        {locale === "es" ? item.nameEs : item.name}
+                        {locale === "es" ? "Productos Disponibles En" : "Products Available At"}
                         <svg className="h-5 w-5 text-primary-700 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m6 9 6 6 6-6" />
                         </svg>

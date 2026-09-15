@@ -122,7 +122,13 @@ export function Header() {
                           : isScrolled ? "text-charcoal hover:text-primary-600" : "text-cream/90 hover:text-cream"
                       )}
                     >
-                      {locale === "es" ? item.nameEs : item.name}
+                      {isProducts
+                        ? locale === "es"
+                          ? "Productos Disponibles En"
+                          : "Products Available At"
+                        : locale === "es"
+                          ? item.nameEs
+                          : item.name}
                       {isProducts && (
                         <svg className="h-4 w-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m6 9 6 6 6-6" />
