@@ -6,7 +6,7 @@ export interface AnimalProductCategory {
   itemImages?: Record<string, string | string[]>;
   itemDetails?: Record<
     string,
-    { description?: string; highlights?: string[]; sizes: string[] }
+    { description?: string; benefits?: string[]; highlights?: string[]; sizes: string[] }
   >;
 }
 
@@ -109,10 +109,30 @@ export const animalProductGroups: AnimalProductGroup[] = [
         titleEn: "Keep Feed",
         titleEs: "Alimento de Mantenimiento",
         items: [
-          "Jose Guerrero Conditioner — 19.5% protein, 50 lb",
+          "Jose Guerrero Conditioner",
           "Jose Guerrero Keep Feed — 22% protein, 25 lb",
           "High Octane with Cracked Corn — 17.40% protein, 50 lb",
         ],
+        itemImages: {
+          "Jose Guerrero Conditioner": [
+            "/images/poultry-game-birds/jose-guerrero-conditioner-bag.png",
+            "/images/poultry-game-birds/jose-guerrero-conditioner-feed.png",
+          ],
+        },
+        itemDetails: {
+          "Jose Guerrero Conditioner": {
+            description:
+              "A premium conditioning feed made with quality grains, seeds, plant proteins, vitamins, and minerals to support strong, healthy, well-conditioned birds.",
+            benefits: [
+              "Supports muscle tone and conditioning",
+              "Promotes healthy feathers and appearance",
+              "Provides balanced energy for performance and maintenance",
+              "Fortified with essential nutrients",
+            ],
+            highlights: ["50 lb bag", "19.5% protein"],
+            sizes: [],
+          },
+        },
       },
       {
         id: "layer-feed",

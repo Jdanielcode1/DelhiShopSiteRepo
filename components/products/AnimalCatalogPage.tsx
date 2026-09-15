@@ -136,6 +136,16 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
                                 {category.itemDetails[item].description}
                               </p>
                             )}
+                            {category.itemDetails?.[item]?.benefits?.length ? (
+                              <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-charcoal-light">
+                                {category.itemDetails[item].benefits.map((benefit) => (
+                                  <li key={benefit} className="flex gap-2">
+                                    <span className="text-primary-600" aria-hidden="true">•</span>
+                                    <span>{benefit}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : null}
                             {category.itemDetails?.[item]?.highlights?.length ? (
                               <div className="mt-4 flex flex-wrap gap-2">
                                 {category.itemDetails[item].highlights.map((highlight) => (
