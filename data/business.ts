@@ -62,7 +62,6 @@ export const businessInfo = {
 
 export const navigation = [
   { name: "Home", nameEs: "Inicio", href: "/" },
-  { name: "Locations", nameEs: "Ubicaciones", href: "/locations" },
   { name: "Products", nameEs: "Productos", href: "/products" },
   { name: "Contact", nameEs: "Contacto", href: "/contact" },
 ];

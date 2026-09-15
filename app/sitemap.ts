@@ -7,7 +7,6 @@ export const dynamic = "force-static";
 
 const routes = [
   "",
-  "/locations",
   "/locations/delhi",
   "/locations/denair",
   "/products",
