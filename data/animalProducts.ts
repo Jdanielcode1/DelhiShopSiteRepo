@@ -41,15 +41,61 @@ export const animalProductGroups: AnimalProductGroup[] = [
         titleEn: "Game Bird Maintenance",
         titleEs: "Mantenimiento para Aves de Caza",
         items: [
-          "Monse’s Mix — 10.10% protein",
-          "Gutierrez Game Bird — 14.70% protein, cracked or whole, 50 lb or 80 lb",
-          "Delhi El Patron — 16% protein, cracked or whole",
-          "Delhi Game Bird Mix No Milo — 14.90% protein, cracked or whole",
-          "Delhi El Justo Game Bird Mix — 16.25% protein, cracked or whole",
-          "Economy Stag Game Mix — 11.50% protein, cracked or whole",
-          "Martino Mix — 15.60% protein",
+          "Monse’s Mix",
+          "Gutierrez Game Bird",
+          "Delhi El Patron",
+          "Delhi Game Bird Mix No Milo",
+          "Delhi El Justo Game Bird Mix",
+          "Economy Stag Game Mix",
+          "Martino Mix",
           "TMC No Milo — 16% protein, 50 lb",
         ],
+        itemImages: {
+          "Monse’s Mix": "/images/poultry-game-birds/farmers-best-game-bird-feed-bag.png",
+          "Gutierrez Game Bird": "/images/poultry-game-birds/farmers-best-game-bird-feed-bag.png",
+          "Delhi El Patron": "/images/poultry-game-birds/farmers-best-game-bird-feed-bag.png",
+          "Delhi Game Bird Mix No Milo": "/images/poultry-game-birds/farmers-best-game-bird-feed-bag.png",
+          "Delhi El Justo Game Bird Mix": "/images/poultry-game-birds/farmers-best-game-bird-feed-bag.png",
+          "Economy Stag Game Mix": "/images/poultry-game-birds/farmers-best-game-bird-feed-bag.png",
+          "Martino Mix": "/images/poultry-game-birds/farmers-best-game-bird-feed-bag.png",
+        },
+        itemDetails: {
+          "Monse’s Mix": {
+            description: "A balanced maintenance mix for everyday game bird feeding.",
+            highlights: ["10.10% protein"],
+            sizes: [],
+          },
+          "Gutierrez Game Bird": {
+            description: "A versatile game bird feed available in cracked or whole grain to suit your feeding preference.",
+            highlights: ["14.70% protein", "Cracked or whole", "50 lb & 80 lb"],
+            sizes: [],
+          },
+          "Delhi El Patron": {
+            description: "A dependable game bird mix available in cracked or whole grain options.",
+            highlights: ["16% protein", "Cracked or whole"],
+            sizes: [],
+          },
+          "Delhi Game Bird Mix No Milo": {
+            description: "A no-milo game bird mix available in cracked or whole grain options.",
+            highlights: ["14.90% protein", "Cracked or whole"],
+            sizes: [],
+          },
+          "Delhi El Justo Game Bird Mix": {
+            description: "A game bird mix offered in cracked or whole grain to fit your preferred feeding style.",
+            highlights: ["16.25% protein", "Cracked or whole"],
+            sizes: [],
+          },
+          "Economy Stag Game Mix": {
+            description: "An economical game bird mix available in cracked or whole grain options.",
+            highlights: ["11.50% protein", "Cracked or whole"],
+            sizes: [],
+          },
+          "Martino Mix": {
+            description: "A dependable game bird feed for regular flock care.",
+            highlights: ["15.60% protein"],
+            sizes: [],
+          },
+        },
       },
       {
         id: "keep-feed",
@@ -68,11 +114,12 @@ export const animalProductGroups: AnimalProductGroup[] = [
         items: [
           "Farmers Best Layer Crumble",
           "Farmers Best Layer Pellet",
-          "Delhi Super Egg — 20.80% protein, 50 lb",
+          "Delhi Super Egg",
         ],
         itemImages: {
           "Farmers Best Layer Crumble": "/images/poultry-game-birds/farmers-best-layer-crumble-bag.png",
           "Farmers Best Layer Pellet": "/images/poultry-game-birds/farmers-best-layer-pellet-bag.png",
+          "Delhi Super Egg": "/images/poultry-game-birds/farmers-best-game-bird-feed-bag.png",
         },
         itemDetails: {
           "Farmers Best Layer Crumble": {
@@ -85,6 +132,11 @@ export const animalProductGroups: AnimalProductGroup[] = [
             description:
               "A complete layer feed formulated to support healthy laying hens and consistent egg production.",
             highlights: ["50 lb bag", "16% protein"],
+            sizes: [],
+          },
+          "Delhi Super Egg": {
+            description: "A higher-protein layer feed formulated to support productive laying hens.",
+            highlights: ["50 lb bag", "20.80% protein"],
             sizes: [],
           },
         },
