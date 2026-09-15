@@ -57,7 +57,7 @@ export function LocationDetail({ slug }: LocationDetailProps) {
         }
       />
 
-      {isDelhi && <CategoryGrid />}
+      <CategoryGrid />
 
       <Section variant="default" padding="xl">
         <Container>
