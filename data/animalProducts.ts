@@ -48,7 +48,7 @@ export const animalProductGroups: AnimalProductGroup[] = [
           "Delhi El Justo Game Bird Mix",
           "Economy Stag Game Mix",
           "Martino Mix",
-          "TMC No Milo — 16% protein, 50 lb",
+          "TMC No Milo",
         ],
         itemImages: {
           "Monse’s Mix": "/images/poultry-game-birds/farmers-best-game-bird-feed-bag.png",
@@ -58,6 +58,7 @@ export const animalProductGroups: AnimalProductGroup[] = [
           "Delhi El Justo Game Bird Mix": "/images/poultry-game-birds/farmers-best-game-bird-feed-bag.png",
           "Economy Stag Game Mix": "/images/poultry-game-birds/farmers-best-game-bird-feed-bag.png",
           "Martino Mix": "/images/poultry-game-birds/farmers-best-game-bird-feed-bag.png",
+          "TMC No Milo": "/images/poultry-game-birds/tmc-no-milo-bag.png",
         },
         itemDetails: {
           "Monse’s Mix": {
@@ -93,6 +94,12 @@ export const animalProductGroups: AnimalProductGroup[] = [
           "Martino Mix": {
             description: "A dependable game bird feed for regular flock care.",
             highlights: ["15.60% protein"],
+            sizes: [],
+          },
+          "TMC No Milo": {
+            description:
+              "A premium whole-grain poultry ration with whole corn and no milo, providing balanced nutrition to support flock health, growth, and performance.",
+            highlights: ["50 lb bag", "16% protein"],
             sizes: [],
           },
         },
