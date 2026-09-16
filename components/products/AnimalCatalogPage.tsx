@@ -113,7 +113,7 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
                         <>
                           <div
                             className={cn(
-                              "grid w-full overflow-hidden bg-secondary-100",
+                              "grid w-full overflow-hidden bg-background",
                               Array.isArray(category.itemImages[item])
                                 ? category.itemImages[item].length > 2
                                   ? "grid-cols-3"
@@ -125,13 +125,13 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
                               ? category.itemImages[item]
                               : [category.itemImages[item]]
                             ).map((image, index) => (
-                              <div key={image} className="relative aspect-square overflow-hidden">
+                              <div key={image} className="relative aspect-square overflow-hidden bg-background">
                                 <Image
                                   src={image}
                                   alt={`${item}${index === 0 ? " bag" : " feed close-up"}`}
                                   fill
                                   sizes="(min-width: 1280px) 12.5vw, (min-width: 1024px) 16.5vw, (min-width: 640px) 25vw, 50vw"
-                                  className="object-cover transition-transform duration-300 hover:scale-[1.03]"
+                                  className="object-contain p-2 transition-transform duration-300 hover:scale-[1.03]"
                                 />
                               </div>
                             ))}
