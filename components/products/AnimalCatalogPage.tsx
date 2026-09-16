@@ -12,7 +12,7 @@ interface AnimalCatalogPageProps {
   storeSlug?: "delhi" | "denair";
 }
 
-type CategoryHero = { image: string; altEn: string; altEs: string; objectPosition?: string };
+type CategoryHero = { image: string; altEn: string; altEs: string };
 
 const categoryHeroes: Record<string, Record<"delhi" | "denair", CategoryHero>> = {
   horses: {
@@ -33,7 +33,7 @@ const categoryHeroes: Record<string, Record<"delhi" | "denair", CategoryHero>> =
   },
   dogs: {
     denair: { image: "/images/denair-dogs-hero.png", altEn: "Live Yorkshire terrier in a field near Denair", altEs: "Yorkshire terrier vivo en un campo cerca de Denair" },
-    delhi: { image: "/images/delhi-dogs-hero.png", altEn: "Live black Newfoundland dog in a field near Delhi", altEs: "Perro terranova negro vivo en un campo cerca de Delhi", objectPosition: "70% 18%" },
+    delhi: { image: "/images/delhi-dogs-hero.png", altEn: "Live black Newfoundland dog in a field near Delhi", altEs: "Perro terranova negro vivo en un campo cerca de Delhi" },
   },
   cats: {
     denair: { image: "/images/denair-cats-hero.png", altEn: "Live orange Persian cat near Denair", altEs: "Gato persa naranja vivo cerca de Denair" },
@@ -92,8 +92,7 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
               fill
               priority
               sizes="100vw"
-              className="object-cover"
-              style={categoryHero?.objectPosition ? { objectPosition: categoryHero.objectPosition } : undefined}
+              className="object-contain object-right"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/75 to-charcoal/35" aria-hidden="true" />
           </>
