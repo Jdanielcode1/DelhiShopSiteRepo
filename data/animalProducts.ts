@@ -62,7 +62,8 @@ export const animalProductGroups: AnimalProductGroup[] = [
         },
         itemDetails: {
           "Monse’s Mix": {
-            description: "A balanced maintenance mix for everyday game bird feeding.",
+            description:
+              "A custom grain-based feed for everyday feeding, made for customers seeking a simple, economical option. It contains no added pellets and combines grains with worms and larvae for variety and a natural source of animal protein. A straightforward, practical choice focused on grains, simplicity, and value.",
             highlights: ["10.10% protein"],
             sizes: [],
           },
