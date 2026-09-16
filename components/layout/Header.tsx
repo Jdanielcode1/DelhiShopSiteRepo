@@ -17,8 +17,9 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const { locale, t, toggleLocale } = useLanguage();
-  const isDenairProductsPage = pathname === "/products/denair";
-  const headerBusinessName = isDenairProductsPage
+  const isDenairPage =
+    pathname === "/locations/denair" || pathname.startsWith("/products/denair");
+  const headerBusinessName = isDenairPage
     ? "Denair Feed and Supply"
     : businessInfo.name;
 
