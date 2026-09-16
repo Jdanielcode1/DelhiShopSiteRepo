@@ -235,6 +235,10 @@ export const animalProductGroups: AnimalProductGroup[] = [
           "Re-Cleaned Yellow Whole Corn": "/images/poultry-game-birds/recleaned-yellow-whole-corn.png",
           "Yellow Popcorn": "/images/poultry-game-birds/yellow-popcorn.png",
           "Bug Buffet": "/images/poultry-game-birds/bug-buffet.png",
+          "Pumpkin Spice & Everything Nice": [
+            "/images/poultry-game-birds/pumpkin-spice-treat-bag.png",
+            "/images/poultry-game-birds/pumpkin-spice-treat-ingredients.png",
+          ],
         },
         itemDetails: {
           "El Ranchero Cracked Corn": {
@@ -273,6 +277,12 @@ export const animalProductGroups: AnimalProductGroup[] = [
             description:
               "A protein-packed poultry treat that combines two favorite insects for a wholesome reward and naturally engaging flock activity.",
             highlights: ["1 lb bag"],
+            sizes: [],
+          },
+          "Pumpkin Spice & Everything Nice": {
+            description:
+              "A flavorful poultry treat blending mealworms, pumpkin seeds, chili pepper flakes, corn, oats, sunflower seeds, safflower, and grubs—each chosen for its nutritional benefits.",
+            highlights: ["3 lb bag", "16.2% protein"],
             sizes: [],
           },
         },
