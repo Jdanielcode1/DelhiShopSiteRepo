@@ -19,6 +19,8 @@ export function Header() {
   const { locale, t, toggleLocale } = useLanguage();
   const isDenairPage =
     pathname === "/locations/denair" || pathname.startsWith("/products/denair");
+  const isStoreLocationPage =
+    pathname === "/locations/delhi" || pathname === "/locations/denair";
   const headerBusinessName = isDenairPage
     ? "Denair Feed and Supply"
     : businessInfo.name;
@@ -106,7 +108,7 @@ export function Header() {
                   >
                     {headerBusinessName}
                   </span>
-                  {!isDenairPage && (
+                  {!isStoreLocationPage && (
                     <span
                       className={cn(
                         "mt-1 font-heading text-lg font-bold leading-none transition-colors duration-300",
