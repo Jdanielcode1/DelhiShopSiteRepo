@@ -74,7 +74,7 @@ export const animalProductGroups: AnimalProductGroup[] = [
           },
           "Delhi El Patron": {
             description:
-              "El Patrón Game Bird Feed is a premium, nutrient-rich feed formulated for mature game birds, breeding birds, and maintenance flocks. Made with a diverse blend of wheat, corn, barley, peas, oats, and sunflower seeds, it provides balanced everyday nutrition. Essential amino acids, omega-rich flaxseed, sunflower seeds, fish oil, and salmon oil support proper nutrition, while essential vitamins, minerals, probiotics, and fermentation products help support digestive health. A well-rounded blend for maintenance, breeding, and overall condition.",
+              "A complete, nutrient-rich feed for mature game birds formulated with 16% protein and 5.8% fat. El Patron combines wheat, corn, popcorn, barley, peas, oats, safflower, sunflower, and flax with fish oil and soybean oil for a variety of energy- and omega-rich ingredients. The formula is fortified with essential amino acids, vitamins, minerals, yeast cultures, and fermentation products to support balanced nutrition for mature birds.",
             highlights: ["16% protein", "Cracked or whole"],
             sizes: [],
           },
@@ -97,7 +97,8 @@ export const animalProductGroups: AnimalProductGroup[] = [
             sizes: [],
           },
           "Martino Mix": {
-            description: "A dependable game bird feed for regular flock care.",
+            description:
+              "A complete mature game bird feed featuring a distinctive grain-and-seed combination with 15.6% protein and 3.2% fat. Martino's Mix combines whole wheat and cracked corn with whole popcorn, green and yellow peas, red lentils, oats, safflower, and sunflower seeds. Fish oil, alfalfa, rice bran, vitamins, minerals, amino acids, and fermentation products round out the formula for complete everyday feeding.",
             highlights: ["15.60% protein"],
             sizes: [],
           },
