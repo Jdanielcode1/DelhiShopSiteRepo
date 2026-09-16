@@ -58,7 +58,7 @@ export function Hero() {
                   {delhi.street}, {delhi.city}
                 </p>
               </div>
-              <Button href="/locations/delhi" variant="accent">
+              <Button href="/locations/delhi" variant="primary">
                 {t.exploreDelhiStore}
               </Button>
             </div>
@@ -82,7 +82,7 @@ export function Hero() {
                   {denair.street}, {denair.city}
                 </p>
               </div>
-              <Button href="/locations/denair" variant="accent">
+              <Button href="/locations/denair" variant="primary">
                 {t.exploreDenairStore}
               </Button>
             </div>
