@@ -90,14 +90,19 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
       <Section variant="dark" padding="md" className="relative overflow-hidden pt-36 md:pt-40">
         {heroImage && (
           <>
-            <Image
-              src={heroImage}
-              alt={heroImageAlt}
-              fill
-              priority
-              sizes="100vw"
-              className="object-contain object-right"
-            />
+            {/* Keep each animal's complete frame visible. The supplied category
+                photos are landscape, while this hero is much wider, so a
+                crop-to-fill image cuts off animals at the top or sides. */}
+            <div className="absolute inset-y-0 right-0 hidden w-1/2 md:block">
+              <Image
+                src={heroImage}
+                alt={heroImageAlt}
+                fill
+                priority
+                sizes="50vw"
+                className="object-contain object-right"
+              />
+            </div>
             <div className="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/75 to-charcoal/35" aria-hidden="true" />
           </>
         )}

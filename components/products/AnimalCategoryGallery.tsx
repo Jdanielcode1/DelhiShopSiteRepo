@@ -75,14 +75,14 @@ export function AnimalCategoryGallery({ storeSlug = "delhi" }: AnimalCategoryGal
                 <Link
                   key={group.id}
                   href={animalHref(group.id)}
-                  className="group relative isolate min-h-72 overflow-hidden rounded-sm bg-charcoal shadow-sm transition hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                  className="group relative isolate aspect-[16/9] overflow-hidden rounded-sm bg-charcoal shadow-sm transition hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
                 >
                   <Image
                     src={animalImages[storeSlug][group.id]}
                     alt={name}
                     fill
                     sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover transition duration-500 group-hover:scale-105"
+                    className="object-contain transition duration-500 group-hover:scale-[1.02]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/25 to-transparent" aria-hidden="true" />
                   <div className="absolute inset-x-0 bottom-0 p-6 text-cream">
