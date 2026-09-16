@@ -234,6 +234,7 @@ export const animalProductGroups: AnimalProductGroup[] = [
           ],
           "Re-Cleaned Yellow Whole Corn": "/images/poultry-game-birds/recleaned-yellow-whole-corn.png",
           "Yellow Popcorn": "/images/poultry-game-birds/yellow-popcorn.png",
+          "Bug Buffet": "/images/poultry-game-birds/bug-buffet.png",
         },
         itemDetails: {
           "El Ranchero Cracked Corn": {
@@ -266,6 +267,12 @@ export const animalProductGroups: AnimalProductGroup[] = [
           },
           "Yellow Popcorn": {
             highlights: ["50 lb bag"],
+            sizes: [],
+          },
+          "Bug Buffet": {
+            description:
+              "A protein-packed poultry treat that combines two favorite insects for a wholesome reward and naturally engaging flock activity.",
+            highlights: ["1 lb bag"],
             sizes: [],
           },
         },
