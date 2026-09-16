@@ -26,21 +26,33 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
     group.id === "poultry-game-birds" &&
     categoryId === "scratch" &&
     (item === "Bug Buffet" || item === "Pumpkin Spice & Everything Nice");
-  const heroImage = group.id === "horses"
-    ? isDenair
-      ? "/images/denair-horses-hero.png"
-      : "/images/delhi-horses-hero.png"
+  const heroImage = (group.id === "horses" || group.id === "cattle")
+    ? group.id === "horses"
+      ? isDenair
+        ? "/images/denair-horses-hero.png"
+        : "/images/delhi-horses-hero.png"
+      : isDenair
+        ? "/images/denair-cattle-hero.png"
+        : "/images/delhi-cattle-hero.png"
     : isDenair && group.id === "poultry-game-birds"
       ? "/images/denair-poultry-game-birds.png"
       : group.image;
-  const heroImageAlt = group.id === "horses"
-    ? locale === "es"
-      ? isDenair
-        ? "Caballo castaño vivo en un prado cerca de Denair"
-        : "Caballo tordo vivo trotando por un campo cerca de Delhi"
-      : isDenair
-        ? "Live chestnut horse in a pasture near Denair"
-        : "Live dapple gray horse trotting through a field near Delhi"
+  const heroImageAlt = (group.id === "horses" || group.id === "cattle")
+    ? group.id === "horses"
+      ? locale === "es"
+        ? isDenair
+          ? "Caballo castaño vivo en un prado cerca de Denair"
+          : "Caballo tordo vivo trotando por un campo cerca de Delhi"
+        : isDenair
+          ? "Live chestnut horse in a pasture near Denair"
+          : "Live dapple gray horse trotting through a field near Delhi"
+      : locale === "es"
+        ? isDenair
+          ? "Vaca Angus negra viva en un pasto cerca de Denair"
+          : "Vaca Hereford roja y blanca viva en un campo cerca de Delhi"
+        : isDenair
+          ? "Live black Angus cow in a pasture near Denair"
+          : "Live red and white Hereford cow in a field near Delhi"
     : isDenair && group.id === "poultry-game-birds"
       ? locale === "es"
         ? "Gallinas y aves de caza vivas en una granja cerca de Denair"
