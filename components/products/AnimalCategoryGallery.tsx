@@ -22,6 +22,7 @@ const animalImages: Record<"delhi" | "denair", Record<string, string>> = {
     rabbits: "/images/delhi-rabbits-hero.png",
     "pet-birds": "/images/delhi-pet-birds-hero.png",
     "aquatic-pets": "/images/delhi-aquatic-pets-hero.png",
+    "farm-barn": "/images/farm-barn-hero.png",
   },
   denair: {
     "poultry-game-birds": "/images/denair-poultry-game-birds.png",
@@ -34,6 +35,7 @@ const animalImages: Record<"delhi" | "denair", Record<string, string>> = {
     rabbits: "/images/denair-rabbits-hero.png",
     "pet-birds": "/images/denair-pet-birds-hero.png",
     "aquatic-pets": "/images/denair-aquatic-pets-hero.png",
+    "farm-barn": "/images/farm-barn-hero.png",
   },
 };
 
