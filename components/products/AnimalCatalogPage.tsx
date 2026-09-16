@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn, descriptionParagraphs } from "@/lib/utils";
 import { Button, Container, Heading, Section } from "@/components/ui";
 import type { AnimalProductGroup } from "@/data/animalProducts";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -139,9 +139,11 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
                           <div className="flex flex-1 flex-col px-4 py-4">
                             <span className="block font-semibold text-charcoal">{displayProductName(item)}</span>
                             {category.itemDetails?.[item]?.description && (
-                              <p className="mt-2 text-sm leading-relaxed text-charcoal-light">
-                                {category.itemDetails[item].description}
-                              </p>
+                              <div className="mt-3 space-y-2 border-l-2 border-primary-300 pl-3 text-sm leading-relaxed text-charcoal-light">
+                                {descriptionParagraphs(category.itemDetails[item].description).map((paragraph) => (
+                                  <p key={paragraph}>{paragraph}</p>
+                                ))}
+                              </div>
                             )}
                             {category.itemDetails?.[item]?.benefits?.length ? (
                               <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-charcoal-light">

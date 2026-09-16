@@ -5,6 +5,7 @@ import { Button, ContactLinks, Container, Heading, Section } from "@/components/
 import { businessInfo, whatsappUrl } from "@/data/business";
 import type { CustomFeed } from "@/data/customFeeds";
 import { useLanguage } from "@/lib/LanguageContext";
+import { descriptionParagraphs } from "@/lib/utils";
 
 interface CustomFeedDetailProps {
   feed: CustomFeed;
@@ -36,9 +37,11 @@ export function CustomFeedDetail({ feed }: CustomFeedDetailProps) {
               <Heading as="h1" size="xl" className="mt-3 text-charcoal">
                 {feed.name}
               </Heading>
-              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-charcoal-light">
-                {description}
-              </p>
+              <div className="mt-5 max-w-2xl space-y-3 border-l-4 border-primary-300 pl-5 text-lg leading-relaxed text-charcoal-light">
+                {descriptionParagraphs(description).map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
 
               <dl className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
                 <div className="rounded-sm border border-secondary-200 bg-background p-4">
