@@ -536,7 +536,7 @@ export const animalProductGroups: AnimalProductGroup[] = [
     descriptionEs: "Productos básicos para toda la granja, incluidos granos, camas, marcas de salud animal y control de plagas del establo.",
     categories: [
       { id: "grains", titleEn: "Grains", titleEs: "Granos", items: ["Whole Barley", "Whole Corn", "Cracked Corn", "Rolled Corn", "Whole Oats", "Whole Wheat", "Whole Milo", "Organic Oats"] },
-      { id: "bedding", titleEn: "Bedding", titleEs: "Material para Camas", items: ["Wood Shavings", "Mini Flakes (Sawdust)", "Rice Hulls", "Diatomaceous Earth", "Straw"] },
+      { id: "bedding", titleEn: "Bedding", titleEs: "Material para Camas", items: ["Wood Shavings", "Mini Flakes (Sawdust)", "Rice Hulls", "Diatomaceous Earth", "Limestone Flour", "Straw"] },
       { id: "health-brands", titleEn: "Animal Health Brands", titleEs: "Marcas de Salud Animal", items: ["Merck Animal Health", "Elanco Animal Health", "Zoetis", "Huvepharma", "Durvet", "Dr. Naylor", "First Companion Veterinary Products", "Aspen Veterinary Resources"] },
       { id: "pest-control", titleEn: "Barn Pest Control", titleEs: "Control de Plagas del Establo", items: ["Prozap", "Country Vet", "Martin’s Products", "Insecticides", "Fly Control", "Barn Pest Control"] },
       {
