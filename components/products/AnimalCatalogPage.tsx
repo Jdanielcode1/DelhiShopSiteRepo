@@ -26,18 +26,22 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
     group.id === "poultry-game-birds" &&
     categoryId === "scratch" &&
     (item === "Bug Buffet" || item === "Pumpkin Spice & Everything Nice");
-  const heroImage = (group.id === "horses" || group.id === "cattle")
+  const heroImage = (group.id === "horses" || group.id === "cattle" || group.id === "goats-sheep")
     ? group.id === "horses"
       ? isDenair
         ? "/images/denair-horses-hero.png"
         : "/images/delhi-horses-hero.png"
-      : isDenair
-        ? "/images/denair-cattle-hero.png"
-        : "/images/delhi-cattle-hero.png"
+      : group.id === "cattle"
+        ? isDenair
+          ? "/images/denair-cattle-hero.png"
+          : "/images/delhi-cattle-hero.png"
+        : isDenair
+          ? "/images/denair-goats-sheep-hero.png"
+          : "/images/delhi-goats-sheep-hero.png"
     : isDenair && group.id === "poultry-game-birds"
       ? "/images/denair-poultry-game-birds.png"
       : group.image;
-  const heroImageAlt = (group.id === "horses" || group.id === "cattle")
+  const heroImageAlt = (group.id === "horses" || group.id === "cattle" || group.id === "goats-sheep")
     ? group.id === "horses"
       ? locale === "es"
         ? isDenair
@@ -46,13 +50,21 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
         : isDenair
           ? "Live chestnut horse in a pasture near Denair"
           : "Live dapple gray horse trotting through a field near Delhi"
-      : locale === "es"
-        ? isDenair
-          ? "Vaca Angus negra viva en un pasto cerca de Denair"
-          : "Vaca Hereford roja y blanca viva en un campo cerca de Delhi"
-        : isDenair
-          ? "Live black Angus cow in a pasture near Denair"
-          : "Live red and white Hereford cow in a field near Delhi"
+      : group.id === "cattle"
+        ? locale === "es"
+          ? isDenair
+            ? "Vaca Angus negra viva en un pasto cerca de Denair"
+            : "Vaca Hereford roja y blanca viva en un campo cerca de Delhi"
+          : isDenair
+            ? "Live black Angus cow in a pasture near Denair"
+            : "Live red and white Hereford cow in a field near Delhi"
+        : locale === "es"
+          ? isDenair
+            ? "Cabras y ovejas vivas en un pasto cerca de Denair"
+            : "Cabras y ovejas vivas en un campo cerca de Delhi"
+          : isDenair
+            ? "Live goats and sheep in a pasture near Denair"
+            : "Live goats and sheep in a field near Delhi"
     : isDenair && group.id === "poultry-game-birds"
       ? locale === "es"
         ? "Gallinas y aves de caza vivas en una granja cerca de Denair"
