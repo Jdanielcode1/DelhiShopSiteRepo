@@ -109,8 +109,8 @@ export function Header() {
                   {!isDenairPage && (
                     <span
                       className={cn(
-                        "mt-1 text-sm font-semibold leading-none transition-colors duration-300",
-                        isScrolled ? "text-charcoal-light" : "text-cream/80"
+                        "mt-1 font-heading text-lg font-bold leading-none transition-colors duration-300",
+                        isScrolled ? "text-charcoal" : "text-cream"
                       )}
                     >
                       Denair Feed and Supply
