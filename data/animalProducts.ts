@@ -145,7 +145,7 @@ export const animalProductGroups: AnimalProductGroup[] = [
           },
           "Jose Guerrero Keep Feed": {
             description:
-              "A whole-corn, pellet-based blend of clean grains and protein-rich pellets, with limestone added to support digestion in chickens and roosters.",
+              "A 22% protein blend of clean, quality grains and protein-packed pellets with limestone added to aid digestion. This whole-corn, pellet-based feed is made for chickens and roosters and comes in 25 lb bags.",
             highlights: ["25 lb bag", "22% protein"],
             sizes: [],
           },
