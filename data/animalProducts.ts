@@ -73,7 +73,8 @@ export const animalProductGroups: AnimalProductGroup[] = [
             sizes: [],
           },
           "Delhi El Patron": {
-            description: "A dependable game bird mix available in cracked or whole grain options.",
+            description:
+              "El Patrón Game Bird Feed is a premium, nutrient-rich feed formulated for mature game birds, breeding birds, and maintenance flocks. Made with a diverse blend of wheat, corn, barley, peas, oats, and sunflower seeds, it provides balanced everyday nutrition. Essential amino acids, omega-rich flaxseed, sunflower seeds, fish oil, and salmon oil support proper nutrition, while essential vitamins, minerals, probiotics, and fermentation products help support digestive health. A well-rounded blend for maintenance, breeding, and overall condition.",
             highlights: ["16% protein", "Cracked or whole"],
             sizes: [],
           },
