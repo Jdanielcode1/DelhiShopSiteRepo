@@ -19,10 +19,10 @@ export function Hero() {
 
       <Container className="relative z-10 py-32 text-center md:py-40">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm uppercase tracking-[0.2em] text-primary-700 animate-fade-in md:text-base">
+          <div className="mb-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm uppercase tracking-[0.2em] text-charcoal animate-fade-in md:text-base">
             <span>{t.welcomeTo}</span>
             <span className="whitespace-nowrap">Delhi Feed and Supply</span>
-            <span aria-hidden="true" className="text-secondary-600">&amp;</span>
+            <span aria-hidden="true">&amp;</span>
             <span className="whitespace-nowrap">Denair Feed and Supply</span>
           </div>
 
