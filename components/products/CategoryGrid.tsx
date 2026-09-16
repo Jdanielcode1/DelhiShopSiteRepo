@@ -56,7 +56,7 @@ const denairStockedBrands = [
   { name: "Rival Show Feeds", image: "rival-show-feeds.jpg" },
   { name: "Lindner Show Feeds", image: "lindner-show-feeds.png" },
   { name: "StandAlone Feed", image: "standalone-feed.png" },
-  { name: "Featured Denair feed brand", image: "logo-sm.png" },
+  { name: "ShowMaker", image: "showmaker.png" },
   { name: "Show-Rite", image: "show-rite.png" },
   { name: "Essential Feeds", image: "essential-feeds.png" },
 ] as const;
