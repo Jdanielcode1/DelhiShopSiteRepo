@@ -156,6 +156,9 @@ export const translations = {
     whatWeCarry: "What We Carry",
     weCarryProductsFor: "We carry products for:",
     askAboutAvailability: "Ask About Availability",
+    denairStockedBrands: "Always Stocked at Denair",
+    denairStockedBrandsDescription:
+      "Select feed brands we keep in stock year-round at our Denair location.",
     brandsWeCarry: "Brands We Carry",
     brandsDescription:
       "Trusted feed, animal health, grooming, and pet care brands available in our stores.",
@@ -393,6 +396,9 @@ export const translations = {
     whatWeCarry: "Lo Que Ofrecemos",
     weCarryProductsFor: "Llevamos productos para:",
     askAboutAvailability: "Pregunte por Disponibilidad",
+    denairStockedBrands: "Siempre en Stock en Denair",
+    denairStockedBrandsDescription:
+      "Marcas selectas de alimento que mantenemos en stock todo el año en nuestra ubicación de Denair.",
     brandsWeCarry: "Marcas Que Ofrecemos",
     brandsDescription:
       "Marcas confiables de alimento, salud animal, cuidado y suministros para mascotas disponibles en nuestras tiendas.",

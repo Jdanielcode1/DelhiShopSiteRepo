@@ -51,6 +51,16 @@ const brandLogos = [
 
 const brandLogoRows = [brandLogos.slice(0, 11), brandLogos.slice(11, 22), brandLogos.slice(22)];
 
+const denairStockedBrands = [
+  { name: "Modesto Milling", image: "modesto-milling.jpg" },
+  { name: "Rival Show Feeds", image: "rival-show-feeds.jpg" },
+  { name: "Lindner Show Feeds", image: "lindner-show-feeds.png" },
+  { name: "StandAlone Feed", image: "standalone-feed.png" },
+  { name: "Featured Denair feed brand", image: "logo-sm.png" },
+  { name: "Show-Rite", image: "show-rite.png" },
+  { name: "Essential Feeds", image: "essential-feeds.png" },
+] as const;
+
 export function CategoryGrid({ sectionId, title, description, storeSlug = "delhi" }: CategoryGridProps) {
   const { locale, t } = useLanguage();
   const animalHref = (animalId: string) =>
@@ -69,6 +79,36 @@ export function CategoryGrid({ sectionId, title, description, storeSlug = "delhi
         )}
 
         <div className="space-y-16">
+          {storeSlug === "denair" && (
+            <ScrollReveal>
+              <div>
+                <Heading as="h2" size="lg" className="mb-3 text-charcoal">
+                  {t.denairStockedBrands}
+                </Heading>
+                <p className="mb-6 max-w-3xl text-charcoal-light">
+                  {t.denairStockedBrandsDescription}
+                </p>
+                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+                  {denairStockedBrands.map((brand) => (
+                    <div
+                      key={brand.image}
+                      className="flex h-32 items-center justify-center rounded-sm border border-secondary-200 bg-white p-3 shadow-sm sm:h-36"
+                    >
+                      <Image
+                        src={`/images/denair-brands/${brand.image}`}
+                        alt={`${brand.name} logo`}
+                        width={1024}
+                        height={768}
+                        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          )}
+
           <ScrollReveal>
             <div>
               <Heading as="h2" size="lg" className="mb-3 text-charcoal">{t.brandsWeCarry}</Heading>
