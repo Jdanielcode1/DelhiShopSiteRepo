@@ -110,7 +110,9 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
                             className={cn(
                               "grid w-full overflow-hidden bg-secondary-100",
                               Array.isArray(category.itemImages[item])
-                                ? "grid-cols-2"
+                                ? category.itemImages[item].length > 2
+                                  ? "grid-cols-3"
+                                  : "grid-cols-2"
                                 : "grid-cols-1"
                             )}
                           >

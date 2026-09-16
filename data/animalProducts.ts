@@ -239,6 +239,11 @@ export const animalProductGroups: AnimalProductGroup[] = [
             "/images/poultry-game-birds/pumpkin-spice-treat-bag.png",
             "/images/poultry-game-birds/pumpkin-spice-treat-ingredients.png",
           ],
+          "Petfu Apollo 1": [
+            "/images/poultry-game-birds/petfu-apollo-1-bag.png",
+            "/images/poultry-game-birds/petfu-apollo-1-treat.png",
+            "/images/poultry-game-birds/petfu-apollo-1-feeds-all.png",
+          ],
         },
         itemDetails: {
           "El Ranchero Cracked Corn": {
@@ -284,6 +289,18 @@ export const animalProductGroups: AnimalProductGroup[] = [
               "A flavorful poultry treat blending mealworms, pumpkin seeds, chili pepper flakes, corn, oats, sunflower seeds, safflower, and grubs—each chosen for its nutritional benefits.",
             highlights: ["3 lb bag", "16.2% protein"],
             sizes: [],
+          },
+          "Petfu Apollo 1": {
+            description:
+              "An all-in-one premium treat blend of dried mealworms, black soldier fly larvae, krill, sunflower seeds, marigold petals, and crushed calcium shells for healthy, active flocks.",
+            benefits: [
+              "Supports active foraging, steady growth, and recovery during cold or stressful periods",
+              "Helps maintain strong bones, firm eggshells, and consistent egg production",
+              "Natural oils and amino acids support fuller, glossier feather regrowth during molting",
+              "Marigold petals and krill encourage richly colored golden-orange yolks without artificial additives",
+            ],
+            highlights: ["33% protein", "25% healthy fats", "9% calcium"],
+            sizes: ["1 lb", "5 lb"],
           },
         },
       },
