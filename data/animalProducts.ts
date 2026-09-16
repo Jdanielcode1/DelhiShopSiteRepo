@@ -86,7 +86,7 @@ export const animalProductGroups: AnimalProductGroup[] = [
           },
           "Delhi El Justo Game Bird Mix": {
             description:
-              "A complete summer maintenance feed for mature game birds, made with a carefully selected blend of grains and seeds for balanced everyday nutrition. Grains, seeds, oils, vitamins, minerals, probiotics, and essential nutrients support overall health and condition, while salmon oil and real salmon bites add beneficial fats and nutrients. Ideal for mature game birds needing a well-rounded maintenance diet with quality ingredients and variety.",
+              "A nutrient-dense complete feed for mature game birds, formulated with 16.25% protein and 5.8% fat. El Justo stands out for its exceptionally diverse blend of whole grains and seeds, including corn, wheat, barley, millet, peas, lentils, safflower, sunflower, flax, hemp, and canary seed. Fish oil and flaxseed provide omega-rich ingredients, while added vitamins, minerals, amino acids, yeast cultures, and fermentation products help provide complete everyday nutrition.",
             highlights: ["16.25% protein", "Cracked or whole"],
             sizes: [],
           },
