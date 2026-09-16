@@ -68,7 +68,8 @@ export const animalProductGroups: AnimalProductGroup[] = [
             sizes: [],
           },
           "Gutierrez Game Bird": {
-            description: "A versatile game bird feed available in cracked or whole grain to suit your feeding preference.",
+            description:
+              "A complete maintenance feed for mature game birds formulated with 14.7% protein and 4% fat. Gutierrez Summer Mix features a varied combination of cracked or whole corn, wheat, popcorn, safflower, red lentils, sunflower seeds, oat groats, green and yellow peas, alfalfa, and rice bran. Added soybean oil, amino acids, vitamins, minerals, and fermentation products complete the formula for balanced everyday feeding.",
             highlights: ["14.70% protein", "Cracked or whole", "50 lb & 80 lb"],
             sizes: [],
           },
@@ -92,7 +93,7 @@ export const animalProductGroups: AnimalProductGroup[] = [
           },
           "Economy Stag Game Mix": {
             description:
-              "A budget-friendly game bird feed formulated for mature game birds and everyday maintenance.",
+              "A straightforward maintenance feed for mature game birds offering an economical grain-based option with 11.5% protein and 4.6% fat. The formula combines whole or cracked corn, wheat, oats, maple peas, safflower, and sunflower seeds with alfalfa, rice bran, and other nutritional ingredients. It also contains fish oil and soybean oil and is fortified with essential vitamins, minerals, amino acids, yeast cultures, and fermentation products.",
             highlights: ["11.50% protein", "Cracked or whole"],
             sizes: [],
           },
