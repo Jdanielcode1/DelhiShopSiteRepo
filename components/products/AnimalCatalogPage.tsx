@@ -51,6 +51,10 @@ const categoryHeroes: Record<string, Record<"delhi" | "denair", CategoryHero>> =
     denair: { image: "/images/denair-pet-birds-hero.png", altEn: "Live budgerigars near Denair", altEs: "Periquitos vivos cerca de Denair" },
     delhi: { image: "/images/delhi-pet-birds-hero.png", altEn: "Live cockatiels near Delhi", altEs: "Carolina vivas cerca de Delhi" },
   },
+  "farm-barn": {
+    denair: { image: "/images/farm-barn-hero.png", altEn: "Red barn in a rural landscape", altEs: "Granero rojo en un paisaje rural" },
+    delhi: { image: "/images/farm-barn-hero.png", altEn: "Red barn in a rural landscape", altEs: "Granero rojo en un paisaje rural" },
+  },
 };
 
 export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogPageProps) {
@@ -105,7 +109,17 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
           </Link>
           <div className="mt-7">
             <div className="flex max-w-4xl items-start gap-5 md:gap-7">
-              <span aria-hidden="true" className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-cream/10 text-4xl md:h-20 md:w-20 md:text-5xl">{group.icon}</span>
+              <span aria-hidden="true" className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border border-cream/30 bg-charcoal md:h-20 md:w-20">
+                {heroImage && (
+                  <Image
+                    src={heroImage}
+                    alt=""
+                    fill
+                    sizes="80px"
+                    className="object-cover"
+                  />
+                )}
+              </span>
               <div>
                 <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-secondary-300">
                   {locale === "es" ? `Productos de la Tienda de ${storeName}` : `${storeName} Store Products`}
