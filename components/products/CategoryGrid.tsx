@@ -72,6 +72,7 @@ const animalCutouts: Record<string, string> = {
   rabbits: "/images/animal-cutouts/holland-lop-rabbit.png",
   "pet-birds": "/images/animal-cutouts/umbrella-cockatoo.png",
   "aquatic-pets": "/images/animal-cutouts/red-eared-slider.png",
+  "farm-barn": "/images/animal-cutouts/red-barn.png",
 };
 
 export function CategoryGrid({ sectionId, title, description, storeSlug = "delhi" }: CategoryGridProps) {
@@ -154,15 +155,15 @@ export function CategoryGrid({ sectionId, title, description, storeSlug = "delhi
               </p>
               <nav aria-label={locale === "es" ? "Comprar por tipo de animal" : "Shop by animal type"} className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-5">
                 {animalProductGroups.map((group) => (
-                  <Link key={group.id} href={animalHref(group.id)} className="group flex min-h-48 w-56 shrink-0 snap-start flex-col justify-between rounded-sm border border-secondary-200 bg-secondary-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500">
-                    <span aria-hidden="true" className="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary-50">
+                  <Link key={group.id} href={animalHref(group.id)} className="group flex min-h-56 w-56 shrink-0 snap-start flex-col justify-between rounded-sm border border-secondary-200 bg-secondary-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500">
+                    <span aria-hidden="true" className="flex h-28 w-28 items-center justify-center">
                       <Image
                         src={animalCutouts[group.id]}
                         alt=""
                         width={112}
                         height={112}
                         sizes="112px"
-                        className="absolute -left-6 -top-6 h-28 w-28 max-w-none object-contain drop-shadow-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105"
+                        className="h-28 w-28 object-contain drop-shadow-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105"
                       />
                     </span>
                     <span>
