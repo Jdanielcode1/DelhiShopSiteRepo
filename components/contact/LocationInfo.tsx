@@ -1,7 +1,7 @@
 "use client";
 
-import { ContactLinks, Heading, SocialLinks } from "@/components/ui";
-import { businessInfo, whatsappUrl } from "@/data/business";
+import { Heading, SocialLinks } from "@/components/ui";
+import { businessInfo } from "@/data/business";
 import { StoreHours } from "@/components/ui/StoreHours";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -49,15 +49,17 @@ export function LocationInfo() {
           {t.contactInfo}
         </Heading>
         <ul className="space-y-3 text-charcoal-light">
-          <li>
-            <p className="mb-3 font-medium text-charcoal">{businessInfo.phone}</p>
-            <ContactLinks
-              phone={businessInfo.phone}
-              whatsappUrl={whatsappUrl}
-              whatsappLabel={t.whatsapp}
-              callLabel={t.callUs}
-            />
-          </li>
+          {businessInfo.addresses.map((location) => (
+            <li key={location.slug}>
+              <p className="font-medium text-charcoal">{location.label} {t.location}</p>
+              <a
+                href={`tel:+1${location.phone.replace(/\D/g, "")}`}
+                className="mt-1 inline-block hover:text-primary-600 transition-colors"
+              >
+                {location.phone}
+              </a>
+            </li>
+          ))}
           <li className="flex items-center gap-3">
             <svg
               className="w-5 h-5 text-primary-600 flex-shrink-0"
