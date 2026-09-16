@@ -79,7 +79,8 @@ export const animalProductGroups: AnimalProductGroup[] = [
             sizes: [],
           },
           "Delhi Game Bird Mix No Milo": {
-            description: "A no-milo game bird mix available in cracked or whole grain options.",
+            description:
+              "A complete summer maintenance feed for mature game birds, formulated without milo. With 14.9% protein and 4.5% fat, this blend provides balanced everyday nutrition through cracked corn, whole wheat, safflower seed, green peas, oats, sunflower seed, alfalfa, and other carefully selected ingredients. Fortified with essential vitamins, minerals, amino acids, and fermentation products to support a well-rounded maintenance ration.",
             highlights: ["14.90% protein", "Cracked or whole"],
             sizes: [],
           },
