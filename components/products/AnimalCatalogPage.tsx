@@ -87,33 +87,14 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
 
   return (
     <>
-      <Section variant="dark" padding="md" className="relative overflow-hidden pt-36 md:pt-40">
-        {heroImage && (
-          <>
-            {/* Keep each animal's complete frame visible. The supplied category
-                photos are landscape, while this hero is much wider, so a
-                crop-to-fill image cuts off animals at the top or sides. */}
-            <div className="absolute inset-y-0 right-0 hidden w-1/2 md:block">
-              <Image
-                src={heroImage}
-                alt={heroImageAlt}
-                fill
-                priority
-                sizes="50vw"
-                className="object-contain object-right"
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/75 to-charcoal/35" aria-hidden="true" />
-          </>
-        )}
-
-        <Container className="relative z-10">
+      <Section variant="dark" padding="md" className="pt-36 md:pt-40">
+        <Container>
           <Link href={allAnimalsHref} className="inline-flex items-center gap-2 text-sm font-semibold text-secondary-300 transition hover:text-cream">
             <span aria-hidden="true">←</span>
             {locale === "es" ? "Todos los animales" : "All animals"}
           </Link>
-          <div className="mt-7">
-            <div className="flex max-w-4xl items-start gap-5 md:gap-7">
+          <div className="mt-7 grid items-center gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(22rem,0.9fr)] lg:gap-12">
+            <div className="flex items-start gap-5 md:gap-7">
               <span aria-hidden="true" className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border border-cream/30 bg-charcoal md:h-20 md:w-20">
                 {heroImage && (
                   <Image
@@ -121,7 +102,7 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
                     alt=""
                     fill
                     sizes="80px"
-                    className="object-cover"
+                    className="object-contain"
                   />
                 )}
               </span>
@@ -133,6 +114,18 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
                 <p className="mt-4 max-w-3xl text-lg leading-relaxed text-cream/75">{description}</p>
               </div>
             </div>
+            {heroImage && (
+              <div className="relative aspect-video w-full overflow-hidden rounded-sm border border-cream/20 bg-charcoal-light shadow-2xl">
+                <Image
+                  src={heroImage}
+                  alt={heroImageAlt}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            )}
           </div>
         </Container>
       </Section>
