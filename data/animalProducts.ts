@@ -87,7 +87,8 @@ export const animalProductGroups: AnimalProductGroup[] = [
             sizes: [],
           },
           "Economy Stag Game Mix": {
-            description: "An economical game bird mix available in cracked or whole grain options.",
+            description:
+              "A budget-friendly game bird feed formulated for mature game birds and everyday maintenance.",
             highlights: ["11.50% protein", "Cracked or whole"],
             sizes: [],
           },
