@@ -12,6 +12,47 @@ interface AnimalCatalogPageProps {
   storeSlug?: "delhi" | "denair";
 }
 
+type CategoryHero = { image: string; altEn: string; altEs: string };
+
+const categoryHeroes: Record<string, Record<"delhi" | "denair", CategoryHero>> = {
+  horses: {
+    denair: { image: "/images/denair-horses-hero.png", altEn: "Live chestnut horse in a pasture near Denair", altEs: "Caballo castaño vivo en un prado cerca de Denair" },
+    delhi: { image: "/images/delhi-horses-hero.png", altEn: "Live dapple gray horse trotting through a field near Delhi", altEs: "Caballo tordo vivo trotando por un campo cerca de Delhi" },
+  },
+  cattle: {
+    denair: { image: "/images/denair-cattle-hero.png", altEn: "Live black Angus cow in a pasture near Denair", altEs: "Vaca Angus negra viva en un pasto cerca de Denair" },
+    delhi: { image: "/images/delhi-cattle-hero.png", altEn: "Live red and white Hereford cow in a field near Delhi", altEs: "Vaca Hereford roja y blanca viva en un campo cerca de Delhi" },
+  },
+  "goats-sheep": {
+    denair: { image: "/images/denair-goats-sheep-hero.png", altEn: "Live goats and sheep in a pasture near Denair", altEs: "Cabras y ovejas vivas en un pasto cerca de Denair" },
+    delhi: { image: "/images/delhi-goats-sheep-hero.png", altEn: "Live goats and sheep in a field near Delhi", altEs: "Cabras y ovejas vivas en un campo cerca de Delhi" },
+  },
+  pigs: {
+    denair: { image: "/images/denair-pigs-hero.png", altEn: "Live pink farm pig in a pasture near Denair", altEs: "Cerdo de granja rosado vivo en un pasto cerca de Denair" },
+    delhi: { image: "/images/delhi-pigs-hero.png", altEn: "Live spotted heritage pig in a field near Delhi", altEs: "Cerdo manchado de raza tradicional vivo en un campo cerca de Delhi" },
+  },
+  dogs: {
+    denair: { image: "/images/denair-dogs-hero.png", altEn: "Live golden retriever in a field near Denair", altEs: "Golden retriever vivo en un campo cerca de Denair" },
+    delhi: { image: "/images/delhi-dogs-hero.png", altEn: "Live Australian shepherd running in a field near Delhi", altEs: "Pastor australiano vivo corriendo en un campo cerca de Delhi" },
+  },
+  cats: {
+    denair: { image: "/images/denair-cats-hero.png", altEn: "Live orange tabby cat near Denair", altEs: "Gato atigrado naranja vivo cerca de Denair" },
+    delhi: { image: "/images/delhi-cats-hero.png", altEn: "Live gray and white cat in a field near Delhi", altEs: "Gato gris y blanco vivo en un campo cerca de Delhi" },
+  },
+  rabbits: {
+    denair: { image: "/images/denair-rabbits-hero.png", altEn: "Live white and brown rabbit near Denair", altEs: "Conejo blanco y marrón vivo cerca de Denair" },
+    delhi: { image: "/images/delhi-rabbits-hero.png", altEn: "Live gray rabbit in a field near Delhi", altEs: "Conejo gris vivo en un campo cerca de Delhi" },
+  },
+  "aquatic-pets": {
+    denair: { image: "/images/denair-aquatic-pets-hero.png", altEn: "Live red-eared slider turtle near Denair", altEs: "Tortuga de orejas rojas viva cerca de Denair" },
+    delhi: { image: "/images/delhi-aquatic-pets-hero.png", altEn: "Live painted turtle swimming near Delhi", altEs: "Tortuga pintada viva nadando cerca de Delhi" },
+  },
+  "pet-birds": {
+    denair: { image: "/images/denair-pet-birds-hero.png", altEn: "Live budgerigars near Denair", altEs: "Periquitos vivos cerca de Denair" },
+    delhi: { image: "/images/delhi-pet-birds-hero.png", altEn: "Live cockatiels near Delhi", altEs: "Carolina vivas cerca de Delhi" },
+  },
+};
+
 export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogPageProps) {
   const { locale } = useLanguage();
   const name = locale === "es" ? group.nameEs : group.nameEn;
@@ -26,45 +67,12 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
     group.id === "poultry-game-birds" &&
     categoryId === "scratch" &&
     (item === "Bug Buffet" || item === "Pumpkin Spice & Everything Nice");
-  const heroImage = (group.id === "horses" || group.id === "cattle" || group.id === "goats-sheep")
-    ? group.id === "horses"
-      ? isDenair
-        ? "/images/denair-horses-hero.png"
-        : "/images/delhi-horses-hero.png"
-      : group.id === "cattle"
-        ? isDenair
-          ? "/images/denair-cattle-hero.png"
-          : "/images/delhi-cattle-hero.png"
-        : isDenair
-          ? "/images/denair-goats-sheep-hero.png"
-          : "/images/delhi-goats-sheep-hero.png"
-    : isDenair && group.id === "poultry-game-birds"
-      ? "/images/denair-poultry-game-birds.png"
-      : group.image;
-  const heroImageAlt = (group.id === "horses" || group.id === "cattle" || group.id === "goats-sheep")
-    ? group.id === "horses"
-      ? locale === "es"
-        ? isDenair
-          ? "Caballo castaño vivo en un prado cerca de Denair"
-          : "Caballo tordo vivo trotando por un campo cerca de Delhi"
-        : isDenair
-          ? "Live chestnut horse in a pasture near Denair"
-          : "Live dapple gray horse trotting through a field near Delhi"
-      : group.id === "cattle"
-        ? locale === "es"
-          ? isDenair
-            ? "Vaca Angus negra viva en un pasto cerca de Denair"
-            : "Vaca Hereford roja y blanca viva en un campo cerca de Delhi"
-          : isDenair
-            ? "Live black Angus cow in a pasture near Denair"
-            : "Live red and white Hereford cow in a field near Delhi"
-        : locale === "es"
-          ? isDenair
-            ? "Cabras y ovejas vivas en un pasto cerca de Denair"
-            : "Cabras y ovejas vivas en un campo cerca de Delhi"
-          : isDenair
-            ? "Live goats and sheep in a pasture near Denair"
-            : "Live goats and sheep in a field near Delhi"
+  const categoryHero = categoryHeroes[group.id]?.[storeSlug];
+  const heroImage = categoryHero?.image ?? (isDenair && group.id === "poultry-game-birds"
+    ? "/images/denair-poultry-game-birds.png"
+    : group.image);
+  const heroImageAlt = categoryHero
+    ? locale === "es" ? categoryHero.altEs : categoryHero.altEn
     : isDenair && group.id === "poultry-game-birds"
       ? locale === "es"
         ? "Gallinas y aves de caza vivas en una granja cerca de Denair"
