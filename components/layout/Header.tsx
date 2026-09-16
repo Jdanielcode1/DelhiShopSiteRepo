@@ -108,7 +108,7 @@ export function Header() {
                   >
                     {headerBusinessName}
                   </span>
-                  {!isStoreLocationPage && (
+                  {!isStoreLocationPage && !isDenairPage && (
                     <span
                       className={cn(
                         "mt-1 font-heading text-lg font-bold leading-none transition-colors duration-300",
