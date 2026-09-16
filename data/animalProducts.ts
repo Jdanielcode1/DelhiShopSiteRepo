@@ -196,7 +196,7 @@ export const animalProductGroups: AnimalProductGroup[] = [
           },
           "Delhi Super Egg": {
             description:
-              "A high-protein layer feed for laying hens, made with a carefully selected ingredient blend to support egg production and everyday flock health. Cracked corn, soybean meal, milo, wheat, rice bran, DDGS, and more are combined with oyster shell and limestone to provide important minerals, including calcium. A nutrient-rich everyday choice for healthy, productive laying flocks.",
+              "A high-protein feed formulated with 20.8% crude protein, setting it apart from conventional 16% layer feeds. Its ingredient blend includes soybean meal, cracked corn, whole wheat, grain sorghum, rice bran, and other grain-based ingredients. Oyster shell flour and ground limestone provide supplemental calcium sources, while added amino acids, vitamins, minerals, and fermentation products round out the nutritional profile.",
             highlights: ["50 lb bag", "20.80% protein"],
             sizes: [],
           },
