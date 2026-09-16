@@ -11,30 +11,30 @@ export function Hero() {
   const denair = businessInfo.addresses.find((location) => location.slug === "denair")!;
 
   return (
-    <section className="relative overflow-hidden bg-primary-900">
+    <section className="relative overflow-hidden bg-cream">
       <div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_48%)]"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(152,110,57,0.08),transparent_48%)]"
         aria-hidden="true"
       />
 
       <Container className="relative z-10 py-32 text-center md:py-40">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm uppercase tracking-[0.2em] text-secondary-300 animate-fade-in md:text-base">
+          <div className="mb-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm uppercase tracking-[0.2em] text-primary-700 animate-fade-in md:text-base">
             <span>{t.welcomeTo}</span>
             <span className="whitespace-nowrap">Delhi Feed and Supply</span>
-            <span aria-hidden="true" className="text-secondary-400">&amp;</span>
+            <span aria-hidden="true" className="text-secondary-600">&amp;</span>
             <span className="whitespace-nowrap">Denair Feed and Supply</span>
           </div>
 
           <Heading
             as="h1"
             size="xl"
-            className="text-cream mb-6 animate-fade-in-up"
+            className="text-charcoal mb-6 animate-fade-in-up"
           >
             {locale === "es" ? businessInfo.taglineEs : businessInfo.tagline}
           </Heading>
 
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-cream/80 animate-fade-in-up delay-100 md:text-xl">
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-charcoal-light animate-fade-in-up delay-100 md:text-xl">
             {t.heroDescription}
           </p>
         </div>
