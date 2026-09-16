@@ -10,7 +10,6 @@ import { navigation, businessInfo } from "@/data/business";
 import { useLanguage } from "@/lib/LanguageContext";
 import { MobileMenu } from "./MobileMenu";
 import { LanguageToggle } from "./LanguageToggle";
-import { ProductSearch } from "./ProductSearch";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -184,7 +183,6 @@ export function Header() {
                     </div>
                   );
                 })}
-                <ProductSearch appearance={hasSolidHeader ? "dark" : "light"} />
                 <LanguageToggle variant={hasSolidHeader ? "dark" : "light"} />
                 <Button
                   href="/contact"
