@@ -59,7 +59,7 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
   const description = locale === "es" ? group.descriptionEs : group.descriptionEn;
   const isDenair = storeSlug === "denair";
   const storeName = isDenair ? "Denair" : "Delhi";
-  const storeProductsHref = `/products/${storeSlug}`;
+  const allAnimalsHref = isDenair ? "/products/denair/animals" : "/products/animals";
   const displayProductName = (item: string) =>
     isDenair ? item.replace(/\bDelhi\b/g, "Denair") : item;
   const isUnavailableAtDenair = (categoryId: string, item: string) =>
@@ -100,7 +100,7 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
         )}
 
         <Container className="relative z-10">
-          <Link href={storeProductsHref} className="inline-flex items-center gap-2 text-sm font-semibold text-secondary-300 transition hover:text-cream">
+          <Link href={allAnimalsHref} className="inline-flex items-center gap-2 text-sm font-semibold text-secondary-300 transition hover:text-cream">
             <span aria-hidden="true">←</span>
             {locale === "es" ? "Todos los animales" : "All animals"}
           </Link>
@@ -251,7 +251,7 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
               <Heading as="h2" size="md" className="text-charcoal">{locale === "es" ? "¿Busca otro animal?" : "Shopping for another animal?"}</Heading>
               <p className="mt-2 text-charcoal-light">{locale === "es" ? `Regrese a la lista de animales de la tienda de ${storeName}.` : `Return to the ${storeName} store’s animal list.`}</p>
             </div>
-            <Button href={storeProductsHref} variant="primary">{locale === "es" ? "Ver todos los animales" : "View all animals"}</Button>
+            <Button href={allAnimalsHref} variant="primary">{locale === "es" ? "Ver todos los animales" : "View all animals"}</Button>
           </div>
         </Container>
       </Section>
