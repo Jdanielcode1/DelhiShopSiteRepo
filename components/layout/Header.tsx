@@ -97,13 +97,25 @@ export function Header() {
                   priority
                   unoptimized
                 />
-                <span
-                  className={cn(
-                    "font-heading text-lg font-bold leading-none transition-colors duration-300",
-                    isScrolled ? "text-charcoal" : "text-cream"
+                <span className="flex flex-col">
+                  <span
+                    className={cn(
+                      "font-heading text-lg font-bold leading-none transition-colors duration-300",
+                      isScrolled ? "text-charcoal" : "text-cream"
+                    )}
+                  >
+                    {headerBusinessName}
+                  </span>
+                  {!isDenairPage && (
+                    <span
+                      className={cn(
+                        "mt-1 text-sm font-semibold leading-none transition-colors duration-300",
+                        isScrolled ? "text-charcoal-light" : "text-cream/80"
+                      )}
+                    >
+                      Denair Feed and Supply
+                    </span>
                   )}
-                >
-                  {headerBusinessName}
                 </span>
               </Link>
 
