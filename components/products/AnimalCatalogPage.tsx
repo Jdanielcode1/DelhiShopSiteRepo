@@ -32,12 +32,12 @@ const categoryHeroes: Record<string, Record<"delhi" | "denair", CategoryHero>> =
     delhi: { image: "/images/delhi-pigs-hero.png", altEn: "Live spotted heritage pig in a field near Delhi", altEs: "Cerdo manchado de raza tradicional vivo en un campo cerca de Delhi" },
   },
   dogs: {
-    denair: { image: "/images/denair-dogs-hero.png", altEn: "Live golden retriever in a field near Denair", altEs: "Golden retriever vivo en un campo cerca de Denair" },
-    delhi: { image: "/images/delhi-dogs-hero.png", altEn: "Live Australian shepherd running in a field near Delhi", altEs: "Pastor australiano vivo corriendo en un campo cerca de Delhi" },
+    denair: { image: "/images/denair-dogs-hero.png", altEn: "Live Yorkshire terrier in a field near Denair", altEs: "Yorkshire terrier vivo en un campo cerca de Denair" },
+    delhi: { image: "/images/delhi-dogs-hero.png", altEn: "Live black Newfoundland dog in a field near Delhi", altEs: "Perro terranova negro vivo en un campo cerca de Delhi" },
   },
   cats: {
-    denair: { image: "/images/denair-cats-hero.png", altEn: "Live orange tabby cat near Denair", altEs: "Gato atigrado naranja vivo cerca de Denair" },
-    delhi: { image: "/images/delhi-cats-hero.png", altEn: "Live gray and white cat in a field near Delhi", altEs: "Gato gris y blanco vivo en un campo cerca de Delhi" },
+    denair: { image: "/images/denair-cats-hero.png", altEn: "Live orange Persian cat near Denair", altEs: "Gato persa naranja vivo cerca de Denair" },
+    delhi: { image: "/images/delhi-cats-hero.png", altEn: "Live fluffy Siamese cat in a field near Delhi", altEs: "Gato siamés peludo vivo en un campo cerca de Delhi" },
   },
   rabbits: {
     denair: { image: "/images/denair-rabbits-hero.png", altEn: "Live white and brown rabbit near Denair", altEs: "Conejo blanco y marrón vivo cerca de Denair" },
