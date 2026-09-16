@@ -23,6 +23,10 @@ export function Header() {
     pathname.startsWith("/products/delhi") || pathname.startsWith("/products/animals");
   const isStoreLocationPage =
     pathname === "/locations/delhi" || pathname === "/locations/denair";
+  const hasSolidHeader =
+    isScrolled ||
+    pathname.startsWith("/products/animals") ||
+    pathname.startsWith("/products/denair/animals");
   const headerBusinessName = isDenairPage
     ? "Denair Feed and Supply"
     : businessInfo.name;
@@ -80,7 +84,7 @@ export function Header() {
         <div
           className={cn(
             "transition-all duration-300",
-            isScrolled
+            hasSolidHeader
               ? "bg-cream/95 backdrop-blur-sm shadow-sm py-3"
               : "bg-transparent py-4"
           )}
@@ -105,7 +109,7 @@ export function Header() {
                   <span
                     className={cn(
                       "font-heading text-lg font-bold leading-none transition-colors duration-300",
-                      isScrolled ? "text-charcoal" : "text-cream"
+                      hasSolidHeader ? "text-charcoal" : "text-cream"
                     )}
                   >
                     {headerBusinessName}
@@ -114,7 +118,7 @@ export function Header() {
                     <span
                       className={cn(
                         "mt-1 font-heading text-lg font-bold leading-none transition-colors duration-300",
-                        isScrolled ? "text-charcoal" : "text-cream"
+                        hasSolidHeader ? "text-charcoal" : "text-cream"
                       )}
                     >
                       Denair Feed and Supply
@@ -135,8 +139,8 @@ export function Header() {
                         "after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0",
                         "after:bg-current after:transition-all after:duration-200 hover:after:w-full",
                         isActive
-                          ? isScrolled ? "text-primary-600 after:w-full" : "text-cream after:w-full"
-                          : isScrolled ? "text-charcoal hover:text-primary-600" : "text-cream/90 hover:text-cream"
+                          ? hasSolidHeader ? "text-primary-600 after:w-full" : "text-cream after:w-full"
+                          : hasSolidHeader ? "text-charcoal hover:text-primary-600" : "text-cream/90 hover:text-cream"
                       )}
                     >
                       {isProducts
@@ -180,14 +184,14 @@ export function Header() {
                     </div>
                   );
                 })}
-                <ProductSearch appearance={isScrolled ? "dark" : "light"} />
-                <LanguageToggle variant={isScrolled ? "dark" : "light"} />
+                <ProductSearch appearance={hasSolidHeader ? "dark" : "light"} />
+                <LanguageToggle variant={hasSolidHeader ? "dark" : "light"} />
                 <Button
                   href="/contact"
-                  variant={isScrolled ? "primary" : "secondary"}
+                  variant={hasSolidHeader ? "primary" : "secondary"}
                   size="sm"
                   className={cn(
-                    !isScrolled && "border-cream text-cream hover:bg-cream/10"
+                    !hasSolidHeader && "border-cream text-cream hover:bg-cream/10"
                   )}
                 >
                   {t.visitUs}
@@ -195,12 +199,12 @@ export function Header() {
               </div>
 
               <div className="flex items-center gap-2 lg:hidden">
-                <LanguageToggle variant={isScrolled ? "dark" : "light"} />
+                <LanguageToggle variant={hasSolidHeader ? "dark" : "light"} />
                 <button
                   type="button"
                   className={cn(
                     "p-2 -mr-2 transition-colors duration-200",
-                    isScrolled ? "text-charcoal" : "text-cream"
+                    hasSolidHeader ? "text-charcoal" : "text-cream"
                   )}
                   onClick={() => setIsMobileMenuOpen(true)}
                   aria-label="Open menu"

@@ -46,7 +46,7 @@ export function AnimalCategoryGallery({ storeSlug = "delhi" }: AnimalCategoryGal
 
   return (
     <>
-      <Section variant="cream" padding="md">
+      <Section variant="cream" padding="md" className="pt-32 md:pt-36">
         <Container>
           <Link href={productsHref} className="font-semibold text-primary-700 hover:underline">
             ← {locale === "es" ? `Productos de ${storeName}` : `${storeName} products`}
