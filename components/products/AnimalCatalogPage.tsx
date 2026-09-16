@@ -26,16 +26,28 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
     group.id === "poultry-game-birds" &&
     categoryId === "scratch" &&
     (item === "Bug Buffet" || item === "Pumpkin Spice & Everything Nice");
-  const heroImage = isDenair && group.id === "poultry-game-birds"
-    ? "/images/denair-poultry-game-birds.png"
-    : group.image;
-  const heroImageAlt = isDenair && group.id === "poultry-game-birds"
+  const heroImage = group.id === "horses"
+    ? isDenair
+      ? "/images/denair-horses-hero.png"
+      : "/images/delhi-horses-hero.png"
+    : isDenair && group.id === "poultry-game-birds"
+      ? "/images/denair-poultry-game-birds.png"
+      : group.image;
+  const heroImageAlt = group.id === "horses"
     ? locale === "es"
-      ? "Gallinas y aves de caza vivas en una granja cerca de Denair"
-      : "Live chickens and game birds on a farm near Denair"
-    : locale === "es"
-      ? group.imageAltEs ?? name
-      : group.imageAltEn ?? name;
+      ? isDenair
+        ? "Caballo castaño vivo en un prado cerca de Denair"
+        : "Caballo tordo vivo trotando por un campo cerca de Delhi"
+      : isDenair
+        ? "Live chestnut horse in a pasture near Denair"
+        : "Live dapple gray horse trotting through a field near Delhi"
+    : isDenair && group.id === "poultry-game-birds"
+      ? locale === "es"
+        ? "Gallinas y aves de caza vivas en una granja cerca de Denair"
+        : "Live chickens and game birds on a farm near Denair"
+      : locale === "es"
+        ? group.imageAltEs ?? name
+        : group.imageAltEn ?? name;
 
   return (
     <>
