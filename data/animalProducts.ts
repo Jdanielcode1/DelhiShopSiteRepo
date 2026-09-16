@@ -82,7 +82,8 @@ export const animalProductGroups: AnimalProductGroup[] = [
             sizes: [],
           },
           "Delhi El Justo Game Bird Mix": {
-            description: "A game bird mix offered in cracked or whole grain to fit your preferred feeding style.",
+            description:
+              "A complete summer maintenance feed for mature game birds, made with a carefully selected blend of grains and seeds for balanced everyday nutrition. Grains, seeds, oils, vitamins, minerals, probiotics, and essential nutrients support overall health and condition, while salmon oil and real salmon bites add beneficial fats and nutrients. Ideal for mature game birds needing a well-rounded maintenance diet with quality ingredients and variety.",
             highlights: ["16.25% protein", "Cracked or whole"],
             sizes: [],
           },
