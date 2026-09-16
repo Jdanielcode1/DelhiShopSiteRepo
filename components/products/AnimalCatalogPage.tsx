@@ -21,6 +21,11 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
   const storeProductsHref = `/products/${storeSlug}`;
   const displayProductName = (item: string) =>
     isDenair ? item.replace(/\bDelhi\b/g, "Denair") : item;
+  const isUnavailableAtDenair = (categoryId: string, item: string) =>
+    isDenair &&
+    group.id === "poultry-game-birds" &&
+    categoryId === "scratch" &&
+    (item === "Bug Buffet" || item === "Pumpkin Spice & Everything Nice");
   const heroImage = isDenair && group.id === "poultry-game-birds"
     ? "/images/denair-poultry-game-birds.png"
     : group.image;
@@ -92,7 +97,7 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
                       : "space-y-3"
                   )}
                 >
-                  {category.items.map((item) => (
+                  {category.items.filter((item) => !isUnavailableAtDenair(category.id, item)).map((item) => (
                     <li
                       key={item}
                       className={cn(
