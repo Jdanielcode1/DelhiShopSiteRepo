@@ -96,7 +96,7 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
               fill
               priority
               sizes="100vw"
-              className="z-0 object-cover object-center"
+              className="z-0 object-contain object-center md:object-right"
             />
             <div className="absolute inset-0 z-10 bg-gradient-to-r from-charcoal/95 via-charcoal/78 to-charcoal/35" aria-hidden="true" />
           </>
