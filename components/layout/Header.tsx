@@ -22,10 +22,6 @@ export function Header() {
     pathname.startsWith("/products/delhi") || pathname.startsWith("/products/animals");
   const isStoreLocationPage =
     pathname === "/locations/delhi" || pathname === "/locations/denair";
-  const hasSolidHeader =
-    isScrolled ||
-    pathname.startsWith("/products/animals") ||
-    pathname.startsWith("/products/denair/animals");
   const headerBusinessName = isDenairPage
     ? "Denair Feed and Supply"
     : businessInfo.name;
@@ -82,10 +78,7 @@ export function Header() {
         {/* Main nav */}
         <div
           className={cn(
-            "transition-all duration-300",
-            hasSolidHeader
-              ? "bg-cream/95 backdrop-blur-sm shadow-sm py-3"
-              : "bg-transparent py-4"
+            "bg-cream/95 py-3 shadow-sm backdrop-blur-sm transition-all duration-300"
           )}
         >
           <Container>
@@ -138,8 +131,8 @@ export function Header() {
                         "after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0",
                         "after:bg-current after:transition-all after:duration-200 hover:after:w-full",
                         isActive
-                          ? hasSolidHeader ? "text-primary-600 after:w-full" : "text-cream after:w-full"
-                          : hasSolidHeader ? "text-charcoal hover:text-primary-600" : "text-cream/90 hover:text-cream"
+                          ? "text-charcoal after:w-full"
+                          : "text-charcoal hover:text-primary-600"
                       )}
                     >
                       {isProducts
@@ -183,26 +176,24 @@ export function Header() {
                     </div>
                   );
                 })}
-                <LanguageToggle variant={hasSolidHeader ? "dark" : "light"} />
+                <LanguageToggle variant="dark" />
                 <Button
                   href="/contact"
-                  variant={hasSolidHeader ? "primary" : "secondary"}
+                  variant="secondary"
                   size="sm"
-                  className={cn(
-                    !hasSolidHeader && "border-cream text-cream hover:bg-cream/10"
-                  )}
+                  className="border-charcoal text-charcoal hover:bg-secondary-100"
                 >
                   {t.visitUs}
                 </Button>
               </div>
 
               <div className="flex items-center gap-2 lg:hidden">
-                <LanguageToggle variant={hasSolidHeader ? "dark" : "light"} />
+                <LanguageToggle variant="dark" />
                 <button
                   type="button"
                   className={cn(
                     "p-2 -mr-2 transition-colors duration-200",
-                    hasSolidHeader ? "text-charcoal" : "text-cream"
+                    "text-charcoal"
                   )}
                   onClick={() => setIsMobileMenuOpen(true)}
                   aria-label="Open menu"
