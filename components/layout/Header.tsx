@@ -108,7 +108,7 @@ export function Header() {
                   <span
                     className={cn(
                       "font-heading text-lg font-bold leading-none transition-colors duration-300",
-                      hasSolidHeader ? "text-charcoal" : "text-cream"
+                      "text-charcoal"
                     )}
                   >
                     {headerBusinessName}
@@ -117,7 +117,7 @@ export function Header() {
                     <span
                       className={cn(
                         "mt-1 font-heading text-lg font-bold leading-none transition-colors duration-300",
-                        hasSolidHeader ? "text-charcoal" : "text-cream"
+                        "text-charcoal"
                       )}
                     >
                       Denair Feed and Supply
