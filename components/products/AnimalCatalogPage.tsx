@@ -87,7 +87,11 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
 
   return (
     <>
-      <Section variant="dark" padding="md" className="relative isolate overflow-hidden pt-36 md:pt-40">
+      <Section
+        variant="dark"
+        padding="md"
+        className="relative isolate mt-[104px] overflow-hidden pt-10 md:pt-14"
+      >
         {heroImage && (
           <>
             <Image
