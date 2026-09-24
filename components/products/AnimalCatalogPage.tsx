@@ -100,9 +100,12 @@ export function AnimalCatalogPage({ group, storeSlug = "delhi" }: AnimalCatalogP
               fill
               priority
               sizes="100vw"
-              className="z-0 object-contain object-center md:object-right"
+              className="z-0 object-cover object-right"
             />
-            <div className="absolute inset-0 z-10 bg-gradient-to-r from-charcoal/95 via-charcoal/78 to-charcoal/35" aria-hidden="true" />
+            <div
+              className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(35,26,22,0.97)_0%,rgba(35,26,22,0.94)_34%,rgba(35,26,22,0.72)_54%,rgba(35,26,22,0.28)_76%,rgba(35,26,22,0.08)_100%)]"
+              aria-hidden="true"
+            />
           </>
         )}
         <Container className="relative z-20">
